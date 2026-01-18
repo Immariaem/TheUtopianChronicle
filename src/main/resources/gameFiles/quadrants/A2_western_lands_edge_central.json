@@ -32,9 +32,11 @@
       "blocked": false
     }
   },
-  "npcs": [],
-  "items": [],
-  "interactables": [],
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": []
+  },
   "requiredFlags": [],
   "unlockFlags": [],
   "storyCheckpoint": null,
@@ -42,8 +44,6 @@
   "questData": null,
   "specialMechanics": null,
   "metadata": {
-    "isCriticalPath": false,
-    "estimatedVisits": "0-1",
-    "difficulty": "easy"
+    "isCriticalPath": false
   }
 }

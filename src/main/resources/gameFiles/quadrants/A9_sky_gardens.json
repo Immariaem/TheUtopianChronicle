@@ -32,38 +32,40 @@
       "blocked": false
     }
   },
-  "npcs": [
-    {
-      "npcId": "gardener",
-      "spawnCondition": null,
-      "dialogue": "gardener_plants",
-      "isActive": true
-    }
-  ],
-  "items": [],
-  "interactables": [
-    {
-      "id": "rose_garden",
-      "name": "Rose Garden",
-      "examineText": "Dozens of rose bushes in every color imaginable, red, white, pink, yellow, and even blue roses that seem almost to glow. Their perfume is heady and sweet.",
-      "canInteract": true,
-      "interactionText": "You breathe in the roses' scent. For a moment, you feel at peace, your worries about your father fading just slightly."
-    },
-    {
-      "id": "floating_planter",
-      "name": "Floating Planter",
-      "examineText": "A massive stone planter, elaborately carved, floating a few feet off the ground with no visible means of support. A small tree grows from it, its branches heavy with white blossoms.",
-      "canInteract": false,
-      "interactionText": null
-    },
-    {
-      "id": "garden_bench",
-      "name": "Stone Bench",
-      "examineText": "A simple stone bench positioned to overlook a particularly beautiful section of the gardens. The stone is warm from the sun.",
-      "canInteract": true,
-      "interactionText": "You sit for a moment, taking in the beauty around you. Your father would have loved this place. The thought brings both comfort and sadness."
-    }
-  ],
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "gardener",
+        "spawnCondition": null,
+        "dialogue": "gardener_plants",
+        "isActive": true
+      }
+    ],
+    "items": [],
+    "interactables": [
+      {
+        "id": "rose_garden",
+        "name": "Rose Garden",
+        "examineText": "Dozens of rose bushes in every color imaginable, red, white, pink, yellow, and even blue roses that seem almost to glow. Their perfume is heady and sweet.",
+        "canInteract": true,
+        "interactionText": "You breathe in the roses' scent. For a moment, you feel at peace, your worries about your father fading just slightly."
+      },
+      {
+        "id": "floating_planter",
+        "name": "Floating Planter",
+        "examineText": "A massive stone planter, elaborately carved, floating a few feet off the ground with no visible means of support. A small tree grows from it, its branches heavy with white blossoms.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "garden_bench",
+        "name": "Stone Bench",
+        "examineText": "A simple stone bench positioned to overlook a particularly beautiful section of the gardens. The stone is warm from the sun.",
+        "canInteract": true,
+        "interactionText": "You sit for a moment, taking in the beauty around you. Your father would have loved this place. The thought brings both comfort and sadness."
+      }
+    ]
+  },
   "requiredFlags": ["reached_sky_city"],
   "unlockFlags": ["explored_sky_gardens"],
   "storyCheckpoint": null,
@@ -71,8 +73,6 @@
   "questData": null,
   "specialMechanics": null,
   "metadata": {
-    "isCriticalPath": false,
-    "estimatedVisits": "1-2",
-    "difficulty": "easy"
+    "isCriticalPath": false
   }
 }

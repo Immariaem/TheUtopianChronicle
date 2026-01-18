@@ -32,17 +32,19 @@
       "blocked": false
     }
   },
-  "npcs": [],
-  "items": [],
-  "interactables": [
-    {
-      "id": "mountain_view",
-      "name": "Mountain Vista",
-      "examineText": "Through a gap in the trees, you can see mountains rising in the distance. Their peaks seem to glitter with an unusual light.",
-      "canInteract": false,
-      "interactionText": null
-    }
-  ],
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "mountain_view",
+        "name": "Mountain View",
+        "examineText": "Through a gap in the trees, you can see mountains rising in the distance. Their peaks seem to glitter with an unusual light.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
   "requiredFlags": [],
   "unlockFlags": [],
   "storyCheckpoint": null,
@@ -50,8 +52,6 @@
   "questData": null,
   "specialMechanics": null,
   "metadata": {
-    "isCriticalPath": false,
-    "estimatedVisits": "0-1",
-    "difficulty": "easy"
+    "isCriticalPath": false
   }
 }

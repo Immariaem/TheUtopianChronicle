@@ -32,31 +32,33 @@
       "blocked": false
     }
   },
-  "npcs": [
-    {
-      "npcId": "dock_worker",
-      "spawnCondition": null,
-      "dialogue": "dock_worker_generic",
-      "isActive": true
-    }
-  ],
-  "items": [],
-  "interactables": [
-    {
-      "id": "docked_airship",
-      "name": "Merchant Airship",
-      "examineText": "A medium-sized airship being loaded with crates. Its balloon is patched in several places, telling stories of storms weathered and journeys completed. The name 'Cloud Dancer' is painted on the hull.",
-      "canInteract": false,
-      "interactionText": null
-    },
-    {
-      "id": "rope_pulley",
-      "name": "Loading Pulley",
-      "examineText": "A complex system of ropes and pulleys used to hoist cargo from lower platforms up to the ships. The engineering is impressive.",
-      "canInteract": false,
-      "interactionText": null
-    }
-  ],
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "dock_worker",
+        "spawnCondition": null,
+        "dialogue": "dock_worker_generic",
+        "isActive": true
+      }
+    ],
+    "items": [],
+    "interactables": [
+      {
+        "id": "docked_airship",
+        "name": "Merchant Airship",
+        "examineText": "A medium-sized airship being loaded with crates. Its balloon is patched in several places, telling stories of storms weathered and journeys completed. The name 'Cloud Dancer' is painted on the hull.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "rope_pulley",
+        "name": "Loading Pulley",
+        "examineText": "A complex system of ropes and pulleys used to hoist cargo from lower platforms up to the ships. The engineering is impressive.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
   "requiredFlags": ["reached_sky_city"],
   "unlockFlags": ["explored_sky_docks"],
   "storyCheckpoint": null,
@@ -64,8 +66,6 @@
   "questData": null,
   "specialMechanics": null,
   "metadata": {
-    "isCriticalPath": false,
-    "estimatedVisits": "1-2",
-    "difficulty": "easy"
+    "isCriticalPath": false
   }
 }

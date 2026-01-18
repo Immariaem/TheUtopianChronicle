@@ -32,38 +32,40 @@
       "blocked": false
     }
   },
-  "npcs": [
-    {
-      "npcId": "market_vendor",
-      "spawnCondition": null,
-      "dialogue": "vendor_sales_pitch",
-      "isActive": true
-    }
-  ],
-  "items": [],
-  "interactables": [
-    {
-      "id": "silk_stall",
-      "name": "Silk Merchant's Stall",
-      "examineText": "Bolts of the most beautiful fabric you've ever seen. The silk seems to shimmer with inner light, shifting through colors like oil on water. A sign reads: 'Cloud Silk, Woven from morning mist by the master weavers of the Eastern Peaks.'",
-      "canInteract": true,
-      "interactionText": "The merchant smiles at your interest. 'Beautiful, isn't it? Light as air, strong as steel, and it never wrinkles. A bargain at only fifty gold crowns per bolt!'"
-    },
-    {
-      "id": "cloud_bottles",
-      "name": "Bottled Clouds",
-      "examineText": "Actual clouds trapped in glass bottles. Some are white and fluffy, others dark and stormy, one even has tiny lightning bolts crackling inside. The merchant catches you looking and winks.",
-      "canInteract": true,
-      "interactionText": "'Ah, you have a good eye! That storm cloud is a rare piece. Captured from the Great Tempest of last summer. Makes quite the impression at parties when you uncork it!'"
-    },
-    {
-      "id": "food_stall",
-      "name": "Street Food Vendor",
-      "examineText": "A small stall selling grilled skewers of meat and vegetables, fresh flatbread, and what appears to be fried pastries dusted with sugar. The smell is intoxicating.",
-      "canInteract": false,
-      "interactionText": null
-    }
-  ],
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "market_vendor",
+        "spawnCondition": null,
+        "dialogue": "vendor_sales_pitch",
+        "isActive": true
+      }
+    ],
+    "items": [],
+    "interactables": [
+      {
+        "id": "silk_stall",
+        "name": "Silk Merchant's Stall",
+        "examineText": "Bolts of the most beautiful fabric you've ever seen. The silk seems to shimmer with inner light, shifting through colors like oil on water. A sign reads: 'Cloud Silk, Woven from morning mist by the master weavers of the Eastern Peaks.'",
+        "canInteract": true,
+        "interactionText": "The merchant smiles at your interest. 'Beautiful, isn't it? Light as air, strong as steel, and it never wrinkles. A bargain at only fifty gold crowns per bolt!'"
+      },
+      {
+        "id": "cloud_bottles",
+        "name": "Bottled Clouds",
+        "examineText": "Actual clouds trapped in glass bottles. Some are white and fluffy, others dark and stormy, one even has tiny lightning bolts crackling inside. The merchant catches you looking and winks.",
+        "canInteract": true,
+        "interactionText": "'Ah, you have a good eye! That storm cloud is a rare piece. Captured from the Great Tempest of last summer. Makes quite the impression at parties when you uncork it!'"
+      },
+      {
+        "id": "food_stall",
+        "name": "Street Food Vendor",
+        "examineText": "A small stall selling grilled skewers of meat and vegetables, fresh flatbread, and what appears to be fried pastries dusted with sugar. The smell is intoxicating.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
   "requiredFlags": ["reached_sky_city"],
   "unlockFlags": ["explored_sky_market"],
   "storyCheckpoint": null,
@@ -71,8 +73,6 @@
   "questData": null,
   "specialMechanics": null,
   "metadata": {
-    "isCriticalPath": false,
-    "estimatedVisits": "1-2",
-    "difficulty": "easy"
+    "isCriticalPath": false
   }
 }

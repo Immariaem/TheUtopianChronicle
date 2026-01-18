@@ -32,24 +32,26 @@
       "blocked": false
     }
   },
-  "npcs": [],
-  "items": [],
-  "interactables": [
-    {
-      "id": "observatory_door",
-      "name": "Observatory Door",
-      "examineText": "A heavy wooden door with astronomical symbols carved into it. A sign reads: 'Sky Observatory - Authorized Personnel Only. Observations in Progress.'",
-      "canInteract": false,
-      "interactionText": null
-    },
-    {
-      "id": "telescope",
-      "name": "Small Telescope",
-      "examineText": "A smaller telescope positioned outside the main observatory, apparently for public use. It's pointed toward the eastern horizon.",
-      "canInteract": true,
-      "interactionText": "You peer through the telescope. The view is magnified, you can see the curve of the ocean more clearly, and what might be storm clouds gathering in the far distance."
-    }
-  ],
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "observatory_door",
+        "name": "Observatory Door",
+        "examineText": "A heavy wooden door with astronomical symbols carved into it. A sign reads: 'Sky Observatory - Authorized Personnel Only. Observations in Progress.'",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "telescope",
+        "name": "Small Telescope",
+        "examineText": "A smaller telescope positioned outside the main observatory, apparently for public use. It's pointed toward the eastern horizon.",
+        "canInteract": true,
+        "interactionText": "You peer through the telescope. The view is magnified, you can see the curve of the ocean more clearly, and what might be storm clouds gathering in the far distance."
+      }
+    ]
+  },
   "requiredFlags": ["reached_sky_city"],
   "unlockFlags": [],
   "storyCheckpoint": null,
@@ -57,8 +59,6 @@
   "questData": null,
   "specialMechanics": null,
   "metadata": {
-    "isCriticalPath": false,
-    "estimatedVisits": "0-1",
-    "difficulty": "easy"
+    "isCriticalPath": false
   }
 }

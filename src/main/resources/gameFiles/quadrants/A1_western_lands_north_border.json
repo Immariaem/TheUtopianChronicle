@@ -32,9 +32,11 @@
       "blockedMessage": "This is your way back Home! You want to find your father. Continue on a different path"
     }
   },
+  "visibleObjects": {
   "npcs": [],
   "items": [],
-  "interactables": [],
+  "interactables": []
+},
   "requiredFlags": [],
   "unlockFlags": [],
   "storyCheckpoint": null,
@@ -42,8 +44,6 @@
   "questData": null,
   "specialMechanics": null,
   "metadata": {
-    "isCriticalPath": false,
-    "estimatedVisits": "0-1",
-    "difficulty": "easy"
+    "isCriticalPath": false
   }
 }

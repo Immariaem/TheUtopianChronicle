@@ -32,24 +32,26 @@
       "blocked": false
     }
   },
-  "npcs": [
-    {
-      "npcId": "sky_citizen_generic",
-      "spawnCondition": null,
-      "dialogue": "sky_citizen_small_talk",
-      "isActive": true
-    }
-  ],
-  "items": [],
-  "interactables": [
-    {
-      "id": "nephele_fountain",
-      "name": "Fountain of Nephele",
-      "examineText": "A magnificent marble fountain showing the cloud nymph Nephele. Water flows upward in defiance of gravity, forming misty clouds before falling back down. An inscription in ancient Greek reads: 'Ἐκ πνεύματος γεννηθεῖσα' - Born of breath. Below in common tongue: 'Born of breath, dwelling in air, forever between earth and sky.'",
-      "canInteract": true,
-      "interactionText": "You touch the fountain's water. It's cool and refreshing, and leaves your hand feeling oddly light, as if gravity has less hold on you for a moment."
-    }
-  ],
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "sky_citizen_generic",
+        "spawnCondition": null,
+        "dialogue": "sky_citizen_small_talk",
+        "isActive": true
+      }
+    ],
+    "items": [],
+    "interactables": [
+      {
+        "id": "nephele_fountain",
+        "name": "Fountain of Nephele",
+        "examineText": "A magnificent marble fountain showing the cloud nymph Nephele. Water flows upward in defiance of gravity, forming misty clouds before falling back down. An inscription in ancient Greek reads: 'Ἐκ πνεύματος γεννηθεῖσα' - Born of breath. Below in common tongue: 'Born of breath, dwelling in air, forever between earth and sky.'",
+        "canInteract": true,
+        "interactionText": "You touch the fountain's water. It's cool and refreshing, and leaves your hand feeling oddly light, as if gravity has less hold on you for a moment."
+      }
+    ]
+  },
   "requiredFlags": ["reached_sky_city"],
   "unlockFlags": ["explored_sky_platia"],
   "storyCheckpoint": null,
@@ -57,8 +59,6 @@
   "questData": null,
   "specialMechanics": null,
   "metadata": {
-    "isCriticalPath": false,
-    "estimatedVisits": "2-3",
-    "difficulty": "easy"
+    "isCriticalPath": false
   }
 }
