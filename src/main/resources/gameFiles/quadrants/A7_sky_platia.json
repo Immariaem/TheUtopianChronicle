@@ -1,0 +1,64 @@
+{
+  "quadrantId": "A7",
+  "coordinates": {
+    "row": "A",
+    "column": 7,
+    "x": 7,
+    "y": 0
+  },
+  "name": "Sky Platia",
+  "region": "sky_city",
+  "function": "exploration",
+  "description": {
+    "initial": "You stand in the central plaza of Nephelia, the Sky Platia. White marble stretches in all directions, polished to a mirror shine that reflects the ever-changing sky above. At the center, a massive fountain depicts the nymph Nephele, born of Zeus's breath, her form made of swirling clouds captured in marble. Water flows upward in defiance of gravity, forming misty clouds before falling back down. Citizens of the sky city move about their business. Scholars in flowing robes, merchants haggling, children laughing and playing. The sound of distant music drifts on the breeze. Golden domes rise above you, and rope bridges connect to other floating platforms.",
+    "return": "The grand central plaza of Nephelia. The fountain of Nephele continues its eternal dance, and sky citizens go about their day.",
+    "atmospheric": "The air here smells of incense and distant rain. The marble reflects the ever-changing colors of the sky - blue, gold, purple, pink as clouds drift past."
+  },
+  "connections": {
+    "north": {
+      "blocked": true,
+      "blockedMessage": "The plaza's northern edge. Steps lead down to lower platforms."
+    },
+    "south": {
+      "quadrantId": "B7",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "A8",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "A6",
+      "blocked": false
+    }
+  },
+  "npcs": [
+    {
+      "npcId": "sky_citizen_generic",
+      "spawnCondition": null,
+      "dialogue": "sky_citizen_small_talk",
+      "isActive": true
+    }
+  ],
+  "items": [],
+  "interactables": [
+    {
+      "id": "nephele_fountain",
+      "name": "Fountain of Nephele",
+      "examineText": "A magnificent marble fountain showing the cloud nymph Nephele. Water flows upward in defiance of gravity, forming misty clouds before falling back down. An inscription in ancient Greek reads: 'Ἐκ πνεύματος γεννηθεῖσα' - Born of breath. Below in common tongue: 'Born of breath, dwelling in air, forever between earth and sky.'",
+      "canInteract": true,
+      "interactionText": "You touch the fountain's water. It's cool and refreshing, and leaves your hand feeling oddly light, as if gravity has less hold on you for a moment."
+    }
+  ],
+  "requiredFlags": ["reached_sky_city"],
+  "unlockFlags": ["explored_sky_platia"],
+  "storyCheckpoint": null,
+  "puzzleData": null,
+  "questData": null,
+  "specialMechanics": null,
+  "metadata": {
+    "isCriticalPath": false,
+    "estimatedVisits": "2-3",
+    "difficulty": "easy"
+  }
+}

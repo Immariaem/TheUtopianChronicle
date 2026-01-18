@@ -1,0 +1,78 @@
+{
+  "quadrantId": "A9",
+  "coordinates": {
+    "row": "A",
+    "column": 9,
+    "x": 9,
+    "y": 0
+  },
+  "name": "Sky Gardens",
+  "region": "sky_city",
+  "function": "exploration",
+  "description": {
+    "initial": "You enter the Sky Gardens, and the noise and bustle of the market falls away, replaced by tranquil beauty. These floating gardens are a marvel,somehow, trees and flowers grow here in the open air, their roots planted in large stone planters filled with rich soil. Vines cascade over the edges of platforms, flowers bloom in impossible profusion, and the air is thick with the scent of jasmine and roses. Paths of smooth stone wind between the plantings, and small fountains burble peacefully. Butterflies flit from flower to flower, and hummingbirds hover near bright blossoms. It feels like a secret paradise suspended in the sky.",
+    "return": "The peaceful Sky Gardens. Flowers bloom, water burbles in fountains, and butterflies dance in the sunlight.",
+    "atmospheric": "A gentle breeze carries flower petals through the air like confetti. Somewhere, bees hum drowsily among the blossoms."
+  },
+  "connections": {
+    "north": {
+      "blocked": true,
+      "blockedMessage": "The gardens end at a decorative fence. Beyond is only sky."
+    },
+    "south": {
+      "quadrantId": "B9",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "A10",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "A8",
+      "blocked": false
+    }
+  },
+  "npcs": [
+    {
+      "npcId": "gardener",
+      "spawnCondition": null,
+      "dialogue": "gardener_plants",
+      "isActive": true
+    }
+  ],
+  "items": [],
+  "interactables": [
+    {
+      "id": "rose_garden",
+      "name": "Rose Garden",
+      "examineText": "Dozens of rose bushes in every color imaginable, red, white, pink, yellow, and even blue roses that seem almost to glow. Their perfume is heady and sweet.",
+      "canInteract": true,
+      "interactionText": "You breathe in the roses' scent. For a moment, you feel at peace, your worries about your father fading just slightly."
+    },
+    {
+      "id": "floating_planter",
+      "name": "Floating Planter",
+      "examineText": "A massive stone planter, elaborately carved, floating a few feet off the ground with no visible means of support. A small tree grows from it, its branches heavy with white blossoms.",
+      "canInteract": false,
+      "interactionText": null
+    },
+    {
+      "id": "garden_bench",
+      "name": "Stone Bench",
+      "examineText": "A simple stone bench positioned to overlook a particularly beautiful section of the gardens. The stone is warm from the sun.",
+      "canInteract": true,
+      "interactionText": "You sit for a moment, taking in the beauty around you. Your father would have loved this place. The thought brings both comfort and sadness."
+    }
+  ],
+  "requiredFlags": ["reached_sky_city"],
+  "unlockFlags": ["explored_sky_gardens"],
+  "storyCheckpoint": null,
+  "puzzleData": null,
+  "questData": null,
+  "specialMechanics": null,
+  "metadata": {
+    "isCriticalPath": false,
+    "estimatedVisits": "1-2",
+    "difficulty": "easy"
+  }
+}

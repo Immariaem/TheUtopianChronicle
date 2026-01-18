@@ -1,0 +1,64 @@
+{
+  "quadrantId": "A10",
+  "coordinates": {
+    "row": "A",
+    "column": 10,
+    "x": 10,
+    "y": 0
+  },
+  "name": "Sky Observatory",
+  "region": "sky_city",
+  "function": "filler",
+  "description": {
+    "initial": "At the northeastern edge of Nephelia stands the Sky Observatory, a tall tower with a domed roof made of crystal-clear glass. This is where the city's astronomers and scholars study the heavens, tracking the movements of stars and planets. The tower is currently closed to visitors, but from here you have an unobstructed view eastward. You can see the ocean stretching to the horizon, a vast expanse of blue that seems to go on forever. Somewhere out there, beneath those waves, lies the Underwater Realm you've heard about. The view is breathtaking but also slightly dizzying, you're so high up that clouds drift below you.",
+    "return": "The Sky Observatory at Nephelia's eastern edge. The ocean stretches endlessly to the east.",
+    "atmospheric": "The wind is stronger here at the edge of the city. It whistles past the observatory's tower with a low, mournful sound."
+  },
+  "connections": {
+    "north": {
+      "blocked": true,
+      "blockedMessage": "The observatory marks the northern edge of this section. You cannot go further."
+    },
+    "south": {
+      "quadrantId": "B10",
+      "blocked": false
+    },
+    "east": {
+      "blocked": true,
+      "blockedMessage": "The platform ends here. Beyond is only open sky and the distant ocean far below."
+    },
+    "west": {
+      "quadrantId": "A9",
+      "blocked": false
+    }
+  },
+  "npcs": [],
+  "items": [],
+  "interactables": [
+    {
+      "id": "observatory_door",
+      "name": "Observatory Door",
+      "examineText": "A heavy wooden door with astronomical symbols carved into it. A sign reads: 'Sky Observatory - Authorized Personnel Only. Observations in Progress.'",
+      "canInteract": false,
+      "interactionText": null
+    },
+    {
+      "id": "telescope",
+      "name": "Small Telescope",
+      "examineText": "A smaller telescope positioned outside the main observatory, apparently for public use. It's pointed toward the eastern horizon.",
+      "canInteract": true,
+      "interactionText": "You peer through the telescope. The view is magnified, you can see the curve of the ocean more clearly, and what might be storm clouds gathering in the far distance."
+    }
+  ],
+  "requiredFlags": ["reached_sky_city"],
+  "unlockFlags": [],
+  "storyCheckpoint": null,
+  "puzzleData": null,
+  "questData": null,
+  "specialMechanics": null,
+  "metadata": {
+    "isCriticalPath": false,
+    "estimatedVisits": "0-1",
+    "difficulty": "easy"
+  }
+}

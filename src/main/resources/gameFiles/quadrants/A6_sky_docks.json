@@ -1,0 +1,71 @@
+{
+  "quadrantId": "A6",
+  "coordinates": {
+    "row": "A",
+    "column": 6,
+    "x": 6,
+    "y": 0
+  },
+  "name": "Sky Docks",
+  "region": "sky_city",
+  "function": "exploration",
+  "description": {
+    "initial": "You arrive at the northern docking area of Nephelia, where airships come and go in an intricate dance. Massive wooden platforms extend out into empty air, held aloft by the same mysterious force that keeps the entire city floating. Ropes and chains dangle from docking towers, and you can hear the creak of timber and canvas as ships are loaded and unloaded. Dock workers move with practiced ease, seemingly unbothered by the thousand-foot drop just beyond the platform's edge.",
+    "return": "The bustling Sky Docks. Airships arrive and depart in a constant flow of commerce and travel.",
+    "atmospheric": "The smell of tar, rope, and ozone fills the air. Ship bells ring as vessels signal their arrival or departure."
+  },
+  "connections": {
+    "north": {
+      "blocked": true,
+      "blockedMessage": "The docks end here. Beyond is only open sky."
+    },
+    "south": {
+      "quadrantId": "B6",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "A7",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "A5",
+      "blocked": false
+    }
+  },
+  "npcs": [
+    {
+      "npcId": "dock_worker",
+      "spawnCondition": null,
+      "dialogue": "dock_worker_generic",
+      "isActive": true
+    }
+  ],
+  "items": [],
+  "interactables": [
+    {
+      "id": "docked_airship",
+      "name": "Merchant Airship",
+      "examineText": "A medium-sized airship being loaded with crates. Its balloon is patched in several places, telling stories of storms weathered and journeys completed. The name 'Cloud Dancer' is painted on the hull.",
+      "canInteract": false,
+      "interactionText": null
+    },
+    {
+      "id": "rope_pulley",
+      "name": "Loading Pulley",
+      "examineText": "A complex system of ropes and pulleys used to hoist cargo from lower platforms up to the ships. The engineering is impressive.",
+      "canInteract": false,
+      "interactionText": null
+    }
+  ],
+  "requiredFlags": ["reached_sky_city"],
+  "unlockFlags": ["explored_sky_docks"],
+  "storyCheckpoint": null,
+  "puzzleData": null,
+  "questData": null,
+  "specialMechanics": null,
+  "metadata": {
+    "isCriticalPath": false,
+    "estimatedVisits": "1-2",
+    "difficulty": "easy"
+  }
+}

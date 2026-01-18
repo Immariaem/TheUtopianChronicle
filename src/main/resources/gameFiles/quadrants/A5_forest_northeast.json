@@ -1,0 +1,57 @@
+{
+  "quadrantId": "A5",
+  "coordinates": {
+    "row": "A",
+    "column": 5,
+    "x": 5,
+    "y": 0
+  },
+  "name": "Forest Northeast",
+  "region": "enchanted_forest",
+  "function": "filler",
+  "description": {
+    "initial": "The northeastern corner of the Enchanted Forest. Here, the trees begin to thin slightly as the forest transitions toward the mountains in the distance. You can see rocky outcroppings between the trees, and the ground becomes more uneven. The magical atmosphere of the forest mingles with something else, a crystalline energy that seems to emanate from the mountains ahead.",
+    "return": "Where the forest meets the approach to the mountains. Trees give way to rock and stone.",
+    "atmospheric": "The air here carries two scents, the earthiness of the forest and a sharp, mineral smell from the mountains."
+  },
+  "connections": {
+    "north": {
+      "blocked": true,
+      "blockedMessage": "There is no path going north from here."
+    },
+    "south": {
+      "quadrantId": "B5",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "A6",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "A4",
+      "blocked": false
+    }
+  },
+  "npcs": [],
+  "items": [],
+  "interactables": [
+    {
+      "id": "mountain_view",
+      "name": "Mountain Vista",
+      "examineText": "Through a gap in the trees, you can see mountains rising in the distance. Their peaks seem to glitter with an unusual light.",
+      "canInteract": false,
+      "interactionText": null
+    }
+  ],
+  "requiredFlags": [],
+  "unlockFlags": [],
+  "storyCheckpoint": null,
+  "puzzleData": null,
+  "questData": null,
+  "specialMechanics": null,
+  "metadata": {
+    "isCriticalPath": false,
+    "estimatedVisits": "0-1",
+    "difficulty": "easy"
+  }
+}

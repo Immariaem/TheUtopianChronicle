@@ -1,0 +1,49 @@
+{
+  "quadrantId": "A2",
+  "coordinates": {
+    "row": "A",
+    "column": 2,
+    "x": 2,
+    "y": 0
+  },
+  "name": "Western Lands Edge Central",
+  "region": "western_lands",
+  "function": "filler",
+  "description": {
+    "initial": "You've reached the northernmost edge of the western lands. Rolling hills stretch endlessly to the west, covered in wild grasses that sway in the wind. This is as far north and west as your journey needs to take you. Your path lies to the southeast, toward the Enchanted Forest and beyond.",
+    "return": "The edge between the western wilderness and the lands of your journey. The forest lies to the south.",
+    "atmospheric": "Wildflowers dot the grassland. Birds circle overhead, riding the thermal currents."
+  },
+  "connections": {
+    "north": {
+      "blocked": true,
+      "blockedMessage": "Your Adventure has it's limits! Continue on a different path."
+    },
+    "south": {
+      "quadrantId": "B2",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "A3",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "A1",
+      "blocked": false
+    }
+  },
+  "npcs": [],
+  "items": [],
+  "interactables": [],
+  "requiredFlags": [],
+  "unlockFlags": [],
+  "storyCheckpoint": null,
+  "puzzleData": null,
+  "questData": null,
+  "specialMechanics": null,
+  "metadata": {
+    "isCriticalPath": false,
+    "estimatedVisits": "0-1",
+    "difficulty": "easy"
+  }
+}

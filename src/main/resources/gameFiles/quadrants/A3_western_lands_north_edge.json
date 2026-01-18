@@ -1,0 +1,49 @@
+{
+  "quadrantId": "A3",
+  "coordinates": {
+    "row": "A",
+    "column": 3,
+    "x": 3,
+    "y": 0
+  },
+  "name": "Western Lands North Edge",
+  "region": "western_lands",
+  "function": "filler",
+  "description": {
+    "initial": "The western lands continue here, a buffer zone between the wilderness and the enchanted territories ahead. Scrub brush and weathered rocks dot the landscape. There's a sense of being between places, no longer in the wild west, but not yet in the magical east. You can see the tops of ancient trees rising in the distance.",
+    "return": "The northern edge where western lands meet the approach to the Enchanted Forest.",
+    "atmospheric": "The air feels different here, heavier with magic from the forest nearby."
+  },
+  "connections": {
+    "north": {
+      "blocked": true,
+      "blockedMessage": "Your Adventure has it's limits! Continue on a different path."
+    },
+    "south": {
+      "quadrantId": "B3",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "A4",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "A2",
+      "blocked": false
+    }
+  },
+  "npcs": [],
+  "items": [],
+  "interactables": [],
+  "requiredFlags": [],
+  "unlockFlags": [],
+  "storyCheckpoint": null,
+  "puzzleData": null,
+  "questData": null,
+  "specialMechanics": null,
+  "metadata": {
+    "isCriticalPath": false,
+    "estimatedVisits": "0-1",
+    "difficulty": "easy"
+  }
+}
