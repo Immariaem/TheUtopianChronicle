@@ -5,6 +5,8 @@ This document maps each quadrant to its corresponding location in the game world
 This is just so I understand my own plan better and have more of an overview.
 ---
 
+![QuadrantMapTheUtopianChronicle.png](images/QuadrantMapTheUtopianChronicle.png)
+
 ## 10x10 Grid System (100 Quadrants)
 
 ### Coordinate System
