@@ -37,7 +37,7 @@
 
 <div class="chat-container">
     <div id="output"></div>
-    <input type="text" placeholder="Deine Antwort...">
+    <input type="text" placeholder="Enter Command...">
 </div>
 
 <script>
@@ -53,11 +53,19 @@
         if (e.key === 'Enter') {
             const direction = input.value.trim();
             input.value = '';
-            const res = await fetch(`/api/game/move?direction=${direction}`, { method: 'POST' });
+            const res = await fetch(`/api/game/command?input=${encodeURIComponent(direction)}`, { method: 'POST' });
             const data = await res.json();
-            document.getElementById('output').innerHTML +=
-                '<p>> ' + direction + '</p>' +
-                '<p><strong>' + data.quadrant + '</strong></p><p>' + data.description + '</p>';
+            if (data.description === 'QUIT') {
+                document.getElementById('output').innerHTML +=
+                    '<p>> ' + direction + '</p>' +
+                    '<p>Thanks for playing The Utopian Chronicle!</p>';
+                input.disabled = true;
+                input.placeholder = 'Game over. Refresh to play again.';
+            } else {
+                document.getElementById('output').innerHTML +=
+                    '<p>> ' + direction + '</p>' +
+                    '<p><strong>' + data.quadrant + '</strong></p><p>' + data.description.replace(/\n/g, '<br>') + '</p>';
+            }
         }
     });
 </script>

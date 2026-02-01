@@ -16,9 +16,9 @@ class GameController {
         )
     }
 
-    @PostMapping("/move")
-    fun move(@RequestParam direction: String): Map<String, Any> {
-        val message = engine.move(direction)
+    @PostMapping("/command")
+    fun command(@RequestParam input: String): Map<String, Any> {
+        val message = engine.processCommand(input)
         return mapOf(
             "quadrant" to engine.currentQuadrant.name,
             "description" to message
