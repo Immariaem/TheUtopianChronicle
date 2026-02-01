@@ -2,25 +2,38 @@ package study.coco.project_code
 
 class GameEngine(val world: World) {
     var currentQuadrant: Quadrant
+    val visitedQuadrants = mutableSetOf<String>()
+    val playerInventory = mutableListOf<String>()
 
     init {
         currentQuadrant = world.quadrants.first { it.quadrantId == "B2" }
+        visitedQuadrants.add("B2")
         println("Game started in: ${currentQuadrant.name}")
     }
 
     fun processCommand(input: String): String {
-        val parts = input.trim().lowercase().split(" ", limit = 2)
+        val parts = input
+            .trim()
+            .replace(Regex("\\s+"), " ")
+            .lowercase()
+            .split(" ", limit = 2)
         val command = parts[0]
         val argument = if (parts.size > 1) parts[1] else ""
 
         return when (command) {
-            "north", "south", "east", "west" -> move(command)
-            "look" -> look()
-            "examine" -> examine(argument)
-            "use" -> use(argument)
+            "n","north" -> move("north")
+            "s","south" -> move("south")
+            "e","east" -> move("east")
+            "w","west" -> move("west")
+            "t","take" -> take(argument)
+            "d","drop" -> drop(argument)
+            "i","inventory" -> inventory()
+            "l","look" -> look()
+            "x","examine" -> examine(argument)
+            "u","use" -> use(argument)
             "talk" -> talk(argument)
-            "help" -> help()
-            "quit" -> quit()
+            "h","help" -> help()
+            "q","quit" -> quit()
             else -> "Unknown command: $command. Type 'help' for a list of commands."
         }
     }
@@ -43,7 +56,44 @@ class GameEngine(val world: World) {
             ?: return "Error: quadrant $targetId not found."
 
         currentQuadrant = target
-        return currentQuadrant.description.initial
+        val message = if (currentQuadrant.quadrantId in visitedQuadrants) {
+            currentQuadrant.description.returnText
+        } else {
+            visitedQuadrants.add(currentQuadrant.quadrantId)
+            currentQuadrant.description.initial
+        }
+        return message
+    }
+
+    fun take(target: String): String {
+        if (target.isBlank()) return "Take what? Try: t <name>"
+
+        val item = currentQuadrant.visibleObjects.items
+            .find { it.itemId.lowercase() == target.lowercase() }
+            ?: return "There's no '$target' here to take."
+
+        if (!item.isCollectable) return "You can't take that."
+
+        playerInventory.add(item.itemId)
+        return "You pick up ${item.itemId}."
+    }
+
+    fun drop(target: String): String {
+        if (target.isBlank()) return "Drop what? Try: d <name>"
+
+        val item = playerInventory.find { it.lowercase() == target.lowercase() }
+            ?: return "You don't have '$target' in your inventory."
+
+        playerInventory.remove(item)
+        return "You drop $item."
+    }
+
+    fun inventory(): String {
+        if (playerInventory.isEmpty()) return "Your inventory is empty."
+
+        val result = StringBuilder("You are carrying:")
+        playerInventory.forEach { result.appendLine("\n- $it") }
+        return result.toString()
     }
 
     fun look(): String {
@@ -101,17 +151,23 @@ class GameEngine(val world: World) {
 
     fun help(): String {
         return """Available commands:
-- north / south / east / west — move in a direction
-- look — describe your surroundings
-- examine <name> — examine something closely
-- use <name> — interact with something
+- n / north — go north (also s, e, w)
+- l / look — describe your surroundings
+- x / examine <name> — examine something closely
+- t / take <name> — pick up an item
+- d / drop <name> — drop an item
+- u / use <name> — use an object
+- i / inventory — show items you carry
 - talk <name> — talk to someone
-- help — show this list
-- quit — quit the game"""
+- h / help — show this list
+- q / quit — quit the game"""
     }
 
     fun quit(): String {
         currentQuadrant = world.quadrants.first { it.quadrantId == "B2" }
+        visitedQuadrants.clear()
+        visitedQuadrants.add("B2")
+        playerInventory.clear()
         return "QUIT"
     }
 
