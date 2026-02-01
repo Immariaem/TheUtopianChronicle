@@ -3,6 +3,7 @@ plugins {
 	kotlin("plugin.spring") version "2.2.20"
 	id("org.springframework.boot") version "3.5.8"
 	id("io.spring.dependency-management") version "1.1.7"
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
 }
 
 group = "study.coco"
@@ -17,6 +18,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
 }
 
 kotlin {

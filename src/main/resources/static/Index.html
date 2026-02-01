@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Utopian Chronicle</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chat-container {
+            width: 60%;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #output {
+            flex: 1;
+            border: 1px solid #ccc;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div id="output"></div>
+    <input type="text" placeholder="Deine Antwort...">
+</div>
+
+<script>
+    window.onload = async function() {
+        const res = await fetch('/api/game/status');
+        const data = await res.json();
+        document.getElementById('output').innerHTML =
+            '<p><strong>' + data.quadrant + '</strong></p><p>' + data.description + '</p>';
+    };
+
+    const input = document.querySelector('input');
+    input.addEventListener('keydown', async function(e) {
+        if (e.key === 'Enter') {
+            const direction = input.value.trim();
+            input.value = '';
+            const res = await fetch(`/api/game/move?direction=${direction}`, { method: 'POST' });
+            const data = await res.json();
+            document.getElementById('output').innerHTML +=
+                '<p>> ' + direction + '</p>' +
+                '<p><strong>' + data.quadrant + '</strong></p><p>' + data.description + '</p>';
+        }
+    });
+</script>
+
+</body>
+</html>
