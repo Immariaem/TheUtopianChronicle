@@ -2,6 +2,7 @@ package study.coco.project_code
 
 class GameEngine(val world: World) {
     var currentQuadrant: Quadrant
+        private set
     val visitedQuadrants = mutableSetOf<String>()
     val playerInventory = mutableListOf<String>()
 
@@ -25,6 +26,7 @@ class GameEngine(val world: World) {
             "s","south" -> move("south")
             "e","east" -> move("east")
             "w","west" -> move("west")
+            "go" -> move(argument)
             "t","take" -> take(argument)
             "d","drop" -> drop(argument)
             "i","inventory" -> inventory()
@@ -48,7 +50,7 @@ class GameEngine(val world: World) {
         }
 
         if (connection.blocked) {
-            return connection.blockedMessage ?: "You can't go that way."
+            return connection.blockedMessage ?: "You cannot go that way."
         }
 
         val targetId = connection.quadrantId ?: return "There's nothing in that direction."
@@ -151,7 +153,10 @@ class GameEngine(val world: World) {
 
     fun help(): String {
         return """Available commands:
-- n / north — go north (also s, e, w)
+- n / north — go north 
+- e / east - go east 
+- s / south - go south
+- w / west - go west
 - l / look — describe your surroundings
 - x / examine <name> — examine something closely
 - t / take <name> — pick up an item
