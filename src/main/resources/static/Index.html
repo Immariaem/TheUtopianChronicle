@@ -61,6 +61,9 @@
                     '<p>Thanks for playing The Utopian Chronicle!</p>';
                 input.disabled = true;
                 input.placeholder = 'Game over. Refresh to play again.';
+            } else if (data.reset) {
+                document.getElementById('output').innerHTML =
+                    '<p><strong>' + data.quadrant + '</strong></p><p>' + data.description.replace(/\n/g, '<br>') + '</p>';
             } else {
                 document.getElementById('output').innerHTML +=
                     '<p>> ' + direction + '</p>' +

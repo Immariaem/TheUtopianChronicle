@@ -41,8 +41,11 @@ data class Npc(
 @Serializable
 data class Item(
     val itemId: String,
+    val itemName: String,
     val spawnCondition: String? = null,
-    val isCollectable: Boolean
+    val isCollectable: Boolean,
+    val itemType: String = "generic",
+    val itemMessage: String? = null
 )
 
 @Serializable

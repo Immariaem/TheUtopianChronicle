@@ -1,29 +1,24 @@
 package study.coco.project_code
-import java.io.File
+
 import kotlinx.serialization.json.Json
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver
 
 class World {
     var quadrants = listOf<Quadrant>()
 
     fun loadQuadrants(directory: String) {
         val json = Json { ignoreUnknownKeys = true }
-        val resourceUrl = this::class.java.classLoader.getResource("gameFiles/$directory")
+        val resolver = PathMatchingResourcePatternResolver()
+        val resources = resolver.getResources("classpath:gameFiles/$directory/*.json")
 
-        if (resourceUrl == null) {
-            println("Directory not found: gameFiles/$directory")
-            return
+        quadrants = resources.mapNotNull { resource ->
+            try {
+                val jsonString = resource.inputStream.bufferedReader().readText()
+                json.decodeFromString<Quadrant>(jsonString)
+            } catch (e: Exception) {
+                println("Failed to parse ${resource.filename}: ${e.message}")
+                null
+            }
         }
-
-        val dir = File(resourceUrl.toURI())
-        quadrants = dir.listFiles { file -> file.isFile && file.name.endsWith(".json") }
-            ?.mapNotNull { file ->
-                try {
-                    val jsonString = file.readText()
-                    json.decodeFromString<Quadrant>(jsonString)
-                } catch (e: Exception) {
-                    println("Failed to parse ${file.name}: ${e.message}")
-                    null
-                }
-            } ?: emptyList()
     }
 }

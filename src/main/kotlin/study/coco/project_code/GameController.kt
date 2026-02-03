@@ -21,9 +21,11 @@ class GameController {
     @PostMapping("/command")
     fun command(@RequestParam input: String): Map<String, Any> {
         val message = engine.processCommand(input)
+        val isReset = message.contains("Game has been reset")
         return mapOf(
             "quadrant" to engine.currentQuadrant.name,
-            "description" to message
+            "description" to message,
+            "reset" to isReset
         )
     }
 }

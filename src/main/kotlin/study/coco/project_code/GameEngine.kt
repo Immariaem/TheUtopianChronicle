@@ -1,10 +1,13 @@
 package study.coco.project_code
 
-open class GameEngine(val world: World) {
+open class GameEngine(private val world: World) {
     var currentQuadrant: Quadrant
         private set
-    val visitedQuadrants = mutableSetOf<String>()
-    val playerInventory = mutableListOf<String>()
+    private val visitedQuadrants = mutableSetOf<String>()
+    private val playerInventory = mutableListOf<Item>()
+
+    private var hydration = 20
+    private var saturation = 20
 
     init {
         currentQuadrant = world.quadrants.first { it.quadrantId == "B2" }
@@ -30,9 +33,10 @@ open class GameEngine(val world: World) {
             "t","take" -> take(argument)
             "d","drop" -> drop(argument)
             "i","inventory" -> inventory()
+            "sts", "stats" -> stats()
             "l","look" -> look()
             "x","examine" -> examine(argument)
-            "u","use" -> use(argument)
+            "u","use", "eat", "drink" -> use(argument)
             "talk" -> talk(argument)
             "h","help" -> help()
             "q","quit" -> quit()
@@ -41,6 +45,20 @@ open class GameEngine(val world: World) {
     }
 
     fun move(direction: String): String {
+
+        hydration -= 3
+        saturation -= 1
+
+        if (hydration <= 0) {
+            quit()
+            return "You died of dehydration! Game has been reset.\n\n${currentQuadrant.description.initial}"
+        }
+
+        if (saturation <= 0) {
+            quit()
+            return "You starved to death! Game has been reset.\n\n${currentQuadrant.description.initial}"
+        }
+
         val connection = when (direction.lowercase()) {
             "north" -> currentQuadrant.connections.north
             "south" -> currentQuadrant.connections.south
@@ -58,12 +76,23 @@ open class GameEngine(val world: World) {
             ?: return "Error: quadrant $targetId not found."
 
         currentQuadrant = target
-        val message = if (currentQuadrant.quadrantId in visitedQuadrants) {
+        var message = if (currentQuadrant.quadrantId in visitedQuadrants) {
             currentQuadrant.description.returnText
         } else {
             visitedQuadrants.add(currentQuadrant.quadrantId)
             currentQuadrant.description.initial
         }
+
+        if (hydration <= 12) {
+            message += "\n\nWarning: You're getting thirsty! Find water soon."
+
+        }
+
+        if (saturation <= 10) {
+            message += "\n\nWarning: You're getting hungry! Find food soon."
+
+        }
+
         return message
     }
 
@@ -71,30 +100,30 @@ open class GameEngine(val world: World) {
         if (target.isBlank()) return "Take what? Try: t <name>"
 
         val item = currentQuadrant.visibleObjects.items
-            .find { it.itemId.lowercase() == target.lowercase() }
+            .find { it.itemName.lowercase() == target.lowercase() }
             ?: return "There's no '$target' here to take."
 
         if (!item.isCollectable) return "You can't take that."
 
-        playerInventory.add(item.itemId)
-        return "You pick up ${item.itemId}."
+        playerInventory.add(item)
+        return "You pick up ${item.itemName}."
     }
 
     fun drop(target: String): String {
         if (target.isBlank()) return "Drop what? Try: d <name>"
 
-        val item = playerInventory.find { it.lowercase() == target.lowercase() }
+        val item = playerInventory.find { it.itemName.lowercase() == target.lowercase() }
             ?: return "You don't have '$target' in your inventory."
 
         playerInventory.remove(item)
-        return "You drop $item."
+        return "You drop ${item.itemName}."
     }
 
     fun inventory(): String {
         if (playerInventory.isEmpty()) return "Your inventory is empty."
 
         val result = StringBuilder("You are carrying:")
-        playerInventory.forEach { result.appendLine("\n- $it") }
+        playerInventory.forEach { result.appendLine("\n- ${it.itemName}") }
         return result.toString()
     }
 
@@ -111,7 +140,7 @@ open class GameEngine(val world: World) {
         val items = currentQuadrant.visibleObjects.items
         if (items.isNotEmpty()) {
             result.appendLine("\nItems:")
-            items.forEach { result.appendLine("- ${it.itemId}") }
+            items.forEach { result.appendLine("- ${it.itemName}") }
         }
 
         val interactables = currentQuadrant.visibleObjects.interactables
@@ -140,13 +169,31 @@ open class GameEngine(val world: World) {
     }
 
     fun use(target: String): String {
-        if (target.isBlank()) return "Interact with what? Try: interact <name>"
+        if (target.isBlank()) return "Use what? Try: use <name>"
+
+        val inventoryItem = playerInventory.find { it.itemName.lowercase() == target.lowercase() }
+        if (inventoryItem != null) {
+            if (inventoryItem.itemType == "consumable") {
+                val itemId = inventoryItem.itemId.lowercase()
+
+                if (itemId.contains("water") || itemId == "coconut" || itemId == "cactus_fruit") {
+                    hydration = minOf(hydration + 5, 20)
+                }
+
+                if (!itemId.contains("water") || itemId == "coconut" || itemId == "cactus_fruit") {
+                    saturation = minOf(saturation + 5, 20)
+                }
+
+                playerInventory.remove(inventoryItem)
+            }
+            return inventoryItem.itemMessage ?: "Nothing happens."
+        }
 
         val interactable = currentQuadrant.visibleObjects.interactables
             .find { it.name.lowercase() == target.lowercase() }
             ?: return "You don't see '$target' here."
 
-        if (!interactable.canInteract) return "You can't interact with that."
+        if (!interactable.canInteract) return "You can't use that."
 
         return interactable.interactionText ?: "Nothing happens."
     }
@@ -161,8 +208,11 @@ open class GameEngine(val world: World) {
 - x / examine <name> — examine something closely
 - t / take <name> — pick up an item
 - d / drop <name> — drop an item
+- eat <name> - eat an item
+- drink <name> - drink an item
 - u / use <name> — use an object
 - i / inventory — show items you carry
+- sts / stats - show your hunger and thirst
 - talk <name> — talk to someone
 - h / help — show this list
 - q / quit — quit the game"""
@@ -173,6 +223,8 @@ open class GameEngine(val world: World) {
         visitedQuadrants.clear()
         visitedQuadrants.add("B2")
         playerInventory.clear()
+        hydration = 20
+        saturation = 20
         return "QUIT"
     }
 
@@ -184,5 +236,9 @@ open class GameEngine(val world: World) {
             ?: return "There's no one called '$target' here."
 
         return npc.dialogue
+    }
+
+    fun stats(): String {
+        return "Hydration: $hydration/20\n Saturation: $saturation/20"
     }
 }

@@ -41,7 +41,32 @@
         "isActive": true
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "itemId": "bread_loaf",
+        "itemName": "Bread Loaf",
+        "spawnCondition": null,
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You eat the fresh bread. It's still warm from the oven."
+      },
+      {
+        "itemId": "dried_fruits",
+        "itemName": "Dried Fruits",
+        "spawnCondition": null,
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You eat the sweet dried fruits. Perfect for long journeys."
+      },
+      {
+        "itemId": "water_skin",
+        "itemName": "Water Skin",
+        "spawnCondition": null,
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink deeply from the water skin. Refreshing!"
+      }
+    ],
     "interactables": [
       {
         "id": "silk_stall",
