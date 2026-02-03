@@ -1,9 +1,11 @@
 package study.coco.project_code
 
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.context.annotation.SessionScope
 
 @RestController
 @RequestMapping("/api/game")
+@SessionScope
 class GameController {
     private val loader = QuadrantLoader()
     private val engine = loader.engine

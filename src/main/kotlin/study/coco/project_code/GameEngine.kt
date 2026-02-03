@@ -1,6 +1,6 @@
 package study.coco.project_code
 
-class GameEngine(val world: World) {
+open class GameEngine(val world: World) {
     var currentQuadrant: Quadrant
         private set
     val visitedQuadrants = mutableSetOf<String>()
