@@ -31,10 +31,17 @@ data class Connections(
 )
 
 @Serializable
+data class DialogueCondition(
+    val flag: String,
+    val text: String
+)
+
+@Serializable
 data class Npc(
     val npcId: String,
     val spawnCondition: String? = null,
     val dialogue: String,
+    val dialogueConditions: List<DialogueCondition> = emptyList(),
     val isActive: Boolean
 )
 
@@ -54,7 +61,8 @@ data class Interactable(
     val name: String,
     val examineText: String,
     val canInteract: Boolean,
-    val interactionText: String? = null
+    val interactionText: String? = null,
+    val unlockFlag: String? = null
 )
 
 @Serializable

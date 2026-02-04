@@ -41,7 +41,16 @@
         "isActive": true
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "itemId": "travelers_rations",
+        "itemName": "Travelers Rations",
+        "spawnCondition": null,
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You eat the travelers rations. Simple but filling fare for long journeys."
+      }
+    ],
     "interactables": [
       {
         "id": "docked_airship",

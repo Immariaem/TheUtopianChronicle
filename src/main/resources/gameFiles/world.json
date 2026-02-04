@@ -217,11 +217,32 @@
     "npcs/father.json",
     "npcs/smiling_ones.json"
   ],
-  "itemFiles": [
-    "items/water_flask.json",
-    "items/crystal_keys.json",
-    "items/kiras_crystal.json",
-    "items/fathers_compass.json"
+  "consumableItems": [
+    {"itemId": "wild_berries", "quadrant": "B2", "type": "food"},
+    {"itemId": "fresh_berries", "quadrant": "B3", "type": "food"},
+    {"itemId": "stream_water", "quadrant": "C2", "type": "water"},
+    {"itemId": "spring_water", "quadrant": "C3", "type": "water"},
+    {"itemId": "forest_mushrooms", "quadrant": "D2", "type": "food"},
+    {"itemId": "mountain_spring", "quadrant": "B5", "type": "water"},
+    {"itemId": "travelers_rations", "quadrant": "A6", "type": "food"},
+    {"itemId": "bread_loaf", "quadrant": "A8", "type": "food"},
+    {"itemId": "dried_fruits", "quadrant": "A8", "type": "food"},
+    {"itemId": "water_skin", "quadrant": "A8", "type": "water"},
+    {"itemId": "glowing_mushrooms", "quadrant": "C5", "type": "food"},
+    {"itemId": "crystal_water", "quadrant": "C5", "type": "water"},
+    {"itemId": "water_flask", "quadrant": "E4", "type": "water"},
+    {"itemId": "cactus_water", "quadrant": "E3", "type": "water"},
+    {"itemId": "cactus_fruit", "quadrant": "F3", "type": "both"},
+    {"itemId": "dates", "quadrant": "F3", "type": "food"},
+    {"itemId": "seaweed", "quadrant": "H4", "type": "food"},
+    {"itemId": "coconut", "quadrant": "I4", "type": "both"},
+    {"itemId": "bananas", "quadrant": "I4", "type": "food"},
+    {"itemId": "coconut_water", "quadrant": "J3", "type": "water"}
+  ],
+  "questItems": [
+    {"itemId": "zaras_cargo", "quadrant": "B10", "type": "quest"},
+    {"itemId": "fathers_compass", "quadrant": "E2", "type": "tool"},
+    {"itemId": "hermits_journal", "quadrant": "G4", "type": "readable"}
   ],
   "puzzleFiles": [
     "puzzles/crystal_key_puzzle.json",

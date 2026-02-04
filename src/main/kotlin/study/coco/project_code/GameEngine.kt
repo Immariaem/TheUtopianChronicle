@@ -8,6 +8,7 @@ open class GameEngine(private val world: World) {
 
     private var hydration = 20
     private var saturation = 20
+    private val gameFlags = mutableSetOf<String>()
 
     init {
         currentQuadrant = world.quadrants.first { it.quadrantId == "B2" }
@@ -46,7 +47,7 @@ open class GameEngine(private val world: World) {
 
     fun move(direction: String): String {
 
-        hydration -= 3
+        hydration -= 2
         saturation -= 1
 
         if (hydration <= 0) {
@@ -75,10 +76,24 @@ open class GameEngine(private val world: World) {
         val target = world.quadrants.find { it.quadrantId == targetId }
             ?: return "Error: quadrant $targetId not found."
 
+        if (target.requiredFlags.isNotEmpty()) {
+            val missingFlags = target.requiredFlags.filter { it !in gameFlags }
+            if (missingFlags.isNotEmpty()) {
+                return "You can't go there yet. Something is blocking your path."
+            }
+        }
+
         currentQuadrant = target
+
         var message = if (currentQuadrant.quadrantId in visitedQuadrants) {
             currentQuadrant.description.returnText
         } else {
+
+            if (currentQuadrant.unlockFlags.isNotEmpty()) {
+                currentQuadrant.unlockFlags.forEach { flag ->
+                    gameFlags.add(flag)
+                }
+            }
             visitedQuadrants.add(currentQuadrant.quadrantId)
             currentQuadrant.description.initial
         }
@@ -195,6 +210,11 @@ open class GameEngine(private val world: World) {
 
         if (!interactable.canInteract) return "You can't use that."
 
+        // Set the interactable's unlock flag if it has one
+        interactable.unlockFlag?.let { flag ->
+            gameFlags.add(flag)
+        }
+
         return interactable.interactionText ?: "Nothing happens."
     }
 
@@ -223,6 +243,7 @@ open class GameEngine(private val world: World) {
         visitedQuadrants.clear()
         visitedQuadrants.add("B2")
         playerInventory.clear()
+        gameFlags.clear()
         hydration = 20
         saturation = 20
         return "QUIT"
@@ -235,7 +256,9 @@ open class GameEngine(private val world: World) {
             .find { it.npcId.lowercase() == target.lowercase() && it.isActive }
             ?: return "There's no one called '$target' here."
 
-        return npc.dialogue
+        // Check for conditional dialogue based on flags (first match wins)
+        val conditionalDialogue = npc.dialogueConditions.firstOrNull { it.flag in gameFlags }
+        return conditionalDialogue?.text ?: npc.dialogue
     }
 
     fun stats(): String {
