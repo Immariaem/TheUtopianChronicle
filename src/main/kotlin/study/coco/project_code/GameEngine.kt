@@ -264,4 +264,8 @@ open class GameEngine(private val world: World) {
     fun stats(): String {
         return "Hydration: $hydration/20\n Saturation: $saturation/20"
     }
+
+    fun getInventory(): List<Item> = playerInventory.toList()
+    fun getHydration(): Int = hydration
+    fun getSaturation(): Int = saturation
 }

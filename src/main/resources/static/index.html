@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Utopian Chronicle</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Shared SVG clip paths and symbols -->
+<svg width="0" height="0" style="position:absolute">
+    <defs>
+        <!-- inventory Slots -->
+        <clipPath id="clip-slot" clipPathUnits="objectBoundingBox">
+            <path d="M 0.06 0.03 C 0.18 0.0, 0.32 0.05, 0.50 0.02 C 0.68 -0.01, 0.82 0.04, 0.94 0.03 C 0.98 0.16, 0.95 0.32, 0.97 0.50 C 0.99 0.68, 0.95 0.82, 0.96 0.95 C 0.82 0.98, 0.68 0.95, 0.50 0.97 C 0.32 0.99, 0.18 0.96, 0.04 0.96 C 0.01 0.82, 0.05 0.68, 0.03 0.50 C 0.01 0.32, 0.04 0.18, 0.06 0.03 Z"/>
+        </clipPath>
+        <!-- Stat cirlce for icon -->
+        <clipPath id="clip-circle" clipPathUnits="objectBoundingBox">
+            <path d="M 0.50 0.02 C 0.70 0.0, 0.88 0.10, 0.95 0.28 C 1.02 0.46, 1.0 0.62, 0.94 0.78 C 0.88 0.94, 0.72 1.01, 0.52 0.98 C 0.32 0.95, 0.12 0.90, 0.05 0.72 C -0.02 0.54, 0.0 0.38, 0.06 0.22 C 0.12 0.06, 0.30 0.04, 0.50 0.02 Z"/>
+        </clipPath>
+        <!-- Stat bar -->
+        <clipPath id="clip-pill" clipPathUnits="objectBoundingBox">
+            <path d="M 0.05 0.50
+                     C 0.05 0.20, 0.06 0.08, 0.10 0.05
+                     C 0.16 0.01, 0.22 0.05, 0.28 0.02
+                     C 0.34 -0.01, 0.40 0.04, 0.46 0.02
+                     C 0.52 0.0, 0.58 0.05, 0.64 0.02
+                     C 0.70 -0.01, 0.76 0.04, 0.82 0.02
+                     C 0.88 0.0, 0.92 0.02, 0.95 0.08
+                     C 0.98 0.16, 0.99 0.30, 0.99 0.50
+                     C 0.99 0.70, 0.98 0.84, 0.95 0.92
+                     C 0.92 0.98, 0.88 1.0, 0.82 0.98
+                     C 0.76 0.96, 0.70 1.01, 0.64 0.98
+                     C 0.58 0.95, 0.52 1.0, 0.46 0.98
+                     C 0.40 0.96, 0.34 1.01, 0.28 0.98
+                     C 0.22 0.95, 0.16 0.99, 0.10 0.95
+                     C 0.06 0.92, 0.05 0.80, 0.05 0.50 Z"/>
+        </clipPath>
+        <!-- Command input field -->
+        <clipPath id="clip-input" clipPathUnits="objectBoundingBox">
+            <path d="M 0.02 0.50
+                     C 0.02 0.20, 0.025 0.08, 0.04 0.06
+                     C 0.08 0.02, 0.12 0.06, 0.16 0.03
+                     C 0.20 0.0, 0.24 0.05, 0.28 0.02
+                     C 0.32 -0.01, 0.36 0.04, 0.40 0.02
+                     C 0.44 0.0, 0.48 0.05, 0.52 0.03
+                     C 0.56 0.01, 0.60 0.05, 0.64 0.02
+                     C 0.68 -0.01, 0.72 0.04, 0.76 0.02
+                     C 0.80 0.0, 0.84 0.05, 0.88 0.03
+                     C 0.92 0.01, 0.95 0.03, 0.97 0.08
+                     C 0.99 0.16, 0.99 0.30, 0.99 0.50
+                     C 0.99 0.70, 0.99 0.84, 0.97 0.92
+                     C 0.95 0.97, 0.92 0.99, 0.88 0.97
+                     C 0.84 0.95, 0.80 1.0, 0.76 0.98
+                     C 0.72 0.96, 0.68 1.01, 0.64 0.98
+                     C 0.60 0.95, 0.56 1.0, 0.52 0.97
+                     C 0.48 0.95, 0.44 1.0, 0.40 0.98
+                     C 0.36 0.96, 0.32 1.01, 0.28 0.98
+                     C 0.24 0.95, 0.20 1.0, 0.16 0.97
+                     C 0.12 0.94, 0.08 0.98, 0.04 0.94
+                     C 0.025 0.92, 0.02 0.80, 0.02 0.50 Z"/>
+        </clipPath>
+        <!-- plus symbol for inventory slots -->
+        <symbol id="wavy-plus" viewBox="0 0 30 30">
+            <!-- Horizontal wavy line -->
+            <path d="M 5 15 C 9 14.5, 12 15.5, 15 15 C 18 14.5, 21 15.5, 25 15" stroke="#D4D2C9" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <!-- Vertical wavy line -->
+            <path d="M 15 5 C 14.5 9, 15.5 12, 15 15 C 14.5 18, 15.5 21, 15 25" stroke="#D4D2C9" stroke-width="3" stroke-linecap="round" fill="none"/>
+        </symbol>
+    </defs>
+</svg>
+
+<div class="game-container">
+    <h1 class="game-title">The Utopian Chronicle</h1>
+    <div class="book">
+        <!-- Book png Background -->
+        <img src="images/book.png" class="book-bg" id="book-bg" alt="">
+
+        <!-- Left Page Content -->
+        <div class="page-content page-left-content">
+            <div id="output">
+                <!-- Game text appears here via JavaScript -->
+            </div>
+        </div>
+
+        <!-- Right Page Content -->
+        <div class="page-content page-right-content">
+
+            <!-- Inventory -->
+            <div class="inventory">
+                <h2>Inventory</h2>
+                <div class="inventory-grid">
+                    <div class="inventory-slot"><svg class="slot-plus" viewBox="0 0 30 30"><use href="#wavy-plus"/></svg></div>
+                    <div class="inventory-slot"><svg class="slot-plus" viewBox="0 0 30 30"><use href="#wavy-plus"/></svg></div>
+                    <div class="inventory-slot"><svg class="slot-plus" viewBox="0 0 30 30"><use href="#wavy-plus"/></svg></div>
+                    <div class="inventory-slot"><svg class="slot-plus" viewBox="0 0 30 30"><use href="#wavy-plus"/></svg></div>
+                    <div class="inventory-slot"><svg class="slot-plus" viewBox="0 0 30 30"><use href="#wavy-plus"/></svg></div>
+                    <div class="inventory-slot"><svg class="slot-plus" viewBox="0 0 30 30"><use href="#wavy-plus"/></svg></div>
+                    <div class="inventory-slot"><svg class="slot-plus" viewBox="0 0 30 30"><use href="#wavy-plus"/></svg></div>
+                    <div class="inventory-slot"><svg class="slot-plus" viewBox="0 0 30 30"><use href="#wavy-plus"/></svg></div>
+                    <div class="inventory-slot"><svg class="slot-plus" viewBox="0 0 30 30"><use href="#wavy-plus"/></svg></div>
+                    <div class="inventory-slot"><svg class="slot-plus" viewBox="0 0 30 30"><use href="#wavy-plus"/></svg></div>
+                </div>
+            </div>
+
+
+            <!-- Stats -->
+            <div class="stats">
+                <h2>Stats</h2>
+
+                <!-- Hydration Bar -->
+                <div class="stat-row">
+                    <div class="stat-icon-circle">
+                        <img src="icons/waterIcon.svg" alt="Water">
+                    </div>
+                    <div class="stat-bar stat-bar-hydration" id="hydration-bar">
+                        <div class="stat-bar-track">
+                            <div class="stat-segments">
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Saturation Bar -->
+                <div class="stat-row">
+                    <div class="stat-icon-circle">
+                        <img src="icons/foodIcon.svg" alt="Food">
+                    </div>
+                    <div class="stat-bar stat-bar-saturation" id="saturation-bar">
+                        <div class="stat-bar-track">
+                            <div class="stat-segments">
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                                <div class="stat-segment"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Side Icons -->
+        <div class="side-icons">
+            <button class="icon-btn" id="btn-home">
+                <img src="icons/homeIcon.svg" alt="Home">
+            </button>
+            <button class="icon-btn" id="btn-map">
+                <img src="icons/mapIcon.svg" alt="Map">
+            </button>
+        </div>
+    </div>
+
+    <!-- Command Input -->
+    <div class="command-wrapper">
+        <input type="text" id="command-input" placeholder="Enter your command here">
+    </div>
+</div>
+
+<!-- Link to external JavaScript file -->
+<script src="script.js"></script>
+
+</body>
+</html>

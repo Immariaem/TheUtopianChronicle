@@ -1,0 +1,276 @@
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', sans-serif;
+    color: #593728;
+    overflow: hidden;
+}
+
+/* ===== GAME CONTAINER ===== */
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('images/backgroundImageTemp.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ===== GAME TITLE ===== */
+.game-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-weight: 700;
+    font-size: 36px;
+    color: #ECEBE7;
+    text-align: center;
+}
+
+/* ===== THE BOOK ===== */
+.book {
+    position: relative;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+}
+
+.book.map-view .page-content {
+    display: none;
+}
+
+.book-bg {
+    display: block;
+    height: 520px;
+    width: auto;
+}
+
+/* ===== PAGE CONTENT (positioned on top of book SVG) ===== */
+.page-content {
+    position: absolute;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.page-left-content {
+    top: 55px;
+    left: 45px;
+    right: 50%;
+    bottom: 55px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    scrollbar-width: none;
+}
+
+.page-left-content::-webkit-scrollbar {
+    display: none;
+}
+
+.page-right-content {
+    top: 60px;
+    right: 90px;
+    bottom: 80px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: hidden;
+}
+
+/* ===== TEXT OUTPUT ===== */
+#output {
+    font-size: 12px;
+    line-height: 1.7;
+    text-transform: capitalize;
+}
+
+#output .location-title {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+#output .location-text {
+    margin-bottom: 20px;
+}
+
+#output .command {
+    margin: 15px 0;
+}
+
+/* ===== INVENTORY ===== */
+.inventory h2,
+.stats h2 {
+    font-size: 16px;
+    font-weight: 700;
+    font-variant: small-caps;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 54px);
+    grid-template-rows: repeat(2, 54px);
+    gap: 12px;
+}
+
+.inventory-slot {
+    width: 54px;
+    height: 54px;
+    background: #794722;
+    clip-path: url(#clip-slot);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slot-plus {
+    width: 30px;
+    height: 30px;
+}
+
+.slot-label {
+    font-family: 'Cinzel', sans-serif;
+    font-size: 8px;
+    font-weight: 700;
+    color: #D4D2C9;
+    text-align: center;
+    line-height: 1.2;
+    padding: 2px;
+    word-break: break-word;
+    overflow: hidden;
+}
+
+/* ===== STATS ===== */
+.stats {
+    margin-top: auto;
+}
+
+.stat-row {
+    position: relative;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.stat-icon-circle {
+    width: 40px;
+    height: 40px;
+    background: #794722;
+    clip-path: url(#clip-circle);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.stat-icon-circle img {
+    width: 20px;
+    height: 20px;
+}
+
+.stat-bar {
+    position: relative;
+    width: 200px;
+    height: 35px;
+    margin-left: -24px;
+}
+
+.stat-bar-track {
+    width: 100%;
+    height: 100%;
+    background: #794722;
+    clip-path: url(#clip-pill);
+    display: flex;
+    align-items: center;
+}
+
+.stat-segments {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 0 22px 0 28px;
+    width: 100%;
+}
+
+.stat-segment {
+    flex: 1;
+    height: 16px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.stat-bar-hydration .stat-segment.active {
+    background: #49CFED;
+}
+
+.stat-bar-saturation .stat-segment.active {
+    background: #FF383C;
+}
+
+/* ===== SIDE ICONS ===== */
+.side-icons {
+    position: absolute;
+    right: 20px;
+    top: 27%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.icon-btn {
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-btn img {
+    width: 100%;
+    height: 100%;
+}
+
+.icon-btn:hover {
+    opacity: 0.8;
+}
+
+/* ===== COMMAND INPUT ===== */
+.command-wrapper {
+    position: relative;
+    width: 372px;
+    height: 48px;
+    background: #ECEBE7;
+    clip-path: url(#clip-input);
+}
+
+#command-input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    font-family: 'Cinzel', sans-serif;
+    font-size: 12px;
+    color: #593728;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+#command-input::placeholder {
+    color: #593728;
+    opacity: 0.7;
+}

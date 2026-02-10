@@ -14,7 +14,10 @@ class GameController {
     fun status(): Map<String, Any> {
         return mapOf(
             "quadrant" to engine.currentQuadrant.name,
-            "description" to engine.currentQuadrant.description.initial
+            "description" to engine.currentQuadrant.description.initial,
+            "inventory" to engine.getInventory().map { it.itemName },
+            "hydration" to engine.getHydration(),
+            "saturation" to engine.getSaturation()
         )
     }
 
@@ -25,7 +28,10 @@ class GameController {
         return mapOf(
             "quadrant" to engine.currentQuadrant.name,
             "description" to message,
-            "reset" to isReset
+            "reset" to isReset,
+            "inventory" to engine.getInventory().map { it.itemName },
+            "hydration" to engine.getHydration(),
+            "saturation" to engine.getSaturation()
         )
     }
 }
