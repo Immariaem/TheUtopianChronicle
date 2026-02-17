@@ -3,6 +3,7 @@ package study.coco.project_code
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.json.JsonElement
+import java.util.Collections.emptyList
 
 @Serializable
 data class Coordinates(val row: String, val column: Int, val x: Int, val y: Int)
@@ -68,7 +69,7 @@ data class Interactable(
 @Serializable
 data class VisibleObjects(
     val npcs: List<Npc> = emptyList(),
-    val items: List<Item> = emptyList(),
+    val items: MutableList<Item> = emptyList(),
     val interactables: List<Interactable> = emptyList()
 )
 

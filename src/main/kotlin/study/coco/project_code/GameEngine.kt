@@ -121,6 +121,7 @@ open class GameEngine(private val world: World) {
         if (!item.isCollectable) return "You can't take that."
 
         playerInventory.add(item)
+        currentQuadrant.visibleObjects.items.remove(item)
         return "You pick up ${item.itemName}."
     }
 
