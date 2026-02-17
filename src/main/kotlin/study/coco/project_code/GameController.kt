@@ -28,6 +28,7 @@ class GameController {
         return mapOf(
             "quadrant" to engine.currentQuadrant.name,
             "description" to message,
+            "quadrantDescription" to engine.currentQuadrant.description.initial,
             "reset" to isReset,
             "inventory" to engine.getInventory().map { it.itemName },
             "hydration" to engine.getHydration(),

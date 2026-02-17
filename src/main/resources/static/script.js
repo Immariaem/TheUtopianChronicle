@@ -79,10 +79,26 @@ function updateUI(data) {
 
 // Append response after a command
 function appendResponse(data) {
-    outputDiv.innerHTML += `
-        <p class="location-title">${data.quadrant}</p>
-        <p class="location-text">${data.description.replace(/\n/g, '<br>')}</p>
-    `;
+    if (data.reset) {
+        const cause = data.description.includes('dehydration') ? 'You died of thirst' : 'You starved to death';
+        outputDiv.innerHTML = `
+            <p class="game-over-title">Game Over</p>
+            <p class="game-over-cause">${cause}</p>
+            <p class="location-title">${data.quadrant}</p>
+            <p class="location-text">${data.quadrantDescription}</p>
+        `;
+        scrollContainer.classList.add('game-over');
+        updateInventory(data.inventory);
+        updateStats(data.hydration, data.saturation);
+        scrollContainer.scrollTop = 0;
+        return;
+    } else {
+        scrollContainer.classList.remove('game-over');
+        outputDiv.innerHTML += `
+            <p class="location-title">${data.quadrant}</p>
+            <p class="location-text">${data.description.replace(/\n/g, '<br>')}</p>
+        `;
+    }
     scrollContainer.scrollTop = scrollContainer.scrollHeight;
     updateInventory(data.inventory);
     updateStats(data.hydration, data.saturation);
@@ -113,6 +129,9 @@ const itemIcons = {
     'Fathers Compass': '<svg viewBox="0 0 16 16" class="slot-item-icon"><rect x="7" y="1" width="2" height="2" fill="#a16207"/><rect x="4" y="4" width="8" height="8" fill="#ca8a04"/><rect x="5" y="5" width="6" height="6" fill="#fff"/><rect x="7" y="7" width="2" height="2" fill="#27272a"/><rect x="7" y="5" width="2" height="2" fill="#ef4444"/><rect x="7" y="9" width="2" height="2" fill="#a1a1aa"/></svg>',
     'Zaras Cargo': '<svg viewBox="0 0 16 16" class="slot-item-icon"><rect x="3" y="3" width="10" height="10" fill="#78350f"/><rect x="4" y="4" width="8" height="8" fill="#92400e"/><rect x="5" y="5" width="6" height="1" fill="#b45309"/><rect x="5" y="7" width="6" height="1" fill="#b45309"/><rect x="5" y="9" width="6" height="1" fill="#b45309"/></svg>',
     'Hermits Journal': '<svg viewBox="0 0 16 16" class="slot-item-icon"><rect x="4" y="3" width="8" height="10" fill="#7f1d1d"/><rect x="3" y="3" width="1" height="10" fill="#450a0a"/><rect x="11" y="4" width="2" height="8" fill="#fef9c3"/><rect x="6" y="5" width="4" height="1" fill="#eab308"/><rect x="6" y="9" width="4" height="1" fill="#eab308"/></svg>',
+    'Blue crystal key': '<svg viewBox="0 0 16 16" class="w-12 h-12">\n' + '<rect x="7" y="5" width="2" height="9" class="fill-zinc-600"></rect>\n' + '<rect x="9" y="11" width="2" height="1" class="fill-zinc-600"></rect>\n' + ' <rect x="9" y="13" width="2" height="1" class="fill-zinc-600"></rect>\n' + '<rect x="6" y="1" width="4" height="4" class="fill-sky-500"></rect>\n' + ' <rect x="7" y="2" width="2" height="2" class="fill-sky-300"></rect>\n' + '</svg>',
+    'Red crystal key': '<svg viewBox="0 0 16 16" class="w-12 h-12">\n' + '<rect x="7" y="5" width="2" height="9" class="fill-zinc-600"></rect>\n' + '<rect x="9" y="11" width="2" height="1" class="fill-zinc-600"></rect>\n' + '<rect x="9" y="13" width="2" height="1" class="fill-zinc-600"></rect>\n' + '<rect x="6" y="1" width="4" height="4" class="fill-rose-500"></rect>\n' + '<rect x="7" y="2" width="2" height="2" class="fill-rose-300"></rect>\n' + '</svg>',
+    'Green crystal key': '<svg viewBox="0 0 16 16" class="w-12 h-12">\n' + '<rect x="7" y="5" width="2" height="9" class="fill-zinc-600"></rect>\n' + '<rect x="9" y="11" width="2" height="1" class="fill-zinc-600"></rect>\n' + '<rect x="9" y="13" width="2" height="1" class="fill-zinc-600"></rect>\n' + '<rect x="6" y="1" width="4" height="4" class="fill-emerald-500"></rect>\n' + '<rect x="7" y="2" width="2" height="2" class="fill-emerald-300"></rect>\n' + '</svg>'
 };
 
 // Update inventory slots

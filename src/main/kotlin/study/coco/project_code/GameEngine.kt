@@ -48,9 +48,6 @@ open class GameEngine(private val world: World) {
 
     fun move(direction: String): String {
 
-        hydration -= 2
-        saturation -= 1
-
         if (hydration <= 0) {
             quit()
             return "You died of dehydration! Game has been reset.\n\n${currentQuadrant.description.initial}"
@@ -84,6 +81,8 @@ open class GameEngine(private val world: World) {
             }
         }
 
+        hydration -= 2
+        saturation -= 1
         currentQuadrant = target
 
         var message = if (currentQuadrant.quadrantId in visitedQuadrants) {
@@ -99,12 +98,12 @@ open class GameEngine(private val world: World) {
             currentQuadrant.description.initial
         }
 
-        if (hydration <= 12) {
+        if (hydration <= 8) {
             message += "\n\nWarning: You're getting thirsty! Find water soon."
 
         }
 
-        if (saturation <= 10) {
+        if (saturation <= 5) {
             message += "\n\nWarning: You're getting hungry! Find food soon."
 
         }
@@ -200,7 +199,7 @@ open class GameEngine(private val world: World) {
 
                     if (placedKeys.map { it.itemId } == correctOrder) {
                         gameFlags.add("crystal_keys_complete")
-                        return  "The crystals begin to sing... \n All three keys glow in unison. A light and comfortable ringing echos trough the caves."
+                        return  "The crystals begin to sing... \n All three keys glow in unison. A light and comfortable ringing echos trough the caves. Kira will be more than happy to help any seeker find their way to the clouds now."
                     } else {
                         placedKeys.forEach { key ->
                             currentQuadrant.visibleObjects.items.add(key)
@@ -217,10 +216,12 @@ open class GameEngine(private val world: World) {
 
                 if (itemId.contains("water") || itemId == "coconut" || itemId ==
                     "cactus_fruit") {
+                    hydration = minOf(hydration + 5,20)
                 }
 
                 if (!itemId.contains("water") || itemId == "coconut" || itemId ==
                     "cactus_fruit") {
+                    saturation = minOf(saturation + 5, 20)
                 }
 
                 playerInventory.remove(inventoryItem)
@@ -269,6 +270,7 @@ open class GameEngine(private val world: World) {
         gameFlags.clear()
         hydration = 20
         saturation = 20
+        placedKeys.clear()
         return "QUIT"
     }
 
