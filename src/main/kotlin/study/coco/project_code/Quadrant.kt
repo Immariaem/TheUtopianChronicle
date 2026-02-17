@@ -69,7 +69,7 @@ data class Interactable(
 @Serializable
 data class VisibleObjects(
     val npcs: List<Npc> = emptyList(),
-    val items: MutableList<Item> = emptyList(),
+    val items: MutableList<Item> = mutableListOf<Item>(),
     val interactables: List<Interactable> = emptyList()
 )
 

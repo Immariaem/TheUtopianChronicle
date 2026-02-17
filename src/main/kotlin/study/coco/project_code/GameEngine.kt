@@ -9,6 +9,7 @@ open class GameEngine(private val world: World) {
     private var hydration = 20
     private var saturation = 20
     private val gameFlags = mutableSetOf<String>()
+    private val placedKeys = mutableListOf<Item>()
 
     init {
         currentQuadrant = world.quadrants.first { it.quadrantId == "B2" }
@@ -188,16 +189,38 @@ open class GameEngine(private val world: World) {
         if (target.isBlank()) return "Use what? Try: use <name>"
 
         val inventoryItem = playerInventory.find { it.itemName.lowercase() == target.lowercase() }
+        val correctOrder = listOf("blue_crystal_key", "red_crystal_key", "green_crystal_key")
         if (inventoryItem != null) {
+
+            if (currentQuadrant.quadrantId == "D5" && inventoryItem.itemName.lowercase().contains("crystal key")) {
+                placedKeys.add(inventoryItem)
+                playerInventory.remove(inventoryItem)
+
+                if (placedKeys.size == 3) {
+
+                    if (placedKeys.map { it.itemId } == correctOrder) {
+                        gameFlags.add("crystal_keys_complete")
+                        return  "The crystals begin to sing... \n All three keys glow in unison. A light and comfortable ringing echos trough the caves."
+                    } else {
+                        placedKeys.forEach { key ->
+                            currentQuadrant.visibleObjects.items.add(key)
+                        }
+                        placedKeys.clear()
+                        return "The console rejects the sequence. The keys fall to the ground."
+                    }
+                }
+                return "You place the ${inventoryItem.itemName} on the console."
+            }
+
             if (inventoryItem.itemType == "consumable") {
                 val itemId = inventoryItem.itemId.lowercase()
 
-                if (itemId.contains("water") || itemId == "coconut" || itemId == "cactus_fruit") {
-                    hydration = minOf(hydration + 5, 20)
+                if (itemId.contains("water") || itemId == "coconut" || itemId ==
+                    "cactus_fruit") {
                 }
 
-                if (!itemId.contains("water") || itemId == "coconut" || itemId == "cactus_fruit") {
-                    saturation = minOf(saturation + 5, 20)
+                if (!itemId.contains("water") || itemId == "coconut" || itemId ==
+                    "cactus_fruit") {
                 }
 
                 playerInventory.remove(inventoryItem)
@@ -211,7 +234,6 @@ open class GameEngine(private val world: World) {
 
         if (!interactable.canInteract) return "You can't use that."
 
-        // Set the interactable's unlock flag if it has one
         interactable.unlockFlag?.let { flag ->
             gameFlags.add(flag)
         }
@@ -257,7 +279,6 @@ open class GameEngine(private val world: World) {
             .find { it.npcId.lowercase() == target.lowercase() && it.isActive }
             ?: return "There's no one called '$target' here."
 
-        // Check for conditional dialogue based on flags (first match wins)
         val conditionalDialogue = npc.dialogueConditions.firstOrNull { it.flag in gameFlags }
         return conditionalDialogue?.text ?: npc.dialogue
     }
