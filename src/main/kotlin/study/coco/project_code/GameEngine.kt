@@ -1,5 +1,7 @@
 package study.coco.project_code
 
+import java.awt.Choice
+
 open class GameEngine(private val world: World) {
     var currentQuadrant: Quadrant
         private set
@@ -10,6 +12,8 @@ open class GameEngine(private val world: World) {
     private var saturation = 20
     private val gameFlags = mutableSetOf<String>()
     private val placedKeys = mutableListOf<Item>()
+    private var currentGuardianQuestion = 0
+    private var guardianAnswersCorrect = true
 
     init {
         currentQuadrant = world.quadrants.first { it.quadrantId == "B2" }
@@ -41,6 +45,9 @@ open class GameEngine(private val world: World) {
             "u","use", "eat", "drink" -> use(argument)
             "talk" -> talk(argument)
             "dive" -> dive()
+            "a" -> answerGuardian(command)
+            "b" -> answerGuardian(command)
+            "c" -> answerGuardian(command)
             "h","help" -> help()
             "q","quit" -> quit()
 
@@ -159,6 +166,21 @@ open class GameEngine(private val world: World) {
                 return "You set down the heavy cargo on Zara's dock. She walks over and inspects it with a nod of approval."
             } else {
                 return "You should bring this back to Zara's dock."
+            }
+        }
+
+        if (item.itemId in listOf("coral_relic", "pearl_relic", "stone_relic")) {
+            if (currentQuadrant.quadrantId == "H8") {
+                playerInventory.remove(item)
+                gameFlags.add("dropped_${item.itemId}")
+
+                if ("dropped_coral_relic" in gameFlags && "dropped_pearl_relic" in gameFlags && "dropped_stone_relic" in gameFlags) {
+                    gameFlags.add("relics_offered")
+                    return "You place ${item.itemName} on the altar. The Pearl Guardian nods. All three relics have been offered. Speak to the Guardian when you are ready."
+                }
+                return "You place the ${item.itemName} on the altar. The Guardian watches in silence."
+            } else {
+                return "This does not belong here."
             }
         }
 
@@ -327,6 +349,13 @@ open class GameEngine(private val world: World) {
             .find { it.npcName.lowercase() == target.lowercase() && it.isActive }
             ?: return "There's no one called '$target' here."
 
+        if (npc.npcId == "pearl_guardian" && "relics_offered" in gameFlags &&
+            "guardian_trial_complete" !in gameFlags) {
+            currentGuardianQuestion = 0
+            guardianAnswersCorrect = true
+            return "\"The relics are accepted. Now I will ask you three questions.\"\n\n\"Many have come seeking this island. What drives you to follow in their footsteps?\"\n\nA) I am following someone who came this way. I need to know what happened to them.\nB) I seek a perfect life, free from the pain of the world above.\nC) I will succeed where others have failed. That is reason enough."
+        }
+
         val conditionalDialogue = npc.dialogueConditions.firstOrNull { it.flag in gameFlags }
         return conditionalDialogue?.text ?: npc.dialogue
     }
@@ -337,6 +366,37 @@ open class GameEngine(private val world: World) {
 
         gameFlags.add("entered_underwater")
         return "You clutch Kira's crystal and dive beneath the waves. As the water closes over you, the crystal pulses with warmth and light. You open your mouth, expecting to choke, but instead you breathe. The crystal hums softly as the underwater realm opens up around you. Go east to explore."
+    }
+
+    fun answerGuardian(choice: String): String {
+        if (currentQuadrant.quadrantId != "H8" || "relics_offered" !in gameFlags)
+        {
+            return "Unknown command: $choice. Type 'help' for a list of commands."
+        }
+
+        val correctAnswers = listOf("a", "b", "b")
+
+        if (choice != correctAnswers[currentGuardianQuestion]) {
+            guardianAnswersCorrect = false
+        }
+        currentGuardianQuestion++
+
+        if (currentGuardianQuestion == 1) {
+            return "\"Some call the island a utopia. What do you believe a world without suffering would cost?\"\n\nA) Nothing. Peace is not something that must be paid for.\nB) Everything that makes life worth living.\nC) Only the freedom of those too weak to endure it."
+        }
+
+        if (currentGuardianQuestion == 2) {
+            return "\"If you reached the island and found nothing you hoped for, what would you do?\"\n\nA) I would stay. Any destination is better than the journey.\nB) I would leave and carry the truth back with me.\nC) I would make it into what I needed it to be."
+        }
+
+        if (guardianAnswersCorrect) {
+            gameFlags.add("guardian_trial_complete")
+            return "The Pearl Guardian nods slowly. \"You have answered well, seeker. Surface to the west and head for the desert. Cross it heading west. The Island of Bliss lies beyond the far shore.\""
+        } else {
+            currentGuardianQuestion = 0
+            guardianAnswersCorrect = true
+            return "The Pearl Guardian shakes his head. \"Your answers do not ring true. Speak to me again when you are ready.\""
+        }
     }
 
     fun stats(): String {
