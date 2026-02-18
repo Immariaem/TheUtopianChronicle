@@ -42,11 +42,31 @@ open class GameEngine(private val world: World) {
             "talk" -> talk(argument)
             "h","help" -> help()
             "q","quit" -> quit()
+
+            "warp" -> warp(argument)
+            "flags" -> setFlags(argument)
+
             else -> "Unknown command: $command. Type 'help' for a list of commands."
         }
     }
 
-    fun move(direction: String): String {
+    fun warp(target: String): String {
+        if (target.isBlank()) return "Warp where? Try: warp B5"
+        val quadrant = world.quadrants.find { it.quadrantId == target.uppercase()
+        }
+            ?: return "Quadrant '$target' not found."
+        currentQuadrant = quadrant
+        visitedQuadrants.add(quadrant.quadrantId)
+        return "Warped to ${quadrant.name}(${quadrant.quadrantId})\n\n${quadrant.description.initial}"
+    }
+
+    fun setFlags(flagList: String): String {
+            if (flagList.isBlank()) return "Current flags: $gameFlags"
+            flagList.split(",").forEach { gameFlags.add(it.trim()) }
+            return "Flags set: $gameFlags"
+        }
+
+        fun move(direction: String): String {
 
         if (hydration <= 0) {
             quit()
