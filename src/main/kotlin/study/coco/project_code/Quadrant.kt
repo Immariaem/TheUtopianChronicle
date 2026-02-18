@@ -40,6 +40,7 @@ data class DialogueCondition(
 @Serializable
 data class Npc(
     val npcId: String,
+    val npcName: String,
     val spawnCondition: String? = null,
     val dialogue: String,
     val dialogueConditions: List<DialogueCondition> = emptyList(),

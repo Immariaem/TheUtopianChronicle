@@ -36,12 +36,28 @@
     "npcs": [
       {
         "npcId": "sky_citizen_generic",
+        "npcName": "Citizen",
         "spawnCondition": null,
-        "dialogue": "sky_citizen_small_talk",
+        "dialogue": "Welcome to Nephelia, traveler! You must have come up through the old mining lift. Not many use that route anymore. The market is to the east if you need supplies, and if you are looking for Captain Zara, her dock is just south of here.",
+        "dialogueConditions": [
+          {
+            "flag": "cargo_delivered",
+            "text": "Oh, you are the one who braved the Windy Platform! People are talking about you."
+          }
+        ],
         "isActive": true
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "itemId": "fountain_water",
+        "itemName": "Fountain Water",
+        "spawnCondition": null,
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You cup your hands and drink from the fountain of Nephele. The water is impossibly fresh and cool."
+      }
+    ],
     "interactables": [
       {
         "id": "nephele_fountain",

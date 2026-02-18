@@ -36,8 +36,15 @@
     "npcs": [
       {
         "npcId": "market_vendor",
+        "npcName": "Vendor",
         "spawnCondition": null,
-        "dialogue": "vendor_sales_pitch",
+        "dialogue": "Fresh bread! Dried fruits! Water skins for the long journey! Best prices in all of Nephelia, I promise you that. Take something for the road, traveler, you never know when your next meal will be up here in the clouds.",
+        "dialogueConditions": [
+          {
+            "flag": "cargo_delivered",
+            "text": "Ah, the brave cargo runner! Can I interest you in some supplies for wherever Zara is taking you next?"
+          }
+        ],
         "isActive": true
       }
     ],
@@ -65,6 +72,14 @@
         "isCollectable": true,
         "itemType": "consumable",
         "itemMessage": "You drink deeply from the water skin. Refreshing!"
+      },
+      {
+        "itemId": "water_flask",
+        "itemName": "Water Flask",
+        "spawnCondition": null,
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink from the flask. Clean, cold water collected from the clouds."
       }
     ],
     "interactables": [

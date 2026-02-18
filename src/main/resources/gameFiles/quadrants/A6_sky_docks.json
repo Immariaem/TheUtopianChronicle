@@ -36,8 +36,15 @@
     "npcs": [
       {
         "npcId": "dock_worker",
+        "npcName": "Dock Worker",
         "spawnCondition": null,
-        "dialogue": "dock_worker_generic",
+        "dialogue": "Careful where you step, newcomer. These docks are busy and the drop is a long one. If you are looking for someone, try the Platia to the east. Everyone passes through there eventually.",
+        "dialogueConditions": [
+          {
+            "flag": "cargo_delivered",
+            "text": "Back again? You are becoming a regular around here."
+          }
+        ],
         "isActive": true
       }
     ],

@@ -40,6 +40,7 @@ open class GameEngine(private val world: World) {
             "x","examine" -> examine(argument)
             "u","use", "eat", "drink" -> use(argument)
             "talk" -> talk(argument)
+            "dive" -> dive()
             "h","help" -> help()
             "q","quit" -> quit()
 
@@ -66,7 +67,7 @@ open class GameEngine(private val world: World) {
             return "Flags set: $gameFlags"
         }
 
-        fun move(direction: String): String {
+    fun move(direction: String): String {
 
         if (hydration <= 0) {
             quit()
@@ -151,6 +152,16 @@ open class GameEngine(private val world: World) {
         val item = playerInventory.find { it.itemName.lowercase() == target.lowercase() }
             ?: return "You don't have '$target' in your inventory."
 
+        if (item.itemId == "zaras_cargo") {
+            if (currentQuadrant.quadrantId == "B7") {
+                playerInventory.remove(item)
+                gameFlags.add("cargo_delivered")
+                return "You set down the heavy cargo on Zara's dock. She walks over and inspects it with a nod of approval."
+            } else {
+                return "You should bring this back to Zara's dock."
+            }
+        }
+
         playerInventory.remove(item)
         return "You drop ${item.itemName}."
     }
@@ -170,7 +181,7 @@ open class GameEngine(private val world: World) {
         val npcs = currentQuadrant.visibleObjects.npcs.filter { it.isActive }
         if (npcs.isNotEmpty()) {
             result.appendLine("\nYou see:")
-            npcs.forEach { result.appendLine("- ${it.npcId}") }
+            npcs.forEach { result.appendLine("- ${it.npcName}") }
         }
 
         val items = currentQuadrant.visibleObjects.items
@@ -253,6 +264,21 @@ open class GameEngine(private val world: World) {
             .find { it.name.lowercase() == target.lowercase() }
             ?: return "You don't see '$target' here."
 
+        if (interactable.id == "storm_chaser") {
+            if ("cargo_delivered" !in gameFlags) {
+                return "Zara is not letting anyone near her ship right now."
+            }
+            val crystal = playerInventory.find { it.itemId == "kiras_crystal" }
+            if (crystal == null) {
+                return "Zara looks you over and frowns. You are not ready yet. That crystal keeper in the caves left something for you, did she not? Go back and get it before we fly."
+            }
+            val e8 = world.quadrants.find { it.quadrantId == "E8" }
+            if (e8 != null) {
+                currentQuadrant = e8
+                visitedQuadrants.add(e8.quadrantId)
+            }
+        }
+
         if (!interactable.canInteract) return "You can't use that."
 
         interactable.unlockFlag?.let { flag ->
@@ -298,11 +324,19 @@ open class GameEngine(private val world: World) {
         if (target.isBlank()) return "Talk to whom? Try: talk <name>"
 
         val npc = currentQuadrant.visibleObjects.npcs
-            .find { it.npcId.lowercase() == target.lowercase() && it.isActive }
+            .find { it.npcName.lowercase() == target.lowercase() && it.isActive }
             ?: return "There's no one called '$target' here."
 
         val conditionalDialogue = npc.dialogueConditions.firstOrNull { it.flag in gameFlags }
         return conditionalDialogue?.text ?: npc.dialogue
+    }
+
+    fun dive(): String {
+        if (currentQuadrant.quadrantId != "E8") return "There is nowhere to dive here."
+        if ("entered_underwater" in gameFlags) return "You have already dived. The underwater realm is to the east."
+
+        gameFlags.add("entered_underwater")
+        return "You clutch Kira's crystal and dive beneath the waves. As the water closes over you, the crystal pulses with warmth and light. You open your mouth, expecting to choke, but instead you breathe. The crystal hums softly as the underwater realm opens up around you. Go east to explore."
     }
 
     fun stats(): String {

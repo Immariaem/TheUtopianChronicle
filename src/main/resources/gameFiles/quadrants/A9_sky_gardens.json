@@ -36,8 +36,15 @@
     "npcs": [
       {
         "npcId": "gardener",
+        "npcName": "Gardener",
         "spawnCondition": null,
-        "dialogue": "gardener_plants",
+        "dialogue": "Beautiful, are they not? These gardens have been here since the founding of Nephelia. The flowers grow differently up here, something about the thin air and the sunlight. I have been tending them for thirty years and they still surprise me every spring.",
+        "dialogueConditions": [
+          {
+            "flag": "cargo_delivered",
+            "text": "Still here? Enjoy the roses while you can. I hear you will be leaving us soon."
+          }
+        ],
         "isActive": true
       }
     ],
