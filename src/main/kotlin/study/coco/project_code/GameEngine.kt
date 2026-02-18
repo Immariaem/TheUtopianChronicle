@@ -353,7 +353,7 @@ open class GameEngine(private val world: World) {
             "guardian_trial_complete" !in gameFlags) {
             currentGuardianQuestion = 0
             guardianAnswersCorrect = true
-            return "\"The relics are accepted. Now I will ask you three questions.\"\n\n\"Many have come seeking this island. What drives you to follow in their footsteps?\"\n\nA) I am following someone who came this way. I need to know what happened to them.\nB) I seek a perfect life, free from the pain of the world above.\nC) I will succeed where others have failed. That is reason enough."
+            return "\"The relics are accepted. Now I will ask you three questions.\"\n\n\"Many have come seeking this island. What drives you to follow in their footsteps?\"\n\nA) I am following someone who came this way. I need to know what happened to them.\n\nB) I seek a perfect life, free from the pain of the world above.\n\nC) I will succeed where others have failed. That is reason enough."
         }
 
         val conditionalDialogue = npc.dialogueConditions.firstOrNull { it.flag in gameFlags }
@@ -382,11 +382,11 @@ open class GameEngine(private val world: World) {
         currentGuardianQuestion++
 
         if (currentGuardianQuestion == 1) {
-            return "\"Some call the island a utopia. What do you believe a world without suffering would cost?\"\n\nA) Nothing. Peace is not something that must be paid for.\nB) Everything that makes life worth living.\nC) Only the freedom of those too weak to endure it."
+            return "\"Some call the island a utopia. What do you believe a world without suffering would cost?\"\n\nA) Nothing. Peace is not something that must be paid for.\n\nB) Everything that makes life worth living.\n\nC) Only the freedom of those too weak to endure it."
         }
 
         if (currentGuardianQuestion == 2) {
-            return "\"If you reached the island and found nothing you hoped for, what would you do?\"\n\nA) I would stay. Any destination is better than the journey.\nB) I would leave and carry the truth back with me.\nC) I would make it into what I needed it to be."
+            return "\"If you reached the island and found nothing you hoped for, what would you do?\"\n\nA) I would stay. Any destination is better than the journey.\n\nB) I would leave and carry the truth back with me.\n\nC) I would make it into what I needed it to be."
         }
 
         if (guardianAnswersCorrect) {

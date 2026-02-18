@@ -38,11 +38,11 @@
         "npcId": "sky_citizen_generic",
         "npcName": "Citizen",
         "spawnCondition": null,
-        "dialogue": "Welcome to Nephelia, traveler! You must have come up through the old mining lift. Not many use that route anymore. The market is to the east if you need supplies, and if you are looking for Captain Zara, her dock is just south of here.",
+        "dialogue": "\"Welcome to Nephelia, traveler! You must have come up through the old mining lift. Not many use that route anymore. The market is to the east if you need supplies, and if you are looking for Captain Zara, her dock is just south of here.\"",
         "dialogueConditions": [
           {
             "flag": "cargo_delivered",
-            "text": "Oh, you are the one who braved the Windy Platform! People are talking about you."
+            "text": "\"Oh, you are the one who braved the Windy Platform! People are talking about you.\""
           }
         ],
         "isActive": true

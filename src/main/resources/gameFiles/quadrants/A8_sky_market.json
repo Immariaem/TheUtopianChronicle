@@ -38,11 +38,11 @@
         "npcId": "market_vendor",
         "npcName": "Vendor",
         "spawnCondition": null,
-        "dialogue": "Fresh bread! Dried fruits! Water skins for the long journey! Best prices in all of Nephelia, I promise you that. Take something for the road, traveler, you never know when your next meal will be up here in the clouds.",
+        "dialogue": "\"Fresh bread! Dried fruits! Water skins for the long journey! Best prices in all of Nephelia, I promise you that. Take something for the road, traveler, you never know when your next meal will be up here in the clouds.\"",
         "dialogueConditions": [
           {
             "flag": "cargo_delivered",
-            "text": "Ah, the brave cargo runner! Can I interest you in some supplies for wherever Zara is taking you next?"
+            "text": "\"Ah, the brave cargo runner! Can I interest you in some supplies for wherever Zara is taking you next?\""
           }
         ],
         "isActive": true
