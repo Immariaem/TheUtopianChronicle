@@ -14,6 +14,9 @@ open class GameEngine(private val world: World) {
     private val placedKeys = mutableListOf<Item>()
     private var currentGuardianQuestion = 0
     private var guardianAnswersCorrect = true
+    private var labyrinthActive = false
+    private var labyrinthQuestion = 0
+    private var labyrinthAwaitingMove = false
 
     init {
         currentQuadrant = world.quadrants.first { it.quadrantId == "B2" }
@@ -45,9 +48,9 @@ open class GameEngine(private val world: World) {
             "u","use", "eat", "drink" -> use(argument)
             "talk" -> talk(argument)
             "dive" -> dive()
-            "a" -> answerGuardian(command)
-            "b" -> answerGuardian(command)
-            "c" -> answerGuardian(command)
+            "a" -> if(labyrinthActive) answerLabyrinth(command) else answerGuardian(command)
+            "b" -> if(labyrinthActive) answerLabyrinth(command) else answerGuardian(command)
+            "c" -> if(labyrinthActive) answerLabyrinth(command) else answerGuardian(command)
             "h","help" -> help()
             "q","quit" -> quit()
 
@@ -84,6 +87,18 @@ open class GameEngine(private val world: World) {
         if (saturation <= 0) {
             quit()
             return "You starved to death! Game has been reset.\n\n${currentQuadrant.description.initial}"
+        }
+
+        if (labyrinthActive && currentQuadrant.quadrantId == "J4") {
+            if (!labyrinthAwaitingMove) {
+                return "Your reflection stands before you, waiting. Answer before you move on."
+            }
+            labyrinthAwaitingMove = false
+            return nextLabyrinthQuestion()
+        }
+
+        if (currentQuadrant.quadrantId == "J4" && direction == "west" && "mirror_labyrinth_complete" !in gameFlags) {
+            return "The western wall is solid mirrors. There is no way through. Not yet."
         }
 
         val connection = when (direction.lowercase()) {
@@ -320,6 +335,13 @@ open class GameEngine(private val world: World) {
             return "You untie the knot keeping the boat in place and raise the sail. The boat glides out of the cove as if it has been waiting for this moment. The desert disappears behind you. For three days you sail south, guided by your father's compass. The ocean is vast and indifferent. Then, on the morning of the fourth day, the horizon turns gold.\n\nThe Island of Bliss."
         }
 
+        if (interactable.id == "labyrinth_entrance") {
+            labyrinthActive = true
+            labyrinthQuestion = 0
+            labyrinthAwaitingMove = false
+            return "You and your father step through the arch together. The world outside vanishes. \n\nEvery surface is mirrors. Infinite versions of you and your father stretch in every direction. The reflections are perfectly still, until one steps forward. \n\n\"Why do people seek utopia?\"\n\nA) Because they are running from something, not towards something. \nB) Because they believe something better is possible. \nC) Because the world as it is has truly failed them."
+        }
+
         if (!interactable.canInteract) return "You can't use that."
 
         interactable.unlockFlag?.let { flag ->
@@ -358,6 +380,9 @@ open class GameEngine(private val world: World) {
         hydration = 20
         saturation = 20
         placedKeys.clear()
+        labyrinthActive = false
+        labyrinthQuestion = 0
+        labyrinthAwaitingMove = false
         return "QUIT"
     }
 
@@ -416,6 +441,66 @@ open class GameEngine(private val world: World) {
             guardianAnswersCorrect = true
             return "The Pearl Guardian shakes his head. \"Your answers do not ring true. Speak to me again when you are ready.\""
         }
+    }
+
+    fun answerLabyrinth(choice: String): String {
+        if (!labyrinthActive) return "Unknown command: $choice. Type 'help' for a list of commands."
+
+        val correctAnswers = listOf("a", "b", "a", "b", "b", "c")
+        val fatherTexts = listOf(
+            "Your father's reflection speaks quietly beside yours: \"Because I was afraid that ordinary was all I would ever be. And I couldn't face that.\"",
+            "Your father's reflection speaks: \"Three years. Your childhood. The chance to watch you grow. I didn't know I was paying until it was already gone.\"",
+            "Your father's reflection speaks: \"I thought I was. Until I realised I hadn't felt anything in months. Not worry. Not longing. Not love. Nothing.\"",
+            "Your father's reflection speaks: \"I watched it happen slowly. First the worry. Then the longing. Then the memories. Then the names of the people they loved.\"",
+            "Your father's reflection speaks: \"Ask me again when I've had a chance to be imperfect for a while.\""
+        )
+
+        if (choice != correctAnswers[labyrinthQuestion]) {
+            labyrinthActive = false
+            labyrinthQuestion = 0
+            labyrinthAwaitingMove = false
+            return "The mirrors cloud over. The corridor behind you dissolves. You find yourself back at the entrance, your father beside you.\n\n\"Again,\" he says quietly. \"We face it again.\"\n\nUse the archway to enter once more."
+        }
+
+        if (labyrinthQuestion == 5) {
+            labyrinthActive = false
+            labyrinthQuestion = 0
+            labyrinthAwaitingMove = false
+            gameFlags.add("mirror_labyrinth_complete")
+
+            val j3 = world.quadrants.find { it.quadrantId == "J3" }
+            if (j3 != null) {
+                currentQuadrant = j3
+                visitedQuadrants.add(j3.quadrantId)
+            }
+            return "The mirrors shatter.\n\nNot with violence, with release. Every reflection, every version of you and your father, dissolves into light.The labyrinth opens. The western wall simply isn't there anymore.\n\nYou and your father walk out together.\n\n${j3?.description?.initial ?: ""}"
+        }
+
+        val fatherText = fatherTexts[labyrinthQuestion]
+        labyrinthQuestion++
+        labyrinthAwaitingMove = true
+        return "$fatherText\n\nThe path ahead clears. Move deeper."
+    }
+
+    private fun nextLabyrinthQuestion(): String {
+        val corridorTexts = listOf(
+            "The mirror clears. Your reflections multiply as you walk deeper. Another intersection, another reflection waiting.",
+            "The corridor shifts around you. Behind you, the entrance has disappeared. There is only forward.",
+            "The air grows heavier. Your father walks beside you in silence. The reflections track your every step.",
+            "The labyrinth breathes. The reflections watch you both with something that might be recognition.",
+            "One final corridor. The western wall shimmers ahead. The last reflection steps forward."
+        )
+
+        val questionTexts = listOf(
+            "\"What does a perfect world cost?\"\n\nA) The suffering of those who cannot enter it.\nB) Everything that makes us human.\nC) Only what we are willing to give.",
+            "\"Could you be happy here?\"\n\nA) No. Happiness without struggle is not happiness.\nB) Yes. The peace is real. The beauty is real.\nC) Perhaps. If I forgot enough.",
+            "\"What did the Smiling Ones lose?\"\n\nA) Nothing. They found what they were looking for.\nB) Everything that made them themselves.\nC) Only what caused them pain.",
+            "\"Is the search for perfection worth pursuing?\"\n\nA) Yes. The pursuit itself makes us better.\nB) No. It blinds us to what we already have.\nC) Only if we accept we may never arrive.",
+            "\"What is utopia?\"\n\nA) The world we build when we refuse to accept suffering.\nB) A destination that demands more than we can pay.\nC) A beautiful lie we tell ourselves to avoid living."
+        )
+
+        val idx = labyrinthQuestion - 1
+        return "${corridorTexts[idx]}\n\n${questionTexts[idx]}"
     }
 
     fun stats(): String {
