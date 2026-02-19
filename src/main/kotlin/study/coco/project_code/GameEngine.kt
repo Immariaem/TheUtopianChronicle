@@ -250,6 +250,7 @@ open class GameEngine(private val world: World) {
 
                 if (placedKeys.size == 3) {
 
+                    //Crystal quest
                     if (placedKeys.map { it.itemId } == correctOrder) {
                         gameFlags.add("crystal_keys_complete")
                         return  "The crystals begin to sing... \n All three keys glow in unison. A light and comfortable ringing echos trough the caves. Kira will be more than happy to help any seeker find their way to the clouds now."
@@ -262,6 +263,12 @@ open class GameEngine(private val world: World) {
                     }
                 }
                 return "You place the ${inventoryItem.itemName} on the console."
+            }
+
+            //Desert compass quest
+            if (currentQuadrant.quadrantId == "F2" && inventoryItem.itemId == "fathers_compass") {
+                gameFlags.add("found_star_point")
+                return "EPHEMERAL:The compass needle spins wildly, then locks in place. A vision burns into your mind: \n\n\"You see three stars lighting up in the night sky. The first sinks below the horizon. The second and third rise side by side where the sun rises each day follow them twice. The cove awaits the seeker worthy of understanding.\"\n\nThe compass goes still."
             }
 
             if (inventoryItem.itemType == "consumable") {
@@ -299,6 +306,18 @@ open class GameEngine(private val world: World) {
                 currentQuadrant = e8
                 visitedQuadrants.add(e8.quadrantId)
             }
+        }
+
+        if (interactable.id == "fathers_boat") {
+            gameFlags.add("island_sighted")
+            gameFlags.add("reached_island")
+
+            val i3 = world.quadrants.find { it.quadrantId == "I3" }
+            if (i3 != null) {
+                currentQuadrant = i3
+                visitedQuadrants.add(i3.quadrantId)
+            }
+            return "You untie the knot keeping the boat in place and raise the sail. The boat glides out of the cove as if it has been waiting for this moment. The desert disappears behind you. For three days you sail south, guided by your father's compass. The ocean is vast and indifferent. Then, on the morning of the fourth day, the horizon turns gold.\n\nThe Island of Bliss."
         }
 
         if (!interactable.canInteract) return "You can't use that."

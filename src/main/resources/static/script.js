@@ -93,12 +93,22 @@ function appendResponse(data) {
         scrollContainer.scrollTop = 0;
         return;
     } else {
-        scrollContainer.classList.remove('game-over');
+        const isEphemeral = data.description.startsWith('EPHEMERAL:');
+        const displayText = isEphemeral ? data.description.substring(10) : data.description;
+
         outputDiv.innerHTML += `
             <p class="location-title">${data.quadrant}</p>
-            <p class="location-text">${data.description.replace(/\n/g, '<br>')}</p>
+            <p class="location-text">${displayText.replace(/\n/g, '<br>')}</p>
         `;
+
+    if (isEphemeral) {
+        const ephermalParagraph = outputDiv.lastElementChild;
+        setTimeout(() => {
+            ephermalParagraph.innerHTML = '<em>The vision fades. You must remember the way.</em>';
+        }, 30000);
     }
+}
+
     scrollContainer.scrollTop = scrollContainer.scrollHeight;
     updateInventory(data.inventory);
     updateStats(data.hydration, data.saturation);
