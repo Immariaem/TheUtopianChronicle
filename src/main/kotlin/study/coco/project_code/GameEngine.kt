@@ -323,7 +323,7 @@ open class GameEngine(private val world: World) {
             }
         }
 
-        if (interactable.id == "fathers_boat") {
+        if (interactable.id == "sailing_boat") {
             gameFlags.add("island_sighted")
             gameFlags.add("reached_island")
 
@@ -341,6 +341,14 @@ open class GameEngine(private val world: World) {
             labyrinthAwaitingMove = false
             return "You and your father step through the arch together. The world outside vanishes. \n\nEvery surface is mirrors. Infinite versions of you and your father stretch in every direction. The reflections are perfectly still, until one steps forward. \n\n\"Why do people seek utopia?\"\n\nA) Because they are running from something, not towards something. \nB) Because they believe something better is possible. \nC) Because the world as it is has truly failed them."
         }
+
+        if (interactable.id == "weathered_boat") {
+            if ("mirror_labyrinth_complete" !in gameFlags) {
+                return "The ocean stretches endlessly before you. You don't feel ready to leave yet. There is still something unfinished on this island."
+            }
+            return "You untie the weathered boat and push off from shore together. The island recedes behind you.\n\nHalfway across the cove, you reach into your pck and pull out The Utopian Chronicle. Your handwriting filling the pages he started.The story of a journey that began with his obsession and ended with yours.\n\nYour father sees it and goes still.\n\nThe Smiling Ones call from the shore: \"Stay. Stay. Be happy forever.\"\n\nNeither of you turns around.\n\n\"We should let it go,\" you say.\n\nHe looks at the book for along moment. At his handwriting on the first pages. At yours on the rest.\n\n\"Yes,\" he says quietly. \"We should.\"\n\nYou hold it out over the water together. The book falls, hits the surface, floats for a moment, pages spreading like wings, then sinks. Down into the blue.\n\n\"We don't need a map to paradise anymore,\" your father says. \"Because we're not going there. We're going home.\"\n\nYou sail toward the sunrise.\n\nWhat remains: two people, imperfect, real. Sailing toward an imperfect, beautiful world.\n\nThat's enough. That's everything."
+        }
+
 
         if (!interactable.canInteract) return "You can't use that."
 
