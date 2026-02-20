@@ -1,14 +1,6 @@
 {
   "quadrantId": "A8",
-  "coordinates": {
-    "row": "A",
-    "column": 8,
-    "x": 8,
-    "y": 0
-  },
   "name": "Sky Market",
-  "region": "sky_city",
-  "function": "exploration",
   "description": {
     "initial": "The Sky Market is a riot of color, sound, and smell. Vendors have set up stalls selling everything imaginable. Exotic fruits from distant lands, bolts of shimmering silk that seem to change color as you look at them, intricate mechanical devices that whir and click, and stranger things still. A merchant sells bottled clouds ('Genuine storm clouds! Perfect for dramatic entrances!'). Another offers 'sky fish', fish that somehow swim through the air itself. The babble of haggling voices mingles with the cries of vendors advertising their wares. Awnings in every color flutter in the breeze, and the smell of street food, grilled meat, fresh bread, exotic spices, makes your mouth water.",
     "return": "The bustling Sky Market. Vendors call out their wares and customers weave between the colorful stalls.",
@@ -37,7 +29,6 @@
       {
         "npcId": "market_vendor",
         "npcName": "Vendor",
-        "spawnCondition": null,
         "dialogue": "\"Fresh bread! Dried fruits! Water skins for the long journey! Best prices in all of Nephelia, I promise you that. Take something for the road, traveler, you never know when your next meal will be up here in the clouds.\"",
         "dialogueConditions": [
           {
@@ -52,7 +43,6 @@
       {
         "itemId": "bread_loaf",
         "itemName": "Bread Loaf",
-        "spawnCondition": null,
         "isCollectable": true,
         "itemType": "consumable",
         "itemMessage": "You eat the fresh bread. It's still warm from the oven."
@@ -60,7 +50,6 @@
       {
         "itemId": "dried_fruits",
         "itemName": "Dried Fruits",
-        "spawnCondition": null,
         "isCollectable": true,
         "itemType": "consumable",
         "itemMessage": "You eat the sweet dried fruits. Perfect for long journeys."
@@ -68,7 +57,6 @@
       {
         "itemId": "water_skin",
         "itemName": "Water Skin",
-        "spawnCondition": null,
         "isCollectable": true,
         "itemType": "consumable",
         "itemMessage": "You drink deeply from the water skin. Refreshing!"
@@ -76,7 +64,6 @@
       {
         "itemId": "water_flask",
         "itemName": "Water Flask",
-        "spawnCondition": null,
         "isCollectable": true,
         "itemType": "consumable",
         "itemMessage": "You drink from the flask. Clean, cold water collected from the clouds."
@@ -106,13 +93,10 @@
       }
     ]
   },
-  "requiredFlags": ["reached_sky_city"],
-  "unlockFlags": ["explored_sky_market"],
-  "storyCheckpoint": null,
-  "puzzleData": null,
-  "questData": null,
-  "specialMechanics": null,
-  "metadata": {
-    "isCriticalPath": false
-  }
+  "requiredFlags": [
+    "reached_sky_city"
+  ],
+  "unlockFlags": [
+    "explored_sky_market"
+  ]
 }

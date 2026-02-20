@@ -1,14 +1,6 @@
 {
   "quadrantId": "A7",
-  "coordinates": {
-    "row": "A",
-    "column": 7,
-    "x": 7,
-    "y": 0
-  },
   "name": "Sky Platia",
-  "region": "sky_city",
-  "function": "exploration",
   "description": {
     "initial": "You stand in the central plaza of Nephelia, the Sky Platia. White marble stretches in all directions, polished to a mirror shine that reflects the ever-changing sky above. At the center, a massive fountain depicts the nymph Nephele, born of Zeus's breath, her form made of swirling clouds captured in marble. Water flows upward in defiance of gravity, forming misty clouds before falling back down. Citizens of the sky city move about their business. Scholars in flowing robes, merchants haggling, children laughing and playing. The sound of distant music drifts on the breeze. Golden domes rise above you, and rope bridges connect to other floating platforms.",
     "return": "The grand central plaza of Nephelia. The fountain of Nephele continues its eternal dance, and sky citizens go about their day.",
@@ -37,7 +29,6 @@
       {
         "npcId": "sky_citizen_generic",
         "npcName": "Citizen",
-        "spawnCondition": null,
         "dialogue": "\"Welcome to Nephelia, traveler! You must have come up through the old mining lift. Not many use that route anymore. The market is to the east if you need supplies, and if you are looking for Captain Zara, her dock is just south of here.\"",
         "dialogueConditions": [
           {
@@ -52,7 +43,6 @@
       {
         "itemId": "fountain_water",
         "itemName": "Fountain Water",
-        "spawnCondition": null,
         "isCollectable": true,
         "itemType": "consumable",
         "itemMessage": "You cup your hands and drink from the fountain of Nephele. The water is impossibly fresh and cool."
@@ -68,13 +58,10 @@
       }
     ]
   },
-  "requiredFlags": ["reached_sky_city"],
-  "unlockFlags": ["explored_sky_platia"],
-  "storyCheckpoint": null,
-  "puzzleData": null,
-  "questData": null,
-  "specialMechanics": null,
-  "metadata": {
-    "isCriticalPath": false
-  }
+  "requiredFlags": [
+    "reached_sky_city"
+  ],
+  "unlockFlags": [
+    "explored_sky_platia"
+  ]
 }

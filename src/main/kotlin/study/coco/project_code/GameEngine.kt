@@ -1,7 +1,5 @@
 package study.coco.project_code
 
-import java.awt.Choice
-
 open class GameEngine(private val world: World) {
     var currentQuadrant: Quadrant
         private set
@@ -17,6 +15,9 @@ open class GameEngine(private val world: World) {
     private var labyrinthActive = false
     private var labyrinthQuestion = 0
     private var labyrinthAwaitingMove = false
+    private val checkpointQuadrants = setOf("B2", "C4", "A7", "E8", "F5","I4")
+    private var checkpointQuadrantId = "B2"
+    private val itemSources = mutableMapOf<Item, String>()
 
     init {
         currentQuadrant = world.quadrants.first { it.quadrantId == "B2" }
@@ -80,13 +81,11 @@ open class GameEngine(private val world: World) {
     fun move(direction: String): String {
 
         if (hydration <= 0) {
-            quit()
-            return "You died of dehydration! Game has been reset.\n\n${currentQuadrant.description.initial}"
+            return respawn("You died of dehydration! You have respawned at your last checkpoint.")
         }
 
         if (saturation <= 0) {
-            quit()
-            return "You starved to death! Game has been reset.\n\n${currentQuadrant.description.initial}"
+            return respawn("You died of starvation! You have respawned at your last checkpoint.")
         }
 
         if (labyrinthActive && currentQuadrant.quadrantId == "J4") {
@@ -138,6 +137,11 @@ open class GameEngine(private val world: World) {
                 }
             }
             visitedQuadrants.add(currentQuadrant.quadrantId)
+
+            if (currentQuadrant.quadrantId in checkpointQuadrants) {
+                checkpointQuadrantId = currentQuadrant.quadrantId
+            }
+
             currentQuadrant.description.initial
         }
 
@@ -163,6 +167,7 @@ open class GameEngine(private val world: World) {
 
         if (!item.isCollectable) return "You can't take that."
 
+        itemSources[item] = currentQuadrant.quadrantId
         playerInventory.add(item)
         currentQuadrant.visibleObjects.items.remove(item)
         return "You pick up ${item.itemName}."
@@ -199,6 +204,8 @@ open class GameEngine(private val world: World) {
             }
         }
 
+        currentQuadrant.visibleObjects.items.add(item)
+        itemSources.remove(item)
         playerInventory.remove(item)
         return "You drop ${item.itemName}."
     }
@@ -346,7 +353,7 @@ open class GameEngine(private val world: World) {
             if ("mirror_labyrinth_complete" !in gameFlags) {
                 return "The ocean stretches endlessly before you. You don't feel ready to leave yet. There is still something unfinished on this island."
             }
-            return "You untie the weathered boat and push off from shore together. The island recedes behind you.\n\nHalfway across the cove, you reach into your pck and pull out The Utopian Chronicle. Your handwriting filling the pages he started.The story of a journey that began with his obsession and ended with yours.\n\nYour father sees it and goes still.\n\nThe Smiling Ones call from the shore: \"Stay. Stay. Be happy forever.\"\n\nNeither of you turns around.\n\n\"We should let it go,\" you say.\n\nHe looks at the book for along moment. At his handwriting on the first pages. At yours on the rest.\n\n\"Yes,\" he says quietly. \"We should.\"\n\nYou hold it out over the water together. The book falls, hits the surface, floats for a moment, pages spreading like wings, then sinks. Down into the blue.\n\n\"We don't need a map to paradise anymore,\" your father says. \"Because we're not going there. We're going home.\"\n\nYou sail toward the sunrise.\n\nWhat remains: two people, imperfect, real. Sailing toward an imperfect, beautiful world.\n\nThat's enough. That's everything."
+            return "WIN:You untie the weathered boat and push off from shore together. The island recedes behind you.\n\nHalfway across the cove, you reach into your pck and pull out The Utopian Chronicle. Your handwriting filling the pages he started.The story of a journey that began with his obsession and ended with yours.\n\nYour father sees it and goes still.\n\nThe Smiling Ones call from the shore: \"Stay. Stay. Be happy forever.\"\n\nNeither of you turns around.\n\n\"We should let it go,\" you say.\n\nHe looks at the book for along moment. At his handwriting on the first pages. At yours on the rest.\n\n\"Yes,\" he says quietly. \"We should.\"\n\nYou hold it out over the water together. The book falls, hits the surface, floats for a moment, pages spreading like wings, then sinks. Down into the blue.\n\n\"We don't need a map to paradise anymore,\" your father says. \"Because we're not going there. We're going home.\"\n\nYou sail toward the sunrise.\n\nWhat remains: two people, imperfect, real. Sailing toward an imperfect, beautiful world.\n\nThat's enough. That's everything."
         }
 
 
@@ -388,6 +395,7 @@ open class GameEngine(private val world: World) {
         hydration = 20
         saturation = 20
         placedKeys.clear()
+        itemSources.clear()
         labyrinthActive = false
         labyrinthQuestion = 0
         labyrinthAwaitingMove = false
@@ -509,6 +517,31 @@ open class GameEngine(private val world: World) {
 
         val idx = labyrinthQuestion - 1
         return "${corridorTexts[idx]}\n\n${questionTexts[idx]}"
+    }
+
+    private fun respawn (cause: String):String {
+
+        playerInventory.forEach { item ->
+            val sourceId = itemSources[item]
+            val sourceQuadrant = world.quadrants.find { it.quadrantId == sourceId }
+            sourceQuadrant?.visibleObjects?.items?.add(item)
+        }
+        playerInventory.clear()
+
+        placedKeys.forEach { key ->
+            val sourceId = itemSources[key]
+            val sourceQuadrant = world.quadrants.find { it.quadrantId == sourceId }
+            sourceQuadrant?.visibleObjects?.items?.add(key)
+        }
+        placedKeys.clear()
+
+        itemSources.clear()
+
+        val checkpoint = world.quadrants.first { it.quadrantId == checkpointQuadrantId }
+        currentQuadrant = checkpoint
+        hydration = 20
+        saturation = 20
+        return "CHECKPOINT:$cause"
     }
 
     fun stats(): String {

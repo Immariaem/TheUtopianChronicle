@@ -27,3 +27,11 @@ kotlin {
 		freeCompilerArgs.addAll("-Xjsr305=strict")
 	}
 }
+
+tasks.bootJar {
+    archiveFileName.set("text-adventure.jar")
+}
+
+tasks.register("package") {
+    dependsOn("bootJar")
+}

@@ -1,14 +1,6 @@
 {
   "quadrantId": "A9",
-  "coordinates": {
-    "row": "A",
-    "column": 9,
-    "x": 9,
-    "y": 0
-  },
   "name": "Sky Gardens",
-  "region": "sky_city",
-  "function": "exploration",
   "description": {
     "initial": "You enter the Sky Gardens, and the noise and bustle of the market falls away, replaced by tranquil beauty. These floating gardens are a marvel,somehow, trees and flowers grow here in the open air, their roots planted in large stone planters filled with rich soil. Vines cascade over the edges of platforms, flowers bloom in impossible profusion, and the air is thick with the scent of jasmine and roses. Paths of smooth stone wind between the plantings, and small fountains burble peacefully. Butterflies flit from flower to flower, and hummingbirds hover near bright blossoms. It feels like a secret paradise suspended in the sky.",
     "return": "The peaceful Sky Gardens. Flowers bloom, water burbles in fountains, and butterflies dance in the sunlight.",
@@ -37,7 +29,6 @@
       {
         "npcId": "gardener",
         "npcName": "Gardener",
-        "spawnCondition": null,
         "dialogue": "\"Beautiful, are they not? These gardens have been here since the founding of Nephelia. The flowers grow differently up here, something about the thin air and the sunlight. I have been tending them for thirty years and they still surprise me every spring.\"",
         "dialogueConditions": [
           {
@@ -73,13 +64,10 @@
       }
     ]
   },
-  "requiredFlags": ["reached_sky_city"],
-  "unlockFlags": ["explored_sky_gardens"],
-  "storyCheckpoint": null,
-  "puzzleData": null,
-  "questData": null,
-  "specialMechanics": null,
-  "metadata": {
-    "isCriticalPath": false
-  }
+  "requiredFlags": [
+    "reached_sky_city"
+  ],
+  "unlockFlags": [
+    "explored_sky_gardens"
+  ]
 }

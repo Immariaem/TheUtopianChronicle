@@ -1,14 +1,6 @@
 {
   "quadrantId": "B1",
-  "coordinates": {
-    "row": "B",
-    "column": 1,
-    "x": 1,
-    "y": 1
-  },
   "name": "Western Lands Edge",
-  "region": "western_lands",
-  "function": "filler",
   "description": {
     "initial": "You've wandered to the edge of the western lands, where civilization fades into wilderness. The terrain here is rugged and uninviting, with scattered rocks and sparse vegetation clinging to thin soil. To the east lies the Enchanted Forest, its treeline visible in the distance, beckoning with mystery. There's little reason to linger here at the world's edge.",
     "return": "The western edge of the lands. Empty and windswept, with the forest waiting to the east.",
@@ -46,12 +38,5 @@
     ]
   },
   "requiredFlags": [],
-  "unlockFlags": [],
-  "storyCheckpoint": null,
-  "puzzleData": null,
-  "questData": null,
-  "specialMechanics": null,
-  "metadata": {
-    "isCriticalPath": false
-  }
+  "unlockFlags": []
 }

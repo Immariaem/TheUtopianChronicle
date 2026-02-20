@@ -1,14 +1,6 @@
 {
   "quadrantId": "A1",
-  "coordinates": {
-    "row": "A",
-    "column": 1,
-    "x": 1,
-    "y": 0
-  },
   "name": "Western Lands North Border",
-  "region": "western_lands",
-  "function": "filler",
   "description": {
     "initial": "You've reached the northernmost edge of the western lands. Rolling hills stretch endlessly to the west, covered in wild grasses that sway in the wind. This is as far north and west as your journey needs to take you. Your path lies to the east, toward the Enchanted Forest and beyond.",
     "return": "The northern border of the western lands. Wild, untamed country stretches westward beyond the horizon.",
@@ -17,7 +9,7 @@
   "connections": {
     "north": {
       "blocked": true,
-      "blockedMessage": "Your Adventure has it's limits! Continue on a different path."
+      "blockedMessage": "The hills roll onward into grey emptiness. The world simply ends here."
     },
     "south": {
       "quadrantId": "B1",
@@ -29,21 +21,14 @@
     },
     "west": {
       "blocked": true,
-      "blockedMessage": "This is your way back Home! You want to find your father. Continue on a different path"
+      "blockedMessage": "The wild lands stretch endlessly westward into nothing. There is no reason to go that way."
     }
   },
   "visibleObjects": {
-  "npcs": [],
-  "items": [],
-  "interactables": []
-},
+    "npcs": [],
+    "items": [],
+    "interactables": []
+  },
   "requiredFlags": [],
-  "unlockFlags": [],
-  "storyCheckpoint": null,
-  "puzzleData": null,
-  "questData": null,
-  "specialMechanics": null,
-  "metadata": {
-    "isCriticalPath": false
-  }
+  "unlockFlags": []
 }

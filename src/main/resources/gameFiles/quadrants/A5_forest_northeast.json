@@ -1,14 +1,6 @@
 {
   "quadrantId": "A5",
-  "coordinates": {
-    "row": "A",
-    "column": 5,
-    "x": 5,
-    "y": 0
-  },
   "name": "Forest Northeast",
-  "region": "enchanted_forest",
-  "function": "filler",
   "description": {
     "initial": "The northeastern corner of the Enchanted Forest. Here, the trees begin to thin slightly as the forest transitions toward the mountains in the distance. You can see rocky outcroppings between the trees, and the ground becomes more uneven. The magical atmosphere of the forest mingles with something else, a crystalline energy that seems to emanate from the mountains ahead.",
     "return": "Where the forest meets the approach to the mountains. Trees give way to rock and stone.",
@@ -17,7 +9,7 @@
   "connections": {
     "north": {
       "blocked": true,
-      "blockedMessage": "There is no path going north from here."
+      "blockedMessage": "The terrain rises sharply into impassable ridges of stone. There is no way through."
     },
     "south": {
       "quadrantId": "B5",
@@ -46,12 +38,5 @@
     ]
   },
   "requiredFlags": [],
-  "unlockFlags": [],
-  "storyCheckpoint": null,
-  "puzzleData": null,
-  "questData": null,
-  "specialMechanics": null,
-  "metadata": {
-    "isCriticalPath": false
-  }
+  "unlockFlags": []
 }

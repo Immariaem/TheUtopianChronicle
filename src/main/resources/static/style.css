@@ -306,3 +306,124 @@ body {
     color: #593728;
     opacity: 0.7;
 }
+
+/* ===== WIN / CREDITS ===== */
+.win-mode .page-right-content {
+    display: none;
+}
+
+.credits-overlay {
+    position: absolute;
+    top: 50px;
+    left: 45px;
+    right: 90px;
+    bottom: 90px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.credits-ending {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-size: 11px;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: none;
+    padding: 0 140px;
+    transform: translateY(430px);
+    animation: endingScroll 85s linear forwards;
+}
+
+@keyframes endingScroll {
+    from { transform: translateY(430px); }
+    to   { transform: translateY(-700px); }
+}
+
+.credits-scroll {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    text-transform: none;
+    padding: 0 80px;
+    transform: translateY(500px);
+    animation: creditsRoll 70s linear forwards;
+    animation-delay: 75s;
+}
+
+@keyframes creditsRoll {
+    from { transform: translateY(500px); }
+    to   { transform: translateY(-100%); }
+}
+
+.credits-gap { height: 120px; }
+.credits-spacer { height: 40px; }
+.credits-spacer.small { height: 16px; }
+.credits-spacer.large { height: 70px; }
+
+.credits-production {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.credits-presents {
+    font-size: 11px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.credits-main-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.credits-role {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.credits-name {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.credits-note {
+    font-size: 10px;
+    font-style: italic;
+    opacity: 0.75;
+    margin-top: 6px;
+    line-height: 1.7;
+}
+
+.credits-quote {
+    font-size: 11px;
+    font-style: italic;
+    line-height: 2.1;
+}
+
+.credits-year {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    opacity: 0.55;
+}
+
+.play-again-btn {
+    width: 100%;
+    height: 100%;
+    font-family: 'Cinzel', sans-serif;
+    font-size: 12px;
+    color: #593728;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.play-again-btn:hover { opacity: 0.6; }

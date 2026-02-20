@@ -1,14 +1,6 @@
 {
   "quadrantId": "A4",
-  "coordinates": {
-    "row": "A",
-    "column": 4,
-    "x": 4,
-    "y": 0
-  },
   "name": "Forest North",
-  "region": "enchanted_forest",
-  "function": "filler",
   "description": {
     "initial": "You've entered the northern reaches of the Enchanted Forest. The trees here are ancient and tall, their branches forming a canopy high above that filters the sunlight into soft, green-tinted beams. The air smells of moss and earth. This is the edge of the forest's magic, you can feel it tingling on your skin, like the forest is aware of your presence and is deciding whether to welcome you.",
     "return": "The northern part of the Enchanted Forest. Ancient trees tower above, and magic whispers through the leaves.",
@@ -38,12 +30,5 @@
     "interactables": []
   },
   "requiredFlags": [],
-  "unlockFlags": [],
-  "storyCheckpoint": null,
-  "puzzleData": null,
-  "questData": null,
-  "specialMechanics": null,
-  "metadata": {
-    "isCriticalPath": false
-  }
+  "unlockFlags": []
 }

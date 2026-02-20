@@ -79,11 +79,17 @@ function updateUI(data) {
 
 // Append response after a command
 function appendResponse(data) {
+    scrollContainer.classList.remove('game-over');
+
     if (data.reset) {
-        const cause = data.description.includes('dehydration') ? 'You died of thirst' : 'You starved to death';
+        const rawDesc = data.checkpoint ? data.description.substring(11) : data.description;
+        const cause = rawDesc.includes('dehydration') ? 'You died of thirst' : 'You starved to death';
+        const checkpointLine = data.checkpoint
+            ? `<p class="location-text">You have been returned to your last checkpoint.</p>`
+            : '';
         outputDiv.innerHTML = `
-            <p class="game-over-title">Game Over</p>
             <p class="game-over-cause">${cause}</p>
+            ${checkpointLine}
             <p class="location-title">${data.quadrant}</p>
             <p class="location-text">${data.quadrantDescription}</p>
         `;
@@ -93,6 +99,62 @@ function appendResponse(data) {
         scrollContainer.scrollTop = 0;
         return;
     } else {
+        if (data.description.startsWith('WIN:')) {
+            const endingText = data.description.substring(4);
+
+            document.body.classList.add('win-mode');
+            commandInput.disabled = true;
+            outputDiv.innerHTML = '';
+
+            const creditsHTML = `
+                <div class="credits-overlay">
+                    <div class="credits-ending">${endingText.replace(/\n/g, '<br>')}</div>
+                    <div class="credits-scroll">
+                        <p class="credits-production">A Project Code Production</p>
+                        <div class="credits-spacer"></div>
+                        <p class="credits-presents">presents</p>
+                        <div class="credits-spacer"></div>
+                        <p class="credits-main-title">The Utopian Chronicle</p>
+                        <div class="credits-spacer large"></div>
+                        <p class="credits-role">Written & Designed by</p>
+                        <div class="credits-spacer small"></div>
+                        <p class="credits-name">Maria Emmerich</p>
+                        <div class="credits-spacer large"></div>
+                        <p class="credits-role">Developed by</p>
+                        <div class="credits-spacer small"></div>
+                        <p class="credits-name">Maria Emmerich</p>
+                        <p class="credits-note">with a great deal of help</p>
+                        <div class="credits-spacer large"></div>
+                        <p class="credits-role">Special Thanks to</p>
+                        <div class="credits-spacer small"></div>
+                        <p class="credits-name">My Dad</p>
+                        <div class="credits-spacer small"></div>
+                        <p class="credits-name">My Family</p>
+                        <div class="credits-spacer small"></div>
+                        <p class="credits-name">My Girlfriend & My Friends</p>
+                        <div class="credits-spacer small"></div>
+                        <p class="credits-name">Claude</p>
+                        <div class="credits-spacer small"></div>
+                        <p class="credits-note">And everyone who believed in this<br>before it believed in itself</p>
+                        <div class="credits-spacer large"></div>
+                        <p class="credits-quote">"Utopia is not a place to be found.<br>It is the moment you stop searching<br>and realise you were already there."</p>
+                        <div class="credits-spacer large"></div>
+                        <p class="credits-year">© 2026 Project Code</p>
+                        <div class="credits-spacer large"></div>
+                    </div>
+                </div>
+            `;
+
+            document.querySelector('.book').insertAdjacentHTML('beforeend', creditsHTML);
+
+            document.querySelector('.credits-scroll').addEventListener('animationend', () => {
+                document.querySelector('.command-wrapper').innerHTML =
+                    '<button class="play-again-btn" onclick="location.reload()">Play Again</button>';
+            });
+
+            return;
+        }
+
         const isEphemeral = data.description.startsWith('EPHEMERAL:');
         const displayText = isEphemeral ? data.description.substring(10) : data.description;
 

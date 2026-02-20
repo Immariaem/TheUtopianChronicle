@@ -2,11 +2,6 @@ package study.coco.project_code
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.SerialName
-import kotlinx.serialization.json.JsonElement
-import java.util.Collections.emptyList
-
-@Serializable
-data class Coordinates(val row: String, val column: Int, val x: Int, val y: Int)
 
 @Serializable
 data class Description(
@@ -19,8 +14,7 @@ data class Description(
 data class Connection(
     val quadrantId: String? = null,
     val blocked: Boolean,
-    val blockedMessage: String? = null,
-    val travelMethod: String? = null
+    val blockedMessage: String? = null
 )
 
 @Serializable
@@ -41,7 +35,6 @@ data class DialogueCondition(
 data class Npc(
     val npcId: String,
     val npcName: String,
-    val spawnCondition: String? = null,
     val dialogue: String,
     val dialogueConditions: List<DialogueCondition> = emptyList(),
     val isActive: Boolean
@@ -51,7 +44,6 @@ data class Npc(
 data class Item(
     val itemId: String,
     val itemName: String,
-    val spawnCondition: String? = null,
     val isCollectable: Boolean,
     val itemType: String = "generic",
     val itemMessage: String? = null
@@ -70,28 +62,17 @@ data class Interactable(
 @Serializable
 data class VisibleObjects(
     val npcs: List<Npc> = emptyList(),
-    val items: MutableList<Item> = mutableListOf<Item>(),
+    val items: MutableList<Item> = mutableListOf(),
     val interactables: List<Interactable> = emptyList()
 )
 
 @Serializable
-data class Metadata(val isCriticalPath: Boolean)
-
-@Serializable
 data class Quadrant(
     val quadrantId: String,
-    val coordinates: Coordinates,
     val name: String,
-    val region: String,
-    val function: String,
     val description: Description,
     val connections: Connections,
     val visibleObjects: VisibleObjects,
     val requiredFlags: List<String> = emptyList(),
-    val unlockFlags: List<String> = emptyList(),
-    val storyCheckpoint: String? = null,
-    val puzzleData: JsonElement? = null,
-    val questData: JsonElement? = null,
-    val specialMechanics: JsonElement? = null,
-    val metadata: Metadata
+    val unlockFlags: List<String> = emptyList()
 )
