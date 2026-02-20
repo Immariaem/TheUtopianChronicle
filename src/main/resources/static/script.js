@@ -75,6 +75,7 @@ function updateUI(data) {
     scrollContainer.scrollTop = scrollContainer.scrollHeight;
     updateInventory(data.inventory);
     updateStats(data.hydration, data.saturation);
+    if (data.discoveredAreas) updateMap(data.discoveredAreas);
 }
 
 // Append response after a command
@@ -96,6 +97,7 @@ function appendResponse(data) {
         scrollContainer.classList.add('game-over');
         updateInventory(data.inventory);
         updateStats(data.hydration, data.saturation);
+        if (data.discoveredAreas) updateMap(data.discoveredAreas);
         scrollContainer.scrollTop = 0;
         return;
     } else {
@@ -174,6 +176,7 @@ function appendResponse(data) {
     scrollContainer.scrollTop = scrollContainer.scrollHeight;
     updateInventory(data.inventory);
     updateStats(data.hydration, data.saturation);
+    if (data.discoveredAreas) updateMap(data.discoveredAreas);
 }
 
 // Pixel-art SVG icons for inventory items
@@ -243,6 +246,17 @@ function updateInventory(items) {
             }
         } else {
             plusIcon.style.display = 'block';
+        }
+    });
+}
+
+// Update map layers based on discovered areas
+function updateMap(areas) {
+    const areaIds = ['enchantedForest', 'mountainRange', 'nephelia', 'desertOfTruth', 'underwaterRealm', 'islandOfBliss'];
+    areaIds.forEach(id => {
+        const layer = document.getElementById('map-' + id);
+        if (layer) {
+            layer.classList.toggle('discovered', areas.includes(id));
         }
     });
 }

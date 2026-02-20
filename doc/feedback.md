@@ -37,7 +37,7 @@
 - tbd
 
 ## Feedback Session 2 - Design Feedback
-**Date:** 3. Februar 2026  
+**Date:** 24. Februar 2026  
 **Feedback from:** Kjell & Conrad
 
 ### Feedback received:

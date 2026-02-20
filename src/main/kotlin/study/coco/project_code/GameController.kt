@@ -17,7 +17,8 @@ class GameController {
             "description" to engine.currentQuadrant.description.initial,
             "inventory" to engine.getInventory().map { it.itemName },
             "hydration" to engine.getHydration(),
-            "saturation" to engine.getSaturation()
+            "saturation" to engine.getSaturation(),
+            "discoveredAreas" to engine.getDiscoveredAreas()
         )
     }
 
@@ -34,7 +35,8 @@ class GameController {
             "checkpoint" to isCheckpoint,
             "inventory" to engine.getInventory().map { it.itemName },
             "hydration" to engine.getHydration(),
-            "saturation" to engine.getSaturation()
+            "saturation" to engine.getSaturation(),
+            "discoveredAreas" to engine.getDiscoveredAreas()
         )
     }
 }

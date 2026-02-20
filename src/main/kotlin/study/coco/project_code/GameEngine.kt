@@ -548,6 +548,16 @@ open class GameEngine(private val world: World) {
         return "Hydration: $hydration/20\n Saturation: $saturation/20"
     }
 
+    fun getDiscoveredAreas(): List<String> {
+        val areas = mutableListOf("enchantedForest")
+        if ("met_kira" in gameFlags) areas.add("mountainRange")
+        if ("met_zara" in gameFlags) areas.add("nephelia")
+        if ("reached_desert" in gameFlags) areas.add("desertOfTruth")
+        if ("entered_underwater" in gameFlags) areas.add("underwaterRealm")
+        if ("reached_island" in gameFlags) areas.add("islandOfBliss")
+        return areas
+    }
+
     fun getInventory(): List<Item> = playerInventory.toList()
     fun getHydration(): Int = hydration
     fun getSaturation(): Int = saturation

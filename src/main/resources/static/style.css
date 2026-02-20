@@ -427,3 +427,34 @@ body {
 }
 
 .play-again-btn:hover { opacity: 0.6; }
+
+/* ===== MAP LAYERS ===== */
+.map-layers {
+    position: absolute;
+    top: 50px;
+    left: 45px;
+    right: 90px;
+    bottom: 55px;
+    pointer-events: none;
+    display: none;
+}
+
+.book.map-view .map-layers {
+    display: block;
+}
+
+.map-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.map-layer.discovered {
+    opacity: 1;
+}
