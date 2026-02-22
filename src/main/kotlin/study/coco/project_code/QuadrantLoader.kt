@@ -5,9 +5,13 @@ class QuadrantLoader {
     val engine: GameEngine
 
     init {
-        world.loadQuadrants("quadrants")
-        engine = GameEngine(world)
-        println("Loaded ${world.quadrants.size} quadrants")
+        try {
+            world.loadQuadrants("quadrants")
+            engine = GameEngine(world)
+            println("Loaded ${world.quadrants.size} quadrants")
+        } catch (e: Exception) {
+            println("Failed to initialize game: ${e.message}")
+            throw e
+        }
     }
 }
-

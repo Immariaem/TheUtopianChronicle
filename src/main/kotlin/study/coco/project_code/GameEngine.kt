@@ -26,39 +26,43 @@ open class GameEngine(private val world: World) {
     }
 
     fun processCommand(input: String): String {
-        val parts = input
-            .trim()
-            .replace(Regex("\\s+"), " ")
-            .lowercase()
-            .split(" ", limit = 2)
-        val command = parts[0]
-        val argument = if (parts.size > 1) parts[1] else ""
+        return try {
+            val parts = input
+                .trim()
+                .replace(Regex("\\s+"), " ")
+                .lowercase()
+                .split(" ", limit = 2)
+            val command = parts[0]
+            val argument = if (parts.size > 1) parts[1] else ""
 
-        return when (command) {
-            "n","north" -> move("north")
-            "s","south" -> move("south")
-            "e","east" -> move("east")
-            "w","west" -> move("west")
-            "go" -> move(argument)
-            "t","take" -> take(argument)
-            "d","drop" -> drop(argument)
-            "i","inventory" -> inventory()
-            "sts", "stats" -> stats()
-            "l","look" -> look()
-            "x","examine" -> examine(argument)
-            "u","use", "eat", "drink" -> use(argument)
-            "talk" -> talk(argument)
-            "dive" -> dive()
-            "a" -> if(labyrinthActive) answerLabyrinth(command) else answerGuardian(command)
-            "b" -> if(labyrinthActive) answerLabyrinth(command) else answerGuardian(command)
-            "c" -> if(labyrinthActive) answerLabyrinth(command) else answerGuardian(command)
-            "h","help" -> help()
-            "q","quit" -> quit()
+            return when (command) {
+                "n","north" -> move("north")
+                "s","south" -> move("south")
+                "e","east" -> move("east")
+                "w","west" -> move("west")
+                "go" -> move(argument)
+                "t","take" -> take(argument)
+                "d","drop" -> drop(argument)
+                "i","inventory" -> inventory()
+                "sts", "stats" -> stats()
+                "l","look" -> look()
+                "x","examine" -> examine(argument)
+                "u","use", "eat", "drink" -> use(argument)
+                "talk" -> talk(argument)
+                "dive" -> dive()
+                "a" -> if(labyrinthActive) answerLabyrinth(command) else answerGuardian(command)
+                "b" -> if(labyrinthActive) answerLabyrinth(command) else answerGuardian(command)
+                "c" -> if(labyrinthActive) answerLabyrinth(command) else answerGuardian(command)
+                "h","help" -> help()
+                "q","quit" -> quit()
 
-            "warp" -> warp(argument)
-            "flags" -> setFlags(argument)
+                "warp" -> warp(argument)
+                "flags" -> setFlags(argument)
 
-            else -> "Unknown command: $command. Type 'help' for a list of commands."
+                else -> "Unknown command: $command. Type 'help' for a list of commands."
+            }
+        } catch (e: Exception) {
+            "Something went wrong processing that command. Try again."
         }
     }
 
