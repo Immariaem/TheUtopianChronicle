@@ -1,0 +1,53 @@
+{
+  "quadrantId": "D5",
+  "name": "Singing Chamber",
+  "description": {
+    "initial": "You've found the legendary Singing Chamber, the heart of the Crystal Caves. Here, the crystals' harmonies converge into a single, overwhelming song that seems to touch your soul. The chamber is perfectly circular, with crystals arranged like the pipes of an organ. At the center stands a crystalline console with spaces for three color sequences. This is where you must prove you've memorized all three tablets.",
+    "return": "The Singing Chamber. The crystal song continues its eternal melody.",
+    "atmospheric": "The music here is almost visible, the air shimmering with harmonics that transcend normal sound."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "C5",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "E5",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "D6",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "D4",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "crystal_console",
+        "name": "Crystal Console",
+        "examineText": "A console made of interlocked crystals, with three input sections labeled 'Blue,' 'Red,' and 'Green.' Each section has five crystal buttons in different colors. You must input the sequences you memorized from the three chambers.",
+        "canInteract": true,
+        "interactionText": "You carefully input the three sequences you memorized. The crystals chime as you press each one. When the final sequence is complete, the chamber's song shifts to a triumphant chord. A hidden passage opens in the wall, revealing the deeper archives Kira mentioned, and a path to the mining lift that leads to Nephelia."
+      },
+      {
+        "id": "organ_crystals",
+        "name": "Crystal Organ",
+        "examineText": "The crystals arranged along the walls resemble the pipes of a grand organ. Each one produces a different note, and together they create the cave's famous song.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "viewed_blue_tablet",
+    "viewed_red_tablet",
+    "viewed_green_tablet"
+  ],
+  "unlockFlags": []
+}

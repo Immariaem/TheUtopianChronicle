@@ -1,0 +1,42 @@
+{
+  "quadrantId": "E10",
+  "name": "Ocean East",
+  "description": {
+    "initial": "You've reached the eastern edges of the charted ocean. The water here is warm and clear, filled with colorful fish and waving seaweed. Coral formations rise from the depths, some breaking the surface to form small islands barely large enough to stand on. This is a place of beauty and tranquility.",
+    "return": "The eastern ocean. Coral formations create a maze of beauty.",
+    "atmospheric": "Tropical warmth embraces you. The water sparkles like liquid sapphire."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "D10",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "F10",
+      "blocked": false
+    },
+    "east": {
+      "blocked": true,
+      "blockedMessage": "The eastern ocean continues beyond all maps. Your path lies elsewhere."
+    },
+    "west": {
+      "quadrantId": "E9",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "surface_coral",
+        "name": "Surface Coral",
+        "examineText": "Coral formations break the surface here, creating tiny islands teeming with life. Crabs scuttle across them, and seabirds rest on the larger formations.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

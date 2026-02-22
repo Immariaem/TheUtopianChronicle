@@ -1,0 +1,42 @@
+{
+  "quadrantId": "J10",
+  "name": "Ocean South Central",
+  "description": {
+    "initial": "The south-central ocean marks the furthest corner of the explored world. From here, every direction leads back toward civilization, toward home. The water is calm and deep, reflecting a sky that seems larger than anywhere else. This is where journeys end and new ones begin.",
+    "return": "The south-central ocean. The world's corner, where all paths lead home.",
+    "atmospheric": "Endings and beginnings share this space. Every journey must eventually turn toward home."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "I10",
+      "blocked": false
+    },
+    "south": {
+      "blocked": true,
+      "blockedMessage": "The southern ocean extends forever. All paths now lead home."
+    },
+    "east": {
+      "blocked": true,
+      "blockedMessage": "The eastern ocean stretches beyond all maps. Your path lies elsewhere."
+    },
+    "west": {
+      "quadrantId": "J9",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "corner_of_world",
+        "name": "World's Edge",
+        "examineText": "This feels like the corner of the map, where explorers must turn back. There's nothing here but ocean and sky, and the knowledge that home waits in the other direction.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

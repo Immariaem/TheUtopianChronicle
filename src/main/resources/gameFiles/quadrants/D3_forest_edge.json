@@ -1,0 +1,50 @@
+{
+  "quadrantId": "D3",
+  "name": "Forest Edge",
+  "description": {
+    "initial": "You've reached the southeastern edge of the Enchanted Forest, where the trees begin to thin and the ground grows rockier. The transition to mountain terrain is gradual here, with scattered boulders appearing among the trees. You can see the dark mouths of cave entrances in the cliffs ahead, the beginning of the Crystal Caves system.",
+    "return": "The forest edge, where trees give way to mountain stone.",
+    "atmospheric": "The air grows cooler as the forest ends. The scent of earth and stone replaces the smell of leaves and bark."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "C3",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "E3",
+      "blocked": true,
+      "blockedMessage": "Sheer cliff faces block your path, their stone walls offering no opening or foothold."
+    },
+    "east": {
+      "quadrantId": "D4",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "D2",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "boundary_stones",
+        "name": "Boundary Markers",
+        "examineText": "Old stone markers define the edge of the Enchanted Forest. They bear faded symbols, perhaps warnings or blessings for travelers.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "last_trees",
+        "name": "Final Trees",
+        "examineText": "The last trees of the Enchanted Forest grow here, stubbornly clinging to the rocky soil. They seem to wave farewell to those leaving the forest's protection.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

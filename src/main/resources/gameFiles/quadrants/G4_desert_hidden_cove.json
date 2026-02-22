@@ -1,0 +1,64 @@
+{
+  "quadrantId": "G4",
+  "name": "Hidden Cove",
+  "description": {
+    "initial": "You've found it, the hidden cove the Hermit spoke of. A natural harbour\nsheltered by high cliffs, invisible from the sea and nearly impossible to find\nwithout the star navigation. And there, bobbing gently in the protected\nwaters, is a small sailing boat. Old but sound, as if it has been waiting here\nsince before memory.",
+    "return": "The hidden cove. The old vessel waits to carry you to the Island of Bliss.",
+    "atmospheric": "Waves lap gently against the hull of the waiting boat. Everything is ready for the final journey."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "F4",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "H4",
+      "blocked": false,
+      "blockedMessage": null
+    },
+    "east": {
+      "quadrantId": "G5",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "G3",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "hermits_journal",
+        "itemName": "Hermits Journal",
+        "isCollectable": true,
+        "itemType": "readable",
+        "itemMessage": "You read the Hermit's journal. It contains detailed sailing directions to the Island of Bliss and his personal reflections on the journey."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "sailing_boat",
+        "name": "Sailing Boat",
+        "examineText": "A small vessel, old wood worn smooth by years of salt and sun. No name on the\n   bow. The Hermit's notes spoke of a boat kept here by tradition, left for\n  those who follow the stars, so they might complete the journey their searching\n   led them to.",
+        "canInteract": true,
+        "interactionText": "You step aboard the old vessel. Everything is ready: sails, provisions, navigation tools. All that remains is to set sail."
+      },
+      {
+        "id": "buried_spot",
+        "name": "Disturbed Sand",
+        "examineText": "A slight depression in the sand marks where something is buried. The Hermit mentioned his old journal would be here.",
+        "canInteract": true,
+        "interactionText": "You dig carefully and unearth the Hermit's journal. Inside, you find his account of his own journey, his reasons for stopping, and detailed sailing directions to the Island of Bliss. The final piece of the puzzle."
+      }
+    ]
+  },
+  "requiredFlags": [
+    "found_star_point",
+    "met_hermit"
+  ],
+  "unlockFlags": [
+    "star_navigation_complete",
+    "found_boat"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "quadrantId": "F5",
+  "name": "Desert Dunes East",
+  "description": {
+    "initial": "The eastern dunes mark the boundary between the desert and the coast. You can smell salt on the wind now, and the sand becomes darker, mixed with soil. Nerina's currents carried you here from the Underwater Realm, depositing you on the beach that leads into this desert. The path back to the sea lies to the east.",
+    "return": "The eastern dunes. The transition between desert and coast continues.",
+    "atmospheric": "Salt and sand mingle in the air. Two worlds meet here."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "E5",
+      "blocked": true,
+      "blockedMessage": "The cliff rises sheer above the dunes, offering no foothold or passage."
+    },
+    "south": {
+      "quadrantId": "G5",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "F6",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "F4",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "beach_transition",
+        "name": "Sandy Beach",
+        "examineText": "The pure desert sand gradually mixes with darker beach sand. Shells appear among the dunes, carried inland by ancient storms.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "guardian_trial_complete"
+  ],
+  "unlockFlags": [
+    "reached_desert"
+  ]
+}

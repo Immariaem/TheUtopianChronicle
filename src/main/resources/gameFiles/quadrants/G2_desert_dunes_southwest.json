@@ -1,0 +1,53 @@
+{
+  "quadrantId": "G2",
+  "name": "Desert Dunes Southwest",
+  "description": {
+    "initial": "Following the star navigation, you've arrived at the southwestern dunes. The compass led you true. Somewhere ahead, hidden by the cliffs, your father's boat is waiting. The path continues east.",
+    "return": "The southwestern dunes. Part of the star-guided path to the hidden cove.",
+    "atmospheric": "The stars seem closer here, watching over travelers who follow their ancient guidance."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "F2",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "H2",
+      "blocked": true,
+      "blockedMessage": "Impassable terrain blocks the southern route."
+    },
+    "east": {
+      "quadrantId": "G3",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "G1",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "dates",
+        "itemName": "Dates",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You eat the sweet dates. A perfect desert snack."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "navigation_marker",
+        "name": "Stone Cairn",
+        "examineText": "A small pile of stones marks this spot. Others have navigated by stars and left these markers to confirm the path. Your father may have added to this pile.",
+        "canInteract": true,
+        "interactionText": "You add a stone to the cairn, joining the countless travelers who came before you. The path continues east."
+      }
+    ]
+  },
+  "requiredFlags": [
+    "found_star_point"
+  ],
+  "unlockFlags": []
+}

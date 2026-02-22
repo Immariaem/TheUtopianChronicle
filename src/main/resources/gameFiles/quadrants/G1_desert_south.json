@@ -1,0 +1,42 @@
+{
+  "quadrantId": "G1",
+  "name": "Desert South",
+  "description": {
+    "initial": "The southern reaches of the desert are harsher still, with less vegetation and more exposed rock. The dunes here are lower but more numerous, creating a confusing landscape of endless repetition. Without the stars to guide you, navigation would be nearly impossible.",
+    "return": "The southern desert. Rocky and barren, testing all who cross it.",
+    "atmospheric": "The sun beats down mercilessly. Not a single cloud offers respite."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "F1",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "H1",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "G2",
+      "blocked": false
+    },
+    "west": {
+      "blocked": true,
+      "blockedMessage": "The western desert is impassable. Your path lies elsewhere."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "exposed_bedrock",
+        "name": "Exposed Rock",
+        "examineText": "Ancient bedrock shows through the sand here, dark stone worn smooth by millennia of wind and sand. It's hot to the touch.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

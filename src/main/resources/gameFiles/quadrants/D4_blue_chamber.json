@@ -1,0 +1,61 @@
+{
+  "quadrantId": "D4",
+  "name": "Blue Chamber",
+  "description": {
+    "initial": "You enter a chamber dominated by crystals of deep, sapphire blue. They grow in clusters from every surface, their color so intense it seems to tint the very air. At the center of the chamber stands a pedestal holding a color-coded tablet, one of the three Kira mentioned. This is part of the Coral Cipher puzzle. The tablet displays a sequence of five colors, glowing softly.",
+    "return": "The Blue Chamber. The sapphire crystals pulse with their eternal rhythm.",
+    "atmospheric": "The blue light creates an underwater feeling, as if you've descended into the depths of an ocean made of stone."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "C4",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "E4",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "D5",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "D3",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "blue_crystal_key",
+        "itemName": "Blue Crystal Key",
+        "isCollectable": true,
+        "itemType": "quest",
+        "itemMessage": "You pick up the slightly glowing blue crystal key."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "blue_tablet",
+        "name": "Color Tablet",
+        "examineText": "A tablet made of polished stone displays five glowing colors in sequence: Blue, Green, Red, Yellow, Blue. Kira warned that you can only view each tablet once. If you examine it again, the pattern changes.",
+        "canInteract": true,
+        "interactionText": "You memorize the pattern carefully: Blue, Green, Red, Yellow, Blue. The tablet pulses once, acknowledging your observation. You sense you should not look again."
+      },
+      {
+        "id": "sapphire_formation",
+        "name": "Sapphire Crystal Cluster",
+        "examineText": "A magnificent cluster of sapphire-blue crystals, some as long as your arm. They emit a low hum that harmonizes with the other crystals in the caves.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "met_kira"
+  ],
+  "unlockFlags": [
+    "viewed_blue_tablet"
+  ]
+}

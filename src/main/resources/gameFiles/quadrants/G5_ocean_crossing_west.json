@@ -1,0 +1,42 @@
+{
+  "quadrantId": "G5",
+  "name": "Ocean Crossing West",
+  "description": {
+    "initial": "You sail into the western ocean, leaving the coast behind. The water here is deep blue, and the swells are larger than anything you've experienced. According to the Hermit's directions, you must sail west until you can no longer see land, and then the island will find you.",
+    "return": "The western ocean crossing. Open water stretches in all directions.",
+    "atmospheric": "The vast emptiness of the open ocean is both terrifying and liberating. You are truly alone."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "F5",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "H5",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "G6",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "G4",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "horizon",
+        "name": "Empty Horizon",
+        "examineText": "Nothing but water and sky in every direction. The coast has disappeared behind you. According to the Hermit, this is when the island reveals itself to true seekers.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

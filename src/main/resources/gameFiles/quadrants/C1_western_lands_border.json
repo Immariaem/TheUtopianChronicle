@@ -1,0 +1,34 @@
+{
+  "quadrantId": "C1",
+  "name": "Western Lands Border",
+  "description": {
+    "initial": "You've wandered to the western border, where the civilized lands meet the wild unknown. Rocky outcrops and scraggly trees dot the landscape. This is frontier territory, rarely traveled and holding little of interest. Your path lies to the east, toward the forest and beyond.",
+    "return": "The western border region. Empty and windswept, offering nothing but a view of endless western plains.",
+    "atmospheric": "The wind carries dust and the faint howl of distant wolves. This is the edge of the known world."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "B1",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "D1",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "C2",
+      "blocked": false
+    },
+    "west": {
+      "blocked": true,
+      "blockedMessage": "The plains dissolve into a featureless grey horizon. There is nothing out there."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": []
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

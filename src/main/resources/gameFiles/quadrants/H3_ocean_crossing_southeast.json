@@ -1,0 +1,44 @@
+{
+  "quadrantId": "H3",
+  "name": "Ocean Crossing Southeast",
+  "description": {
+    "initial": "The southeastern waters are dotted with small, rocky outcrops, the first signs of land since you left the hidden cove. Seabirds rest on these tiny islands, and you can see seaweed and barnacles coating the rocks. The Island of Bliss cannot be far now.",
+    "return": "The southeastern crossing. Rocky outcrops break the endless blue.",
+    "atmospheric": "Seabirds cry overhead. Land feels close, even if you cannot see it yet."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "G3",
+      "blocked": true,
+      "blockedMessage": "Dangerous rocks block the northern passage."
+    },
+    "south": {
+      "quadrantId": "I3",
+      "blocked": true,
+      "blockedMessage": "Rocky outcrops choke the surface above you. There is no safe way up here."
+    },
+    "east": {
+      "quadrantId": "H4",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "H2",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "rocky_outcrops",
+        "name": "Sea Rocks",
+        "examineText": "Small rocky islands dot the water, too small to land on but significant as the first land you've seen in days. Birds have colonized every inch.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

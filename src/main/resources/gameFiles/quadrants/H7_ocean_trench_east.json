@@ -1,0 +1,52 @@
+{
+  "quadrantId": "H7",
+  "name": "Ocean Trench East",
+  "description": {
+    "initial": "The eastern edge of the great trench is marked by ancient coral formations, some grown to monstrous size over millennia. These corals form natural bridges across the narrowest parts of the chasm, allowing passage for those brave enough to cross.",
+    "return": "The eastern trench edge. Ancient coral bridges span the darkness.",
+    "atmospheric": "The coral seems to hum with ancient memory. These formations were old when the merfolk first came."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "G7",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "I7",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "H8",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "H6",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "luminous_kelp",
+        "itemName": "Luminous Kelp",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You chew on the glowing kelp. It tastes of the sea and fills your stomach with a gentle warmth."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "coral_bridge",
+        "name": "Ancient Bridge",
+        "examineText": "A natural bridge of coral spans part of the trench, grown solid over countless years. Merfolk have carved handholds into its surface.",
+        "canInteract": true,
+        "interactionText": "You swim across the coral bridge, looking down into the endless darkness below. The bridge holds firm, ancient and reliable."
+      }
+    ]
+  },
+  "requiredFlags": [
+    "entered_underwater"
+  ],
+  "unlockFlags": []
+}

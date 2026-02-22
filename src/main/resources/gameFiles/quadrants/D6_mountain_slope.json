@@ -1,0 +1,50 @@
+{
+  "quadrantId": "D6",
+  "name": "Mountain Slope",
+  "description": {
+    "initial": "You emerge from the caves onto a steep mountain slope. The terrain here is treacherous, loose rock and narrow ledges requiring careful navigation. Above, the peaks disappear into clouds. Below, a vast valley opens up, eventually giving way to distant blue that might be ocean. The caves continue deeper into the mountain to the west.",
+    "return": "The mountain slope. The view remains breathtaking despite the treacherous footing.",
+    "atmospheric": "Wind whips at your clothes. Small stones skitter downward with each step you take."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "C6",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "E6",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "D7",
+      "blocked": true,
+      "blockedMessage": "The slope becomes too steep and unstable to traverse. You cannot go this way."
+    },
+    "west": {
+      "quadrantId": "D5",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "mountain_goats",
+        "name": "Wild Goats",
+        "examineText": "A small herd of mountain goats picks its way across the impossible terrain with ease. They pause to watch you, unafraid.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "cave_exit",
+        "name": "Cave Mouth",
+        "examineText": "The cave entrance you emerged from yawns dark against the grey stone. Faint crystal light glows from within.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

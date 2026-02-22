@@ -1,0 +1,52 @@
+{
+  "quadrantId": "H9",
+  "name": "Underwater Southeast",
+  "description": {
+    "initial": "The southeastern waters of the Underwater Realm are quieter than other areas. Ancient statues dot the seafloor, remnants of a civilization that existed before even the merfolk. Their origin is lost to time, but the merfolk maintain them with reverence.",
+    "return": "The southeastern underwater realm. Ancient statues watch from the seafloor.",
+    "atmospheric": "History weighs heavily here. These statues have watched the ocean for millennia."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "G9",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "I9",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "H10",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "H8",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "shell_water",
+        "itemName": "Shell Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink fresh water collected inside a giant shell. Cool and clear."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "ancient_statues",
+        "name": "Seafloor Statues",
+        "examineText": "Stone figures stand in rows on the ocean floor, their features worn by time but still recognizable as humanoid. They predate the merfolk civilization by unknown ages.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "entered_underwater"
+  ],
+  "unlockFlags": []
+}

@@ -1,0 +1,57 @@
+{
+  "quadrantId": "F3",
+  "name": "Desert Dunes North",
+  "description": {
+    "initial": "The northern dunes stretch before you, golden waves frozen in time. Here and there, hardy desert plants cling to life, their roots reaching deep for hidden water. The silence is profound, broken only by the whisper of sand and the occasional cry of a distant bird.",
+    "return": "The northern dunes. Golden sand stretches toward the horizon.",
+    "atmospheric": "Heat shimmers rise from the sand, making distant dunes appear to float above the ground."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "E3",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "G3",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "F4",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "F2",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "cactus_fruit",
+        "itemName": "Cactus Fruit",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You eat the juicy cactus fruit. It quenches both hunger and thirst!"
+      },
+      {
+        "itemId": "dates",
+        "itemName": "Dates",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You eat the sweet dates. A perfect desert snack."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "desert_plant",
+        "name": "Desert Sage",
+        "examineText": "A tough, grey-green plant that has somehow found enough water to survive. Its leaves are thick and waxy, hoarding every drop of moisture.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

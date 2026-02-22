@@ -1,0 +1,43 @@
+{
+  "quadrantId": "F6",
+  "name": "Ocean Shallows",
+  "description": {
+    "initial": "You're in the coastal shallows where the desert meets the sea. The water here is warm and clear, barely deep enough to swim. Sandbars create a maze of channels, and colorful fish dart through the warm water. This is a peaceful place, a buffer between the harsh desert and the deep ocean.",
+    "return": "The ocean shallows. Warm, clear water laps at sandy shores.",
+    "atmospheric": "The water is so clear you can see every grain of sand on the bottom. Small crabs scuttle away from your shadow."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "E6",
+      "blocked": true,
+      "blockedMessage": "Rocky cliffs block passage to the caves from here."
+    },
+    "south": {
+      "quadrantId": "G6",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "F7",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "F5",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "sandbar",
+        "name": "Exposed Sandbar",
+        "examineText": "A sandbar rises just above the waterline, creating a natural resting spot. Shells and sea glass litter its surface.",
+        "canInteract": true,
+        "interactionText": "You rest on the sandbar, letting the warm water lap at your feet. It's peaceful here, a moment of calm in your journey."
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

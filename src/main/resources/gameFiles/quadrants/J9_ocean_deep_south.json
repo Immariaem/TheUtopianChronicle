@@ -1,0 +1,44 @@
+{
+  "quadrantId": "J9",
+  "name": "Underwater Deep South",
+  "description": {
+    "initial": "The deepest southern reaches of the Underwater Realm are cold and dark, barely touched by the merfolk civilization. Only the bravest explorers come here, and many don't return. The pressure is immense, and strange things move in the darkness, things that predate even the ancient civilizations whose ruins dot the seafloor.",
+    "return": "The deep southern waters. Cold, dark, and ancient beyond measure.",
+    "atmospheric": "Primordial darkness. Things older than memory swim here."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "I9",
+      "blocked": false
+    },
+    "south": {
+      "blocked": true,
+      "blockedMessage": "The abyss extends beyond the reach of even Kira's crystal. You cannot survive these depths."
+    },
+    "east": {
+      "quadrantId": "J10",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "J8",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "primordial_shape",
+        "name": "Ancient Presence",
+        "examineText": "Something vast moves in the darkness below, so large it seems more like a landscape than a creature. It pays you no attention, following paths it has swum for millions of years.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "entered_underwater"
+  ],
+  "unlockFlags": []
+}

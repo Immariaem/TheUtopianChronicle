@@ -1,0 +1,62 @@
+{
+  "quadrantId": "E6",
+  "name": "Green Chamber",
+  "description": {
+    "initial": "The Green Chamber surrounds you with crystals of every shade of green, from pale mint to deep emerald. The effect is like standing in an underwater forest, peaceful and serene. The third and final tablet waits on its pedestal, the last piece of the Coral Cipher.",
+    "return": "The Green Chamber. The emerald crystals create their eternal forest of stone.",
+    "atmospheric": "The green light is soothing, creating a sense of growth and life even in this underground space."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "D6",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "F6",
+      "blocked": true,
+      "blockedMessage": "The caves don't extend further south. You must find another path."
+    },
+    "east": {
+      "quadrantId": "E7",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "E5",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "green_crystal_key",
+        "itemName": "Green Crystal Key",
+        "isCollectable": true,
+        "itemType": "quest",
+        "itemMessage": "You pick up the venomously glowing green crystal key."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "green_tablet",
+        "name": "Color Tablet",
+        "examineText": "The final tablet displays: Green, Yellow, Yellow, Red, Green. This is the last sequence you need for the Coral Cipher.",
+        "canInteract": true,
+        "interactionText": "You commit the final sequence to memory: Green, Yellow, Yellow, Red, Green. The tablet acknowledges you. Now you have all three patterns."
+      },
+      {
+        "id": "emerald_formation",
+        "name": "Emerald Crystal Cluster",
+        "examineText": "Emerald crystals grow in spiraling patterns that seem almost organic, like frozen plants reaching toward an invisible sun.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "met_kira"
+  ],
+  "unlockFlags": [
+    "viewed_green_tablet"
+  ]
+}

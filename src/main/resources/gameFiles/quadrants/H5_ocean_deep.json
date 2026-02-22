@@ -1,0 +1,45 @@
+{
+  "quadrantId": "H5",
+  "name": "Ocean Deep",
+  "description": {
+    "initial": "You descend into the deepest part of the Underwater Realm, where light from the surface barely penetrates. The water is cold here, and the pressure immense. Strange creatures drift past, their forms barely visible in the darkness. This is the ocean's abyss.",
+    "return": "The ocean deep. Cold darkness extends in all directions.",
+    "atmospheric": "The weight of the entire ocean presses down. Only the bravest merfolk venture here."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "G5",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "I5",
+      "blocked": true,
+      "blockedMessage": "The underwater realm doesn't extend toward the island. You must surface to reach it."
+    },
+    "east": {
+      "quadrantId": "H6",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "H4",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "abyssal_creature",
+        "name": "Deep Dweller",
+        "examineText": "A creature of the abyss drifts past, its body almost entirely transparent, lit only by bioluminescent organs. It seems unaware of your presence.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "entered_underwater"
+  ],
+  "unlockFlags": []
+}

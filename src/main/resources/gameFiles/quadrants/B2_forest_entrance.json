@@ -1,0 +1,59 @@
+{
+  "quadrantId": "B2",
+  "name": "Forest Entrance",
+  "description": {
+    "initial": "You stand at the threshold of the Enchanted Forest, your father's book clutched tightly in your hands. The trees lean inward, curious about the newcomer. Sunlight filters through the canopy in golden shafts. This is where your journey begins, following the path your father walked three years ago.",
+    "return": "The entrance to the Enchanted Forest. The trees still seem to watch you with ancient curiosity.",
+    "atmospheric": "The forest hums with an energy you can feel in your bones. Somewhere ahead, adventure awaits."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "A2",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "C2",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "B3",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "B1",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "wild_berries",
+        "itemName": "Wild Berries",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You eat the sweet wild berries. They taste like summer sunshine."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "forest_threshold",
+        "name": "Ancient Stone Markers",
+        "examineText": "Two weathered standing stones mark the entrance to the forest proper. Faded runes are carved into their surfaces, too worn to read but still radiating a faint warmth when you touch them.",
+        "canInteract": true,
+        "interactionText": "You place your hand on the warm stone. For a moment, you feel as if the forest is acknowledging your presence, granting you passage."
+      },
+      {
+        "id": "fathers_carving",
+        "name": "Tree Carving",
+        "examineText": "On one of the trees near the entrance, someone has carved initials and an arrow pointing to the southwest. You recognize your father's handwriting: his initials and a clue to help other seekers along their journey.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": [
+    "entered_forest"
+  ]
+}

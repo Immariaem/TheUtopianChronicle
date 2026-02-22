@@ -1,0 +1,62 @@
+{
+  "quadrantId": "B10",
+  "name": "Windy Platform",
+  "description": {
+    "initial": "You've reached the easternmost edge of Nephelia, a cargo platform exposed to the full force of the wind currents that flow around the floating city. Crates and barrels are scattered across the platform, and among them you can see Captain Zara's cargo, marked with her distinctive symbol. The wind here is fierce and unpredictable, gusting from different directions without warning. One wrong step could send you tumbling into the endless sky below.",
+    "return": "The treacherous Windy Platform. The wind still howls, but you know its patterns now.",
+    "atmospheric": "Wind screams past your ears, drowning out all other sound. The platform creaks and sways with each gust."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "A10",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "C10",
+      "blocked": true,
+      "blockedMessage": "Beyond the platform's edge is only open sky and the ocean far, far below. You cannot proceed this way."
+    },
+    "east": {
+      "blocked": true,
+      "blockedMessage": "The platform ends here. Nothing but sky beyond."
+    },
+    "west": {
+      "quadrantId": "B9",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "zaras_cargo",
+        "itemName": "Zaras Cargo",
+        "isCollectable": true,
+        "itemType": "quest",
+        "itemMessage": "You have picked up Zara's very heavy Cargo. Bring it back to her!"
+      }
+    ],
+    "interactables": [
+      {
+        "id": "scattered_crates",
+        "name": "Scattered Cargo",
+        "examineText": "Various crates and barrels have been left here, either forgotten or abandoned due to the dangerous conditions. Most bear shipping marks from distant ports.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "safety_rope",
+        "name": "Frayed Safety Rope",
+        "examineText": "A rope that once served as a safety line has mostly frayed away. Only a few feet remain attached to a metal ring bolted into the platform.",
+        "canInteract": true,
+        "interactionText": "You grab the remaining rope, using it to steady yourself against the wind. It helps, but barely."
+      }
+    ]
+  },
+  "requiredFlags": [
+    "met_zara"
+  ],
+  "unlockFlags": [
+    "reached_windy_platform"
+  ]
+}

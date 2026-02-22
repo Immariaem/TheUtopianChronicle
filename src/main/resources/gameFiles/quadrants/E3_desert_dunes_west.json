@@ -1,0 +1,51 @@
+{
+  "quadrantId": "E3",
+  "name": "Desert Dunes West",
+  "description": {
+    "initial": "You traverse a sea of golden dunes, each one seemingly identical to the last. Navigation here is treacherous without landmarks, the desert could swallow you whole if you lost your way. The sun beats down mercilessly, and you understand why the Hermit spoke of waiting for nightfall to travel.",
+    "return": "The western dunes. The desert remains as beautiful and deadly as ever.",
+    "atmospheric": "Sand shifts beneath your feet with each step. The horizon wavers in the heat."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "D3",
+      "blocked": true,
+      "blockedMessage": "Impassable cliffs block the northern route."
+    },
+    "south": {
+      "quadrantId": "F3",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "E4",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "E2",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "cactus_water",
+        "itemName": "Cactus Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink the water stored inside the cactus. It's slightly bitter but hydrating."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "sand_patterns",
+        "name": "Wind Patterns",
+        "examineText": "The wind has carved intricate patterns into the sand, ripples and swirls that change with each passing hour. Tomorrow, these patterns will be gone, replaced by new ones.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

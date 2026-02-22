@@ -1,0 +1,52 @@
+{
+  "quadrantId": "G9",
+  "name": "Underwater Deep Central",
+  "description": {
+    "initial": "The central deep waters hold ancient secrets. Massive shapes move in the darkness beyond your vision, creatures that have never seen the sun. The merfolk rarely come here, these depths belong to older things.",
+    "return": "The central deep waters. Ancient mysteries drift through the darkness.",
+    "atmospheric": "The pressure of the deep is palpable. You feel small, an intruder in an alien world."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "F9",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "H9",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "G10",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "G8",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "vent_water",
+        "itemName": "Vent Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink from a warm freshwater vent bubbling up from the ocean floor."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "deep_shape",
+        "name": "Distant Shadow",
+        "examineText": "Something enormous moves in the darkness far below, a shape so large your mind struggles to comprehend it. It pays you no attention, moving on its ancient path.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "entered_underwater"
+  ],
+  "unlockFlags": []
+}

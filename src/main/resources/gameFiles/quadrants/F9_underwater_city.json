@@ -1,0 +1,74 @@
+{
+  "quadrantId": "F9",
+  "name": "Underwater City",
+  "description": {
+    "initial": "You've discovered the heart of the Underwater Realm, a magnificent city built from living coral and shaped pearl. Merfolk swim through streets of iridescent shells, going about their daily lives. Bioluminescent creatures provide lighting, and the architecture seems to have grown rather than been built. This is a civilization that has thrived beneath the waves for millennia.",
+    "return": "The Underwater City. Merfolk life continues in its ancient rhythms.",
+    "atmospheric": "The city hums with activity and life. Music drifts through the water, haunting and beautiful."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "E9",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "G9",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "F10",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "F8",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "merfolk_citizen",
+        "npcName": "Merfolk Citizen",
+        "dialogue": "\"A land walker! We do not see many of your kind down here. Most who come are seekers, chasing the island above the waves. If that is why you are here, Nerina in the archives to the north is the one to speak with. She knows more about the surface world than any of us. Just try not to touch the coral, it takes decades to grow.\"",
+        "dialogueConditions": [
+          {
+            "flag": "guardian_trial_complete",
+            "text": "\"Word travels fast down here. You passed the Guardian's trial. I hope you find what you are looking for up there. We could never go ourselves. The air would be the end of us.\""
+          }
+        ],
+        "isActive": true
+      }
+    ],
+    "items": [
+      {
+        "itemId": "sea_grapes",
+        "itemName": "Sea Grapes",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You eat the sea grapes. They burst with a salty sweetness unlike anything from the surface."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "coral_palace",
+        "name": "Coral Palace",
+        "examineText": "The royal palace rises at the city's center, a magnificent structure of pink and white coral. Its spires reach toward the surface, and guards in shell armor patrol its entrances.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "pearl_market",
+        "name": "Pearl Market",
+        "examineText": "Merfolk merchants display their wares: pearls of every color, shells carved into art, preserved treasures from shipwrecks. The economy of the deep operates on beauty.",
+        "canInteract": true,
+        "interactionText": "You browse the market, marveling at treasures from centuries of collecting. The merchants are friendly, curious about surface dwellers."
+      }
+    ]
+  },
+  "requiredFlags": [
+    "entered_underwater"
+  ],
+  "unlockFlags": [
+    "discovered_underwater_city"
+  ]
+}

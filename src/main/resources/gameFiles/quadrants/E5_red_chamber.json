@@ -1,0 +1,62 @@
+{
+  "quadrantId": "E5",
+  "name": "Red Chamber",
+  "description": {
+    "initial": "You enter a chamber ablaze with red crystals, their fiery glow making you feel as if you've stepped into the heart of a volcano. Despite the color, the temperature remains cool. Like the Blue Chamber, this room holds a pedestal with a color-coded tablet, the second piece of the Coral Cipher puzzle.",
+    "return": "The Red Chamber. The crimson crystals pulse with their warm light.",
+    "atmospheric": "The red light creates dancing shadows on the walls, giving the chamber an almost living quality."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "D5",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "F5",
+      "blocked": true,
+      "blockedMessage": "The cave system ends here. Solid rock blocks your passage."
+    },
+    "east": {
+      "quadrantId": "E6",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "E4",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "red_crystal_key",
+        "itemName": "Red Crystal Key",
+        "isCollectable": true,
+        "itemType": "quest",
+        "itemMessage": "You pick up the blinding red crystal key."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "red_tablet",
+        "name": "Color Tablet",
+        "examineText": "A tablet displays five glowing colors in sequence: Red, Red, Green, Blue, Yellow. Remember, you can only view each tablet once before the pattern changes.",
+        "canInteract": true,
+        "interactionText": "You memorize the pattern: Red, Red, Green, Blue, Yellow. The tablet pulses acknowledgment. You must not look again."
+      },
+      {
+        "id": "ruby_formation",
+        "name": "Ruby Crystal Cluster",
+        "examineText": "Deep red crystals cluster together like frozen flames. Their internal glow seems to flicker, creating an illusion of actual fire.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "met_kira"
+  ],
+  "unlockFlags": [
+    "viewed_red_tablet"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "quadrantId": "I10",
+  "name": "Ocean South Far East",
+  "description": {
+    "initial": "The far southeastern waters are remote and peaceful, far from any land or civilization. The ocean here feels ancient and patient, indifferent to the struggles of those who sail upon it. This is the world as it was before humans, and as it will be long after.",
+    "return": "The far southeastern ocean. Ancient waters, eternal and uncaring.",
+    "atmospheric": "The ocean's vastness puts all human concerns in perspective. We are small, and the sea is forever."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "H10",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "J10",
+      "blocked": false
+    },
+    "east": {
+      "blocked": true,
+      "blockedMessage": "The eastern ocean extends beyond all maps. Your path lies elsewhere."
+    },
+    "west": {
+      "quadrantId": "I9",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "ancient_sea",
+        "name": "Timeless Waters",
+        "examineText": "The ocean stretches endlessly, unchanged for millions of years. It was here before humanity and will remain long after we're gone.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

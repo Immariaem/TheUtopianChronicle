@@ -1,0 +1,61 @@
+{
+  "quadrantId": "B5",
+  "name": "Mountain Base",
+  "description": {
+    "initial": "The forest gives way to rocky terrain as the mountains rise before you. The peaks disappear into clouds above, but your destination lies below, in the Crystal Caves that honeycomb these ancient mountains. A well-worn path leads to a cave entrance, its mouth dark and inviting. Faint colored light pulses from within, the glow of the famous crystals that give these caves their name.",
+    "return": "The base of the mountains, where the path to the Crystal Caves begins.",
+    "atmospheric": "The air grows cooler here, carrying the mineral scent of deep earth and the faint hum of crystal resonance."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "A5",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "C5",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "B6",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "B4",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "mountain_spring",
+        "itemName": "Mountain Spring",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink from the mountain spring. The water is ice cold and pure."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "cave_entrance",
+        "name": "Cave Entrance",
+        "examineText": "The entrance to the Crystal Caves yawns before you, a natural archway of weathered stone. From within, you can see the soft glow of crystals reflecting off the walls, painting everything in rainbow hues.",
+        "canInteract": true,
+        "interactionText": "You step through the entrance. The temperature drops immediately, and the air takes on a crystalline quality. The path slopes downward into the mountain's heart."
+      },
+      {
+        "id": "old_signpost",
+        "name": "Weathered Signpost",
+        "examineText": "A wooden sign, barely readable after years of exposure: 'Crystal Caves - Visitors Welcome. Please respect the crystals and their keeper.'",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "spirit_rescued"
+  ],
+  "unlockFlags": [
+    "reached_mountains"
+  ]
+}

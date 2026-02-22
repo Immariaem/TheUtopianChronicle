@@ -1,0 +1,56 @@
+{
+  "quadrantId": "B6",
+  "name": "Mining Lift",
+  "description": {
+    "initial": " An ancient lift stands before you, its platform suspended by thick chains and\n  crystal-powered gears. The mechanism hums with renewed energy from the Singing\n   Chamber below. Step on and travel north to ascend to the sky city Nephelia\n  above.",
+    "return": "The mining lift chamber. The platform waits to carry you up to Nephelia. Go north.",
+    "atmospheric": "The shaft above creates a natural chimney, carrying the scent of clouds and the distant sounds of the sky city."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "A6",
+      "blocked": false,
+      "blockedMessage": null
+    },
+    "south": {
+      "quadrantId": "C6",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "B7",
+      "blocked": true,
+      "blockedMessage": "The rock face here is solid. The only way to the sky city is up through the lift shaft."
+    },
+    "west": {
+      "quadrantId": "B5",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "mining_lift",
+        "name": "Ancient Lift",
+        "examineText": "The lift platform is made of thick wooden planks, worn smooth by centuries of use. A lever controls the counterweight system. Someone has oiled the mechanisms recently, Kira's work no doubt.",
+        "canInteract": true,
+        "interactionText": "You step onto the platform and pull the lever. With a groan of ancient gears, the lift begins to rise. The crystal caves fall away below as you ascend through the mountain, emerging into brilliant sunlight and the magnificent floating city of Nephelia."
+      },
+      {
+        "id": "carved_instructions",
+        "name": "Carved Instructions",
+        "examineText": "Instructions carved into the stone beside the lift: 'Pull lever once to ascend. Pull twice to descend. The journey takes several minutes. Enjoy the view.'",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "crystal_keys_complete"
+  ],
+  "unlockFlags": [
+    "accessed_lift",
+    "reached_sky_city"
+  ]
+}

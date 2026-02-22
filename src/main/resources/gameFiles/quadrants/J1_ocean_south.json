@@ -1,0 +1,42 @@
+{
+  "quadrantId": "J1",
+  "name": "Ocean South",
+  "description": {
+    "initial": "The southern ocean stretches endlessly, the deepest blue you've ever seen. This is the edge of the world, where few ships venture. The Island of Bliss lies to the north, its golden glow visible even from here. Soon, you and your father will sail through these waters together, heading home.",
+    "return": "The southern ocean. Deep waters mark the world's edge.",
+    "atmospheric": "The ocean whispers of journeys ending and new beginnings. Home lies beyond the horizon."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "I1",
+      "blocked": false
+    },
+    "south": {
+      "blocked": true,
+      "blockedMessage": "The southern ocean extends beyond all maps. There is nothing for you there."
+    },
+    "east": {
+      "quadrantId": "J2",
+      "blocked": false
+    },
+    "west": {
+      "blocked": true,
+      "blockedMessage": "The western ocean stretches forever. Your path lies elsewhere."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "world_edge",
+        "name": "Endless Horizon",
+        "examineText": "The horizon stretches unbroken in every direction. This is as far from civilization as you've ever been.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

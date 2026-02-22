@@ -1,0 +1,59 @@
+{
+  "quadrantId": "J3",
+  "name": "Island Main Beach",
+  "description": {
+    "initial": "The main beach. The boat that carried you here still waits at anchor, rope   \n  tied to a palm tree, patient as ever. The golden sand stretches in perfect \n  curves. Everything on this island is perfect. You've never been more ready to \n  leave.",
+    "return": "The main beach. Something is waiting for you here.",
+    "atmospheric": "The waves break in perfect intervals. The sand is warm and flawless beneath  \n  your feet. The island breathes its eternal, unchanged breath behind you.      \n  Ahead, the open ocean, vast, unpredictable, and real."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "I3",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "J2",
+      "blocked": false,
+      "blockedMessage": null
+    },
+    "east": {
+      "quadrantId": "J4",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "J2",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "coconut_water",
+        "itemName": "Coconut Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink the fresh coconut water. Sweet and incredibly refreshing!"
+      }
+    ],
+    "interactables": [
+      {
+        "id": "weathered_boat",
+        "name": "Weathered boat",
+        "examineText": "A small sailboat tied to a palm tree at the water's edge. It has been herefor some time, the rope is faded, the hull marked by sun and salt. Whoever left it here hasn't returned to claim it. Yet.",
+        "canInteract": true
+      },
+      {
+        "id": "landing_point",
+        "name": "Landing Mark",
+        "examineText": "The spot where you first stepped onto the island. It feels like a lifetime ago, though time doesn't pass here.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "reached_island"
+  ],
+  "unlockFlags": []
+}

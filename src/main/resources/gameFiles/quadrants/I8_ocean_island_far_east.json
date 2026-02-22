@@ -1,0 +1,42 @@
+{
+  "quadrantId": "I8",
+  "name": "Ocean Island Far East",
+  "description": {
+    "initial": "Far from the island's shore, the ocean returns to its natural state. Waves rise and fall unpredictably, fish hunt and flee, the sun moves across the sky. After the oppressive perfection of the island, this chaos feels like freedom.",
+    "return": "The far eastern ocean. Natural, imperfect, alive.",
+    "atmospheric": "The real world. Messy, changing, beautiful in its imperfection."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "H8",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "J8",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "I9",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "I7",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "natural_waves",
+        "name": "Living Ocean",
+        "examineText": "The waves here are unpredictable, sometimes large, sometimes small. Fish hunt and are hunted. Seabirds dive for meals. Life, real life, in all its chaotic beauty.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

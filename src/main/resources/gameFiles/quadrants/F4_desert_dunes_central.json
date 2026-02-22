@@ -1,0 +1,51 @@
+{
+  "quadrantId": "F4",
+  "name": "Desert Dunes Central",
+  "description": {
+    "initial": "You've reached the heart of the Desert of Truth. The dunes here are immense, some rising hundreds of feet into the air. The sand is perfectly golden, untouched by the iron deposits found elsewhere. There's a strange peace here, as if the desert itself is holding its breath.",
+    "return": "The central dunes. The heart of the desert pulses with ancient silence.",
+    "atmospheric": "The air is perfectly still. Your footprints are the only marks on the pristine sand."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "E4",
+      "blocked": true,
+      "blockedMessage": "The rock face rises sheer above you, smooth and unbroken. There is no way through."
+    },
+    "south": {
+      "quadrantId": "G4",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "F5",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "F3",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "cactus_water",
+        "itemName": "Cactus Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink the water stored inside the cactus. It's slightly bitter but hydrating."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "perfect_dune",
+        "name": "Pristine Dune",
+        "examineText": "A massive dune with not a single footprint marring its surface. The wind has sculpted it into perfect curves that seem almost artificial in their beauty.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

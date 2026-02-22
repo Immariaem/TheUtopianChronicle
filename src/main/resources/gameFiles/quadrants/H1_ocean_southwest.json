@@ -1,0 +1,42 @@
+{
+  "quadrantId": "H1",
+  "name": "Ocean Southwest",
+  "description": {
+    "initial": "You sail through the southwestern waters, where the ocean begins to show signs of the Island of Bliss's proximity. The water here is warmer, almost tropical, and takes on a distinctive turquoise hue. Schools of colorful fish follow your boat, and the air feels different somehow, more alive.",
+    "return": "The southwestern ocean. The waters grow warmer as you approach the island.",
+    "atmospheric": "A sense of anticipation builds. Something lies ahead, you can feel it."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "G1",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "I1",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "H2",
+      "blocked": false
+    },
+    "west": {
+      "blocked": true,
+      "blockedMessage": "The western ocean extends forever. Your path lies elsewhere."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "following_fish",
+        "name": "Colorful Fish",
+        "examineText": "A school of brightly colored fish follows your boat, their scales flashing in the sunlight. They seem almost to be guiding you.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

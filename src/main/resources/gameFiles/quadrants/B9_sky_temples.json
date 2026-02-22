@@ -1,0 +1,74 @@
+{
+  "quadrantId": "B9",
+  "name": "Sky Temples",
+  "description": {
+    "initial": "The temples of Nephelia rise before you, dedicated to the old gods who were believed to dwell in the sky. The largest temple honors Zeus, father of the gods, but smaller shrines surround it for Nephele (the cloud nymph for whom the city is named), Aeolus (keeper of winds), and others. Priests in white robes tend eternal flames that somehow burn without consuming their fuel, and the air is thick with incense.",
+    "return": "The temple district of Nephelia. Eternal flames flicker in shrines to the sky gods.",
+    "atmospheric": "Incense smoke curls toward the heavens. Distant chanting echoes from within the temples."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "A9",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "C9",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "B10",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "B8",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "temple_priest",
+        "npcName": "Priest",
+        "dialogue": "\"May the winds of Nephele guide your path, traveler. These temples have stood since the city first took to the skies. If you seek the favor of the gods, offer a moment of silence at the shrine. The journey ahead will require more than courage alone.\"",
+        "dialogueConditions": [
+          {
+            "flag": "cargo_delivered",
+            "text": "\"The gods smile upon those who help others. Safe travels, wherever the winds may take you.\""
+          }
+        ],
+        "isActive": true
+      }
+    ],
+    "items": [
+      {
+        "itemId": "sacred_water",
+        "itemName": "Sacred Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink the sacred water from the temple offering bowl. It fills you with a sense of calm."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "nephele_shrine",
+        "name": "Shrine of Nephele",
+        "examineText": "A beautiful shrine depicting Nephele, the cloud nymph created by Zeus. According to legend, she was made from clouds to deceive Ixion, and her descendants became the centaurs. The city takes its name from her, floating eternally in her domain.",
+        "canInteract": true,
+        "interactionText": "You offer a moment of respect at the shrine. A gentle breeze seems to acknowledge your presence, and for a moment, you feel weightless."
+      },
+      {
+        "id": "temple_zeus",
+        "name": "Temple of Zeus",
+        "examineText": "The grand temple dominates the district, its golden dome visible from anywhere in the city. Inside, a massive statue of Zeus holds lightning in one hand and scales in the other, judging the worthiness of mortals.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "reached_sky_city"
+  ],
+  "unlockFlags": [
+    "visited_temples"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "quadrantId": "J6",
+  "name": "Ocean Island South",
+  "description": {
+    "initial": "The southern waters off the Island of Bliss are warm and eerily calm. The island's influence extends even here, smoothing the waves into gentle, hypnotic patterns. But beyond the reach of that influence, you can see real waves, real chaos, real life waiting.",
+    "return": "The southern island waters. The boundary where the island's calm meets the open sea.",
+    "atmospheric": "Two worlds meet at this invisible line. Stillness behind, open water ahead."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "I6",
+      "blocked": false
+    },
+    "south": {
+      "blocked": true,
+      "blockedMessage": "The southern ocean continues endlessly. Your path lies elsewhere."
+    },
+    "east": {
+      "quadrantId": "J7",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "J5",
+      "blocked": true,
+      "blockedMessage": "Thick reef spreads across the ceiling above you. There is no way up from here."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "influence_boundary",
+        "name": "Calm/Chaos Line",
+        "examineText": "You can actually see where the island's influence ends, a visible line where unnaturally calm water meets normal ocean. Life waits beyond that line.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

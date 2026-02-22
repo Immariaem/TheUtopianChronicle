@@ -1,0 +1,44 @@
+{
+  "quadrantId": "C10",
+  "name": "Ocean Northeast",
+  "description": {
+    "initial": "The vast ocean stretches before you, its surface glittering under the sun. You've reached the northeastern waters, where the sky city's shadow sometimes falls across the waves. Seabirds wheel overhead, and in the distance, you can see fishing boats from coastal villages going about their daily work.",
+    "return": "The northeastern ocean waters. Endless blue stretches to the horizon.",
+    "atmospheric": "Salt spray and the cry of seabirds fill the air. The ocean's vastness is both beautiful and humbling."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "B10",
+      "blocked": true,
+      "blockedMessage": "Nephelia floats high above. You cannot reach it from the water."
+    },
+    "south": {
+      "quadrantId": "D10",
+      "blocked": false
+    },
+    "east": {
+      "blocked": true,
+      "blockedMessage": "The eastern ocean stretches endlessly. There is nothing for you in that direction."
+    },
+    "west": {
+      "quadrantId": "C9",
+      "blocked": true,
+      "blockedMessage": "The sky city floats far above the water. You cannot reach it from here."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "fishing_boats",
+        "name": "Distant Fishing Boats",
+        "examineText": "Small boats dot the waters, their crews hauling in nets. They seem content with their simple life on the waves.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

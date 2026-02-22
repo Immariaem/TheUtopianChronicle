@@ -1,0 +1,42 @@
+{
+  "quadrantId": "F10",
+  "name": "Ocean Far East",
+  "description": {
+    "initial": "You've reached the far eastern waters, where the ocean grows warmer and the currents stronger. Tropical fish in impossible colors swim past, and the water is so clear you can see the sandy bottom far below. This feels like the edge of the known underwater world.",
+    "return": "The far eastern ocean. Tropical warmth and crystal clarity.",
+    "atmospheric": "Warm currents embrace you. The water sparkles with suspended particles that catch the light."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "E10",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "G10",
+      "blocked": false
+    },
+    "east": {
+      "blocked": true,
+      "blockedMessage": "The eastern ocean extends beyond all maps. Your path lies elsewhere."
+    },
+    "west": {
+      "quadrantId": "F9",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "tropical_fish",
+        "name": "Tropical Fish",
+        "examineText": "Fish in every color of the rainbow swim past, seemingly unafraid of you. Their scales shimmer like living jewels.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

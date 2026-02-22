@@ -1,0 +1,44 @@
+{
+  "quadrantId": "F7",
+  "name": "Underwater Mid-West",
+  "description": {
+    "initial": "You swim through the mid-western reaches of the Underwater Realm. The water here is filled with swaying kelp forests, their long fronds creating a green-gold maze. Fish of every color dart between the kelp, and you can see larger shapes moving in the deeper waters beyond.",
+    "return": "The kelp forests of the mid-western underwater realm.",
+    "atmospheric": "Sunlight filters through the kelp, creating shifting patterns of light and shadow. The water hums with life."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "E7",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "G7",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "F8",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "F6",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "kelp_forest",
+        "name": "Giant Kelp",
+        "examineText": "Massive kelp fronds rise from the ocean floor, some reaching fifty feet or more. They sway gently in the current, creating an underwater forest.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "entered_underwater"
+  ],
+  "unlockFlags": []
+}

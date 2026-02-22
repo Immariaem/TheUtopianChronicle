@@ -1,0 +1,70 @@
+{
+  "quadrantId": "H8",
+  "name": "Pearl Guardian's Chamber",
+  "description": {
+    "initial": "You have found the chamber of the Pearl Guardian, an ancient sea turtle who has watched over these waters for centuries. The chamber is lined with pearls of every size and color, their soft glow providing gentle illumination. The Pearl Guardian rests at the center, massive and ancient, his wise eyes watching as you approach. He is the keeper of the path to the surface and the one who decides which seekers are worthy of finding the Island of Bliss.",
+    "return": "The Pearl Guardian's Chamber. The ancient turtle watches you with knowing eyes.",
+    "atmospheric": "The pearls create a soft, dreamlike light. Time seems to move differently here."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "G8",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "I8",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "H9",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "H7",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "pearl_guardian",
+        "npcName": "Pearl Guardian",
+        "dialogue": "\"So you have gathered the relics. Three seekers came before you, and three seekers failed. Their relics are all that remain of their journeys. Place them before me, and I will hear why you believe you deserve what they did not.\"",
+        "dialogueConditions": [
+          {
+            "flag": "guardian_trial_complete",
+            "text": "\"You have proven yourself, seeker. I have nothing more to teach you. Go now, surface to the shallows to the west and follow the coast until you reach the desert. Cross it heading west. The Island of Bliss lies beyond the far shore. Whether you return from it is up to you.\""
+          },
+          {
+            "flag": "relics_offered",
+            "text": "\"The relics are accepted. Now I will ask you three questions. Answer honestly. If you answer well, I will tell you the way. If not, you may try again. When you are ready, speak to me.\""
+          }
+        ],
+        "isActive": true
+      }
+    ],
+    "items": [],
+    "interactables": [
+      {
+        "id": "relic_altar",
+        "name": "Stone Altar",
+        "examineText": "A flat stone altar before the Guardian, worn smooth by time. Three shallow indentations mark its surface, shaped to hold offerings. This is where seekers place the relics they have gathered.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "pearl_collection",
+        "name": "Pearl Collection",
+        "examineText": "Thousands of pearls line the chamber walls, each one unique. Some are as small as peas, others larger than your fist. The Guardian has collected them over centuries.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "found_coral_relic",
+    "found_oyster_relic",
+    "found_ruins_relic"
+  ],
+  "unlockFlags": []
+}

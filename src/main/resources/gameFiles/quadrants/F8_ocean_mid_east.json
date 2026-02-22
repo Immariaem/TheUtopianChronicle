@@ -1,0 +1,52 @@
+{
+  "quadrantId": "F8",
+  "name": "Underwater Mid-East",
+  "description": {
+    "initial": "The eastern mid-waters of the Underwater Realm are dominated by rocky outcrops covered in anemones and sponges. Schools of fish move in perfect coordination, their silver bodies flashing as they turn. The water is crystal clear, visibility extending for hundreds of feet.",
+    "return": "The rocky eastern mid-waters. Life clings to every surface.",
+    "atmospheric": "Bubbles rise from hidden vents in the rock. The water feels alive with energy."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "E8",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "G8",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "F9",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "F7",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "sweet_water",
+        "itemName": "Sweet Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink from the freshwater vent. The water is surprisingly sweet and cool despite the ocean surrounding it."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "anemone_rocks",
+        "name": "Anemone Garden",
+        "examineText": "Colorful anemones cover the rocks, their tentacles waving gently in the current. Clownfish dart among them, protected by their symbiotic relationship.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "entered_underwater"
+  ],
+  "unlockFlags": []
+}

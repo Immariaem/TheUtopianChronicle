@@ -1,0 +1,42 @@
+{
+  "quadrantId": "J2",
+  "name": "Ocean South Central",
+  "description": {
+    "initial": "The south-central waters are calm and warm, touched by the island's unnatural influence. The water glows faintly, and the waves seem almost choreographed. This is the departure route, the way you'll take when you finally leave the island with your father.",
+    "return": "The south-central ocean. The path home stretches before you.",
+    "atmospheric": "Freedom waits in these waters. Every wave carries you closer to the real world."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "I2",
+      "blocked": false
+    },
+    "south": {
+      "blocked": true,
+      "blockedMessage": "The southern ocean continues beyond sight. Your journey lies to the north."
+    },
+    "east": {
+      "quadrantId": "J3",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "J1",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "departure_waters",
+        "name": "Calm Seas",
+        "examineText": "The water here is perfect for sailing. When the time comes, this is how you'll leave paradise behind.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

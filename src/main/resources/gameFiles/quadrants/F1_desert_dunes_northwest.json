@@ -1,0 +1,42 @@
+{
+  "quadrantId": "F1",
+  "name": "Desert Dunes Northwest",
+  "description": {
+    "initial": "You navigate through the northwestern dunes, where the sand takes on a reddish hue from iron deposits. The dunes here are taller, more imposing, their crests razor-sharp against the sky. A constant wind keeps the sand in motion, creating an ever-changing landscape.",
+    "return": "The northwestern dunes. Red sand shifts eternally in the wind.",
+    "atmospheric": "Fine sand stings your eyes. The red color makes the landscape feel alien, otherworldly."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "E1",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "G1",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "F2",
+      "blocked": false
+    },
+    "west": {
+      "blocked": true,
+      "blockedMessage": "The desert extends endlessly westward. There is nothing for you there."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "iron_rock",
+        "name": "Iron Outcrop",
+        "examineText": "A dark iron rock protrudes from the sand, the source of the reddish color in this region. It's warm to the touch from the sun's heat.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

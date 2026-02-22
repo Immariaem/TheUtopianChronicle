@@ -1,0 +1,61 @@
+{
+  "quadrantId": "C4",
+  "name": "Cave Entry",
+  "description": {
+    "initial": "The forest gives way to rocky terrain, and before you opens the main entrance to the Crystal Caves. Unlike the smaller entrance to the north, this is a grand natural archway, its edges lined with crystals that pulse with soft, multicolored light. The air here is cool and carries the faint musical hum of the crystals within. Steps have been carved into the stone, leading down into the glowing depths.",
+    "return": "The main entrance to the Crystal Caves. The crystal-lined archway pulses with welcoming light.",
+    "atmospheric": "The crystal hum is like distant music, harmonizing with the whisper of wind through the cave mouth."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "B4",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "D4",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "C5",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "C3",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "stream_water",
+        "itemName": "Stream Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink from the cool underground stream. The water is fresh and revitalizing."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "entry_crystals",
+        "name": "Entrance Crystals",
+        "examineText": "Large crystals frame the cave entrance, their colors shifting slowly through the spectrum. They seem to respond to your presence, glowing brighter as you approach.",
+        "canInteract": true,
+        "interactionText": "You touch one of the crystals. It's warm, almost alive, and emits a soft chime at your touch. The other crystals pick up the note, creating a brief harmony."
+      },
+      {
+        "id": "carved_steps",
+        "name": "Stone Steps",
+        "examineText": "These steps were carved long ago, worn smooth by generations of visitors. Small crystals embedded in the stone provide natural lighting for the descent.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "spirit_rescued"
+  ],
+  "unlockFlags": [
+    "entered_caves"
+  ]
+}

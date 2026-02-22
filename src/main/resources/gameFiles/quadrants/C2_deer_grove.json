@@ -1,0 +1,72 @@
+{
+  "quadrantId": "C2",
+  "name": "Deer Grove",
+  "description": {
+    "initial": "You enter a peaceful clearing where dappled sunlight creates a mosaic of gold on the forest floor. In the center stands a magnificent deer, larger than any you've ever seen, with antlers that seem to hold starlight in their branches. This is the Wise Deer, guardian of the Enchanted Forest, and his ancient eyes regard you with knowing intelligence. When you mention your father, his expression shifts with sympathy.",
+    "return": "The Deer Grove, where the Wise Deer watches over the forest. He acknowledges your return with a gentle nod.",
+    "atmospheric": "Birdsong falls silent in reverence. The very air seems to hold its breath in the presence of the Wise Deer."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "B2",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "D2",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "C3",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "C1",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "wise_deer",
+        "npcName": "Wise Deer",
+        "dialogue": "\"Welcome, young seeker. I sense you carry a heavy burden, searching for one who is lost. Your father passed through these woods three years ago, following whispers of the Island of Bliss. If you wish to follow his path, you must first prove your heart. The fairies in the valley to the east are troubled, help them, and the way forward shall reveal itself.\"",
+        "dialogueConditions": [
+          {
+            "flag": "spirit_rescued",
+            "text": "\"You have done well, young one. The spirit is free, and the forest sings again. To follow your fathers path, you must journey east to the Crystal Caves beneath the mountains. May your Journey be ever so successful!\""
+          }
+        ],
+        "isActive": true
+      }
+    ],
+    "items": [
+      {
+        "itemId": "stream_water",
+        "itemName": "Stream Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink the cool, refreshing water from the crystal spring."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "ancient_oak",
+        "name": "Ancient Oak",
+        "examineText": "An ancient oak tree provides a canopy over the clearing. Its trunk bears the marks of countless seasons, and its roots seem to embrace the entire grove.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "clear_spring",
+        "name": "Crystal Spring",
+        "examineText": "A small spring bubbles up from between moss-covered rocks, its water impossibly clear. The Wise Deer drinks from it, suggesting it holds some magic.",
+        "canInteract": true,
+        "interactionText": "You cup your hands and drink from the spring. The water is cool and sweet, and you feel refreshed, as if a fog has lifted from your mind."
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": [
+    "wise_deer_hint_received"
+  ]
+}

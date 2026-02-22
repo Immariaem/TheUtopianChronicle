@@ -1,0 +1,43 @@
+{
+  "quadrantId": "H2",
+  "name": "Ocean Crossing South",
+  "description": {
+    "initial": "The southern crossing continues through calm, warm waters. The sky is impossibly blue, and the horizon seems to shimmer with promise. You've been sailing for days now, following your father's path across the endless sea.",
+    "return": "The southern ocean crossing. Calm waters stretch to the horizon.",
+    "atmospheric": "Peace settles over everything. The world seems to hold its breath."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "G2",
+      "blocked": true,
+      "blockedMessage": "Rocky shoals block passage to the north."
+    },
+    "south": {
+      "quadrantId": "I2",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "H3",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "H1",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "calm_sea",
+        "name": "Glass-Calm Water",
+        "examineText": "The water is so still it reflects the sky like a mirror. You can see clouds below as clearly as above.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

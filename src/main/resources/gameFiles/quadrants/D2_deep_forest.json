@@ -1,0 +1,58 @@
+{
+  "quadrantId": "D2",
+  "name": "Deep Forest",
+  "description": {
+    "initial": "You've wandered into the deepest part of the Enchanted Forest, where the trees grow so close together that the canopy blocks nearly all light. Luminescent mushrooms provide the only illumination, casting everything in an eerie blue-green glow. The forest seems older here, more primal. You can feel ancient magic in the very air you breathe.",
+    "return": "The Deep Forest. The luminescent mushrooms still light your way through the ancient darkness.",
+    "atmospheric": "The silence here is profound, broken only by the occasional drip of condensation from the canopy."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "C2",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "E2",
+      "blocked": true,
+      "blockedMessage": "The forest becomes impenetrable here. You cannot proceed south through this way."
+    },
+    "east": {
+      "quadrantId": "D3",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "D1",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "forest_mushrooms",
+        "itemName": "Forest Mushrooms",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You eat the edible forest mushrooms. They have a rich, earthy flavor."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "glowing_mushrooms",
+        "name": "Luminescent Mushrooms",
+        "examineText": "Clusters of mushrooms emit a soft blue-green light. They seem to pulse gently, almost like breathing. The fairies probably use them for light.",
+        "canInteract": true,
+        "interactionText": "You touch a mushroom cap gently. It brightens momentarily, then returns to its normal glow. A tiny spore cloud rises, sparkling briefly before dispersing."
+      },
+      {
+        "id": "ancient_roots",
+        "name": "Massive Root System",
+        "examineText": "The roots of the ancient trees rise above the ground like frozen waves, creating a maze of organic tunnels and chambers. Some are large enough to shelter in.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

@@ -1,0 +1,54 @@
+{
+  "quadrantId": "H10",
+  "name": "Ancient Ruins",
+  "description": {
+    "initial": "You have discovered the Ancient Ruins, the remains of a civilization that existed long before the merfolk. Their buildings are covered in coral and inhabited by fish. At the heart of the ruins, resting on a broken altar, you notice a carved stone that does not belong to this place. Another relic from a seeker who came before you.",
+    "return": "The Ancient Ruins. A lost civilization sleeps beneath coral and time.",
+    "atmospheric": "Mystery pervades every stone. Who built this place? Why did they vanish?"
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "G10",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "I10",
+      "blocked": false
+    },
+    "east": {
+      "blocked": true,
+      "blockedMessage": "The underwater realm ends at these ruins. Only ocean lies beyond."
+    },
+    "west": {
+      "quadrantId": "H9",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "stone_relic",
+        "itemName": "Stone Relic",
+        "isCollectable": true,
+        "itemType": "quest",
+        "itemMessage": "You pick up the carved stone. It is heavier than it looks, etched with symbols you cannot read. The last trace of a seeker who vanished long ago."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "ruined_temple",
+        "name": "Sunken Temple",
+        "examineText": "The temple's architecture is unlike anything you've seen, angular and alien. Coral has softened its edges, but it still projects an air of ancient power.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "met_nerina"
+  ],
+  "unlockFlags": [
+    "found_ruins_relic"
+  ]
+}

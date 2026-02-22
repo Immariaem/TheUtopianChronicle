@@ -1,0 +1,66 @@
+{
+  "quadrantId": "D1",
+  "name": "Hidden Valley",
+  "description": {
+    "initial": "You've discovered a hidden valley at the western edge of the world, a place few have visited. The fairies spoke of a lost spirit trapped here, and now you see it: a gentle, glowing form tangled in thick vines that seem to be draining its light. The spirit's eyes meet yours with desperate hope. The vines are magical, requiring careful untangling rather than brute force.",
+    "return": "The Hidden Valley. The freed spirit has left, but its gratitude lingers in the peaceful air.",
+    "atmospheric": "The air here is still and sacred. You feel you've stumbled upon something ancient and important."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "C1",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "E1",
+      "blocked": true,
+      "blockedMessage": "Steep cliffs block your passage south. You'll need to find another way to continue your journey."
+    },
+    "east": {
+      "quadrantId": "D2",
+      "blocked": false
+    },
+    "west": {
+      "blocked": true,
+      "blockedMessage": "The valley ends in an impassable cliff face."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "trapped_spirit",
+        "npcName": "Trapped Spirit",
+        "dialogue": "\"Help... the vines drain my light... Please, help me.. Use the vines carefully...\"",
+        "dialogueConditions": [
+          {
+            "flag": "spirit_rescued",
+            "text": "\"Thank you, friend... I am free... The Wise Deer awaits you... Go east...\""
+          }
+        ],
+        "isActive": true
+      }
+    ],
+    "items": [],
+    "interactables": [
+      {
+        "id": "magical_vines",
+        "name": "Entangling Vines",
+        "examineText": "Thick, dark vines have wrapped around the forest spirit.",
+        "canInteract": true,
+        "interactionText": "You work carefully, speaking softly to both the vines and the spirit. Slowly, the vines relax their grip, and the spirit floats free, its glow intensifying with gratitude. It gestures toward the east, toward the Wise Deer, before fading away.",
+        "unlockFlag": "spirit_rescued"
+      },
+      {
+        "id": "ancient_shrine",
+        "name": "Forgotten Shrine",
+        "examineText": "A small stone shrine, overgrown and forgotten. Someone once worshipped the spirits of the forest here. Offerings of dried flowers and faded ribbons still decorate it.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "discovered_fairy_valley"
+  ],
+  "unlockFlags": []
+}

@@ -1,0 +1,51 @@
+{
+  "quadrantId": "B4",
+  "name": "Ancient Tree",
+  "description": {
+    "initial": "Before you stands the most magnificent tree you have ever seen. Its trunk is so wide that ten people holding hands could not encircle it, and its branches reach so high they seem to touch the sky itself. This is the heart of the Enchanted Forest, the Ancient Tree that has stood since before human memory. The Wise Deer told you that here, knowledge is kept, wisdom is shared. Carved into the bark at eye level is a hollow containing something precious.",
+    "return": "The Ancient Tree, heart of the Enchanted Forest. Its presence fills you with peace and wonder.",
+    "atmospheric": "The tree seems to breathe, its leaves rustling with whispered secrets from ages past."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "A4",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "C4",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "B5",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "B3",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "tree_hollow",
+        "name": "Tree Hollow",
+        "examineText": "A natural hollow in the Ancient Tree's trunk, worn smooth by countless hands over countless years. Inside rests a collection of small offerings: a feather, a polished stone, dried flowers. And there, a small scroll tied with green ribbon.",
+        "canInteract": true,
+        "interactionText": "You carefully take the scroll and unroll it. Written in faded ink are directions: 'Beyond the mountains lie caves of crystal. There, one who tends them might guide you further.' You recognize these words from the Wise Deer's hint. Your father must have received this same message."
+      },
+      {
+        "id": "carved_names",
+        "name": "Carved Names",
+        "examineText": "Generations of visitors have carved their names into the lower bark of the tree. Among them, you find your father's name, placed reverently in a small clear space. He was here. He stood where you stand now.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": [
+    "accessed_ancient_tree"
+  ]
+}

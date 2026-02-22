@@ -1,0 +1,66 @@
+{
+  "quadrantId": "J5",
+  "name": "Secluded Beach",
+  "description": {
+    "initial": "You've found the secluded beach, separated from the rest of the island by rocks and palms. And there, sitting with his back to you, staring at the ocean, is an old man. The only person on this island whose face shows emotion, whose eyes are aware. Something about him is striking, familiar.",
+    "return": "The secluded beach, seperated from the rest of the island",
+    "atmospheric": "The waves flow smoothly onto the sand. You feel the warmth of the sun on your skin."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "I5",
+      "blocked": false
+    },
+    "south": {
+      "blocked": true,
+      "blockedMessage": "The beach ends at the water. Your journey's destination is here."
+    },
+    "east": {
+      "quadrantId": "J6",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "J4",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "father",
+        "npcName": "Old Man",
+        "dialogue": "\"Three years. I kept thinking someone would come. I kept hoping you wouldn't.\" He finally turns to face you. There's no joy in his eyes, only exhaustion. \"You've seen the village. The Smiling Ones. That's what this island does, it wears you down until you stop missing anything.\"He is quiet for a moment. \"There is one place they never go. West, through the lab of mirrors. I found it in my first year. I tried to walk it alone three times. I couldn't.\" He looks at you. \"The mirrors show you things about yourself. Things that are hard to face. But I think that's the way out. I don't think the island can hold two people who go through it together.\"",
+        "isActive": true,
+        "dialogueConditions": [
+          {
+            "flag": "mirror_labyrinth_complete",
+            "text": "Your father is already standing when you return, as if he felt the moment it happened. He doesn't speak right away. He just looks at you, and for the first time since you found him, he smiles. A real one. \"Let's go home.\""
+          }
+        ]
+      }
+    ],
+    "items": [],
+    "interactables": [
+      {
+        "id": "fathers_spot",
+        "name": "Worn Sand",
+        "examineText": "A depression in the sand where someone has sat countless times, staring at the horizon.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "failed_boat",
+        "name": "Abandoned Raft",
+        "examineText": "The remains of a makeshift raft, long abandoned.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "met_smiling_ones"
+  ],
+  "unlockFlags": [
+    "found_father"
+  ]
+}

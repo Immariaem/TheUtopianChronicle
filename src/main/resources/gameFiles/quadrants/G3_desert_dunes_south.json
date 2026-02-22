@@ -1,0 +1,53 @@
+{
+  "quadrantId": "G3",
+  "name": "Desert Dunes South",
+  "description": {
+    "initial": "The southern dunes give way to rockier terrain as you near the coast. You can smell salt on the wind now, and occasional seabirds wheel overhead. The hidden cove must be close. The star-guided path has led you true.",
+    "return": "The southern dunes near the coast. The scent of the sea grows stronger.",
+    "atmospheric": "Desert and ocean meet here. The air carries both sand and salt."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "F3",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "H3",
+      "blocked": true,
+      "blockedMessage": "Steep cliffs drop to the ocean. You cannot proceed this way."
+    },
+    "east": {
+      "quadrantId": "G4",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "G2",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "cactus_water",
+        "itemName": "Cactus Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink the water stored inside the cactus. It's slightly bitter but hydrating."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "seabird_colony",
+        "name": "Nesting Seabirds",
+        "examineText": "A small colony of seabirds nests among the rocks, their cries echoing across the dunes. They're a sign that water is near.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "found_star_point"
+  ],
+  "unlockFlags": []
+}

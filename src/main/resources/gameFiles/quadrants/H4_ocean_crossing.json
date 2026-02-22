@@ -1,0 +1,56 @@
+{
+  "quadrantId": "H4",
+  "name": "Ocean Crossing",
+  "description": {
+    "initial": "You've reached the final stretch of the ocean crossing. The water here glows with an unusual light, as if the sun itself is shining from beneath the waves. And there, on the horizon, you see it: a golden shimmer that can only be the Island of Bliss. Your father saw this same sight three years ago. The journey's end is in sight.",
+    "return": "The final ocean crossing. The Island of Bliss shimmers on the horizon.",
+    "atmospheric": "Your heart races. After everything, you've finally found it. The legendary island awaits."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "G4",
+      "blocked": true,
+      "blockedMessage": "You have come too far to turn back now."
+    },
+    "south": {
+      "quadrantId": "I4",
+      "blocked": true,
+      "blockedMessage": "Strong currents churn just below the surface, dragging you back down each time you try to rise."
+    },
+    "east": {
+      "quadrantId": "H5",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "H3",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "seaweed",
+        "itemName": "Seaweed",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You eat the edible seaweed. It's salty but nutritious."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "island_sighting",
+        "name": "Distant Island",
+        "examineText": "The Island of Bliss appears on the horizon, its golden beaches and perfect palm trees visible even from this distance. It seems to glow with inner light, impossibly beautiful.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "star_navigation_complete"
+  ],
+  "unlockFlags": [
+    "island_sighted"
+  ]
+}

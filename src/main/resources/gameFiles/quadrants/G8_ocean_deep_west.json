@@ -1,0 +1,44 @@
+{
+  "quadrantId": "G8",
+  "name": "Underwater Deep West",
+  "description": {
+    "initial": "You descend into the deeper western waters of the Underwater Realm. The light fades here, replaced by the glow of bioluminescent creatures. Strange fish with lantern-like appendages drift past, their lights creating constellations in the darkness.",
+    "return": "The deep western waters. Bioluminescent creatures light the eternal darkness.",
+    "atmospheric": "Darkness presses in from all sides, held back only by living lights. The water grows colder."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "F8",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "H8",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "G9",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "G7",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "lantern_fish",
+        "name": "Lantern Fish",
+        "examineText": "Fish with bioluminescent organs drift through the darkness, their lights blinking in patterns that seem almost like communication.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "entered_underwater"
+  ],
+  "unlockFlags": []
+}

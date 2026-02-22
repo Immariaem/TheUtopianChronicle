@@ -1,0 +1,45 @@
+{
+  "quadrantId": "C7",
+  "name": "Mountain East",
+  "description": {
+    "initial": "You've reached the eastern edge of the mountain range, where rocky cliffs drop away into misty valleys below. The floating city of Nephelia drifts nearby, close enough to see the details of its marble architecture but too far to reach without the proper means. The mining lift provides the only way up to the sky city from here.",
+    "return": "The eastern mountain edge. Nephelia floats tantalizingly close overhead.",
+    "atmospheric": "Clouds drift between you and the city above, occasionally parting to reveal glimpses of golden domes."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "B7",
+      "blocked": true,
+      "blockedMessage": "The cliff face is sheer and impossible to climb. The mining lift is the only way to reach Nephelia."
+    },
+    "south": {
+      "quadrantId": "D7",
+      "blocked": true,
+      "blockedMessage": "The cliffs drop away into misty depths. You cannot proceed this way."
+    },
+    "east": {
+      "quadrantId": "C8",
+      "blocked": true,
+      "blockedMessage": "There is no path through the air to Nephelia from here."
+    },
+    "west": {
+      "quadrantId": "C6",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "cliff_edge",
+        "name": "Cliff Edge",
+        "examineText": "The cliff drops away sharply, vanishing into mist far below. You can hear the distant roar of a waterfall somewhere in the depths.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

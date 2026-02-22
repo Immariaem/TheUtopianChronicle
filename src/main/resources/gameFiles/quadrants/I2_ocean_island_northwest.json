@@ -1,0 +1,42 @@
+{
+  "quadrantId": "I2",
+  "name": "Ocean Island Northwest",
+  "description": {
+    "initial": "The northwestern approach to the Island of Bliss reveals more of its unsettling perfection. The palm trees sway in a breeze you cannot feel. The beach sand sparkles like gold dust. It's the paradise every legend promised, and yet something deep within you whispers caution.",
+    "return": "The northwestern waters. The island gleams nearby, impossibly beautiful.",
+    "atmospheric": "Paradise waits. The island's golden light draws you closer."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "H2",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "J2",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "I3",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "I1",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "perfect_palms",
+        "name": "Swaying Palms",
+        "examineText": "The palm trees sway in perfect synchronization, as if choreographed. But there's no breeze on the water. How do they move?",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

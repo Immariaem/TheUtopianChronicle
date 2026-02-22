@@ -1,0 +1,42 @@
+{
+  "quadrantId": "J7",
+  "name": "Ocean Island Southeast",
+  "description": {
+    "initial": "The southeastern waters are where the island's influence is weakest. Here, normal ocean life thrives: fish hunt, seabirds dive, waves break unpredictably. It's chaotic and beautiful, a reminder of what waits when you finally leave this place.",
+    "return": "The southeastern waters. Real life flourishes here, beyond the island's reach.",
+    "atmospheric": "Chaos and change. Growth and decay. The beautiful imperfection of reality."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "I7",
+      "blocked": false
+    },
+    "south": {
+      "blocked": true,
+      "blockedMessage": "The southern ocean extends beyond all horizons. Nothing lies that way."
+    },
+    "east": {
+      "quadrantId": "J8",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "J6",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "real_waves",
+        "name": "Breaking Waves",
+        "examineText": "Real waves breaking on real rocks. Unpredictable, powerful, alive. So different from the island's dead perfection.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

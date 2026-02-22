@@ -1,0 +1,43 @@
+{
+  "quadrantId": "I6",
+  "name": "Ocean Island East",
+  "description": {
+    "initial": "The eastern waters around the island are warm and clear, filled with colorful fish that swim in perfect patterns. Even the ocean here has been touched by the island's unnatural perfection. The fish never hunt, never flee, never change their endless choreography.",
+    "return": "The eastern waters. Even the sea has been made perfect here.",
+    "atmospheric": "Fish swim in synchronized circles. The waves break at precise intervals. Everything moves in perfect harmony."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "H6",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "J6",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "I7",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "I5",
+      "blocked": true,
+      "blockedMessage": "The island's coral shelf stretches across the water above you, leaving no gap to surface through."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "perfect_fish",
+        "name": "Synchronized Fish",
+        "examineText": "Schools of fish swim in perfect formation, turning simultaneously, never breaking pattern. They're beautiful but mechanical, like living decorations.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

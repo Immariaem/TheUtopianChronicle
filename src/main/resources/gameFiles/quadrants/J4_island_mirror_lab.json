@@ -1,0 +1,44 @@
+{
+  "quadrantId": "J4",
+  "name": "Mirror Labyrinth",
+  "description": {
+    "initial": "You've found the Mirror Labyrinth, the only way to leave the Island of Bliss. Its entrance is a simple archway of white stone, but beyond it, you can see mirrors stretching into infinity. Your father explained: inside, reflections of yourself ask questions about your morals, your motivations, why you came. Only honest answers open the path. He failed alone, unable to face his truths. But together, with your help, perhaps he can finally escape.",
+    "return": "The Mirror Labyrinth. The final challenge awaits within.",
+    "atmospheric": "Infinite reflections stare back at you. Every version of yourself, waiting to ask the hard questions."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "I4",
+      "blocked": false
+    },
+    "south": {
+      "blocked": true,
+      "blockedMessage": "The labyrinth's walls extend endlessly. The only exit is through truth."
+    },
+    "east": {
+      "quadrantId": "J5",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "J3",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "labyrinth_entrance",
+        "name": "Labyrinth Archway",
+        "examineText": "The entrance to the Mirror Labyrinth. Beyond it, countless reflections wait to test your honesty. Your father failed this test alone. Together, you might succeed.",
+        "canInteract": true,
+        "interactionText": "You and your father enter the labyrinth together. The mirrors close in around you, and your reflections begin to speak, asking questions you've been avoiding your whole life. But together, you face the truth."
+      }
+    ]
+  },
+  "requiredFlags": [
+    "found_father"
+  ],
+  "unlockFlags": []
+}

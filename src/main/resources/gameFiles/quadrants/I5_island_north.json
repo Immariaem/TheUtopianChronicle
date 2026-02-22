@@ -1,0 +1,45 @@
+{
+  "quadrantId": "I5",
+  "name": "Island North",
+  "description": {
+    "initial": "The northern part of the island is as perfect as the rest: groomed paths through manicured gardens, fruit trees bearing perpetual harvests, birds that sing the same song on endless repeat. The horror of this place grows clearer with every step. This isn't life. This is a beautiful death.",
+    "return": "The northern island. Perfection continues its oppressive reign.",
+    "atmospheric": "The birdsong loops. The flowers don't wilt. The fruit is always ripe. Perfection is prison."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "H5",
+      "blocked": true,
+      "blockedMessage": "The island ends here. You cannot swim away from paradise so easily."
+    },
+    "south": {
+      "quadrantId": "J5",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "I6",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "I4",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "fruit_tree",
+        "name": "Eternal Fruit Tree",
+        "examineText": "A tree bearing perfect fruit, every piece identical. When you pick one, another instantly appears in its place. The fruit has no taste.",
+        "canInteract": true,
+        "interactionText": "You bite into the fruit. It looks perfect, but there's no flavor. No sweetness, no tartness. Just texture without substance. Like everything here."
+      }
+    ]
+  },
+  "requiredFlags": [
+    "reached_island"
+  ],
+  "unlockFlags": []
+}

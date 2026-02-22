@@ -1,0 +1,44 @@
+{
+  "quadrantId": "G7",
+  "name": "Ocean Crossing East",
+  "description": {
+    "initial": "The ocean currents from the Underwater Realm surface here, creating unusual patterns in the water. Nerina mentioned these currents, they carry travelers between realms. This is where you emerged from the underwater kingdom, deposited on the surface to continue your journey to the desert.",
+    "return": "The eastern ocean crossing. The underwater realm's currents rise here.",
+    "atmospheric": "The water swirls with hidden energy. Connections between worlds flow beneath the surface."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "F7",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "H7",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "G8",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "G6",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "current_pattern",
+        "name": "Rising Current",
+        "examineText": "A powerful current rises from the depths here, warm water from the Underwater Realm mixing with the cooler surface waters. This is the exit point from the underwater kingdom.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "coral_cipher_complete"
+  ],
+  "unlockFlags": []
+}

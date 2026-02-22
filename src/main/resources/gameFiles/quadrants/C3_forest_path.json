@@ -1,0 +1,57 @@
+{
+  "quadrantId": "C3",
+  "name": "Forest Path",
+  "description": {
+    "initial": "A well-worn path winds through this section of the forest, marked by generations of travelers. The trees here are tall but not as dense, allowing more light to reach the forest floor. Wildflowers bloom along the path edges, and you can see signs of both animal and human passage. This is a crossroads of sorts, connecting the heart of the forest to the mountains beyond.",
+    "return": "The Forest Path, a traveled route connecting the forest's heart to the eastern mountains.",
+    "atmospheric": "Butterflies dance among the wildflowers. The path seems to invite you onward."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "B3",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "D3",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "C4",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "C2",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "spring_water",
+        "itemName": "Spring Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink the cool spring water. It's incredibly refreshing!"
+      }
+    ],
+    "interactables": [
+      {
+        "id": "trail_marker",
+        "name": "Trail Marker",
+        "examineText": "A wooden post marks the intersection of several paths. Carved arrows point in different directions: 'Fairy Valley' to the north, 'Deer Grove' to the west, 'Mountain range' to the east.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "resting_log",
+        "name": "Fallen Log",
+        "examineText": "A large fallen log provides a natural resting spot. Its surface is worn smooth by countless travelers who have sat here before you.",
+        "canInteract": true,
+        "interactionText": "You sit on the log and rest for a moment, reviewing your father's book. His notes about this forest are detailed but clinical. Your own observations feel more alive, more present."
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

@@ -1,0 +1,88 @@
+{
+  "quadrantId": "C5",
+  "name": "Main Chamber",
+  "description": {
+    "initial": "You emerge into a vast underground chamber that takes your breath away. Massive crystals of every color imaginable grow from the floor, walls, and ceiling, some as tall as trees. The light they emit is soft but bright enough to see clearly, and their combined hum creates a symphony that seems to resonate in your very bones. At the center of the chamber, a young woman tends to the crystals with careful, loving attention. This must be Kira.",
+    "return": "The Main Chamber of the Crystal Caves. Kira continues her eternal work among the singing crystals.",
+    "atmospheric": "The crystal song fills every space, a harmony that speaks of ages past and ages yet to come."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "B5",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "D5",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "C6",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "C4",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "kira",
+        "npcName": "Kira",
+        "dialogue": "\"Welcome, traveler. Few find their way to these caves. I am Kira, keeper of the crystals. These caves once hummed with energy, but the three crystal keys have been scattered across the chambers. Without them, the Singing Chamber stays silent and the path to the mountains above remains sealed. If you wish to pass, find the Blue, Red, and Green Crystal Keys and place them in the correct order upon the console. Be warned, the sequence matters. I believe in you.\"",
+        "dialogueConditions": [
+          {
+            "flag": "crystal_keys_complete",
+            "text": "\"You did it! The crystals sing again. A man came through here once, years ago, he spoke of his child back home. He took the mining lift north of here to reach the sky city Nephelia. Follow his path. Head north, then east through the caves, until you find the lift, then go north once more to ascend. Before you go, I have left a crystal shard for you. Your father carried one too. It may prove useful in ways you do not yet expect.\""
+          }
+        ],
+        "isActive": true
+      }
+    ],
+    "items": [
+      {
+        "itemId": "glowing_mushrooms",
+        "itemName": "Glowing Mushrooms",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You eat the glowing mushrooms. They taste earthy and fill you with warmth."
+      },
+      {
+        "itemId": "kiras_crystal",
+        "itemName": "Kiras Crystal",
+        "isCollectable": true,
+        "itemType": "quest",
+        "itemMessage": "A small crystal shard that hums faintly in your hand. Kira said your father carried one just like it."
+      },
+      {
+        "itemId": "crystal_water",
+        "itemName": "Crystal Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink the mineral-rich water dripping from the crystals. It tingles slightly."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "giant_crystal",
+        "name": "Cathedral Crystal",
+        "examineText": "The largest crystal in the chamber rises nearly to the ceiling. Its deep purple color contains swirls of silver that seem to move like clouds. Kira calls it the Cathedral Crystal, the heart of the caves.",
+        "canInteract": true,
+        "interactionText": "You place your hand on the Cathedral Crystal. Its song intensifies, and for a moment, you hear what might be words in the harmony, ancient and incomprehensible but somehow comforting."
+      },
+      {
+        "id": "kiras_workspace",
+        "name": "Crystal Tending Station",
+        "examineText": "Kira's workspace holds tools for caring for the crystals: soft cloths, bottles of mineral solutions, small chisels for careful trimming. Everything is organized with obvious care.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "entered_caves"
+  ],
+  "unlockFlags": [
+    "met_kira"
+  ]
+}

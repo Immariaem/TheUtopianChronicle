@@ -1,0 +1,66 @@
+{
+  "quadrantId": "B8",
+  "name": "Scholar's Quarter",
+  "description": {
+    "initial": "You enter the Scholar's Quarter, where Nephelia's academics and historians make their home. White marble buildings house libraries, scriptoriums, and lecture halls. Students in flowing robes hurry between classes, clutching scrolls and books. The architecture here is more restrained than elsewhere in the city, designed for contemplation rather than spectacle. A elderly scholar named Malik sits on a bench, watching the clouds drift by.",
+    "return": "The Scholar's Quarter of Nephelia. The pursuit of knowledge continues among these white marble halls.",
+    "atmospheric": "The rustle of pages and murmur of academic debate fills the air. Ink and parchment scent the breeze."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "A8",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "C8",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "B9",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "B7",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "malik_scholar",
+        "npcName": "Malik",
+        "dialogue": "\"Ah, a seeker. I can always tell. You have that same look in your eyes, just like your father did. Yes, I remember him well. He spent days in our library, researching the Island of Bliss. The ancient texts say it lies beyond the southern ocean, a place where the worthy find what they have lost. Many have searched for it, but few have ever returned. The key, I believe, lies not in strength, but in proving yourself along the way.\"",
+        "dialogueConditions": [
+          {
+            "flag": "cargo_delivered",
+            "text": "\"So you are leaving Nephelia. Remember what I told you about the Island. The worthy find what they have lost. Stay true to yourself out there.\""
+          }
+        ],
+        "isActive": true
+      }
+    ],
+    "items": [],
+    "interactables": [
+      {
+        "id": "library_entrance",
+        "name": "Great Library",
+        "examineText": "The entrance to Nephelia's Great Library, a magnificent building with columns carved to look like clouds. Inside, thousands of scrolls and books contain the accumulated wisdom of the sky city.",
+        "canInteract": true,
+        "interactionText": "You browse the library's collection. Among texts on navigation, weather patterns, and philosophy, you find references to the Island of Bliss, described as 'the mortal echo of Elysium, where the worthy might find eternal peace.'"
+      },
+      {
+        "id": "sundial",
+        "name": "Cloud Sundial",
+        "examineText": "An ingenious sundial that somehow works despite Nephelia's constant movement through the sky. The shadow falls on a Greek letter: Theta, symbol of death and eternal life.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "reached_sky_city"
+  ],
+  "unlockFlags": [
+    "explored_scholar_quarter"
+  ]
+}

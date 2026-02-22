@@ -1,0 +1,42 @@
+{
+  "quadrantId": "G6",
+  "name": "Ocean Crossing Central",
+  "description": {
+    "initial": "Days blur together in the endless crossing. The sun rises and sets, the stars wheel overhead, and still you sail. The ocean here is calm but featureless, a blue desert. You understand now why so few have made this journey. The solitude is crushing.",
+    "return": "The central ocean crossing. Endless blue stretches to infinity.",
+    "atmospheric": "Time loses meaning on the open ocean. There is only the boat, the water, and the sky."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "F6",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "H6",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "G7",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "G5",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "endless_blue",
+        "name": "The Deep",
+        "examineText": "The water here is impossibly deep, its color shifting to an almost purple blue. You cannot see the bottom. You can only imagine what swims in those depths.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

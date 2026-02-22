@@ -1,0 +1,68 @@
+{
+  "quadrantId": "B7",
+  "name": "Zara's Dock",
+  "description": {
+    "initial": "This private docking platform belongs to Captain Zara, one of Nephelia's most experienced airship pilots. Her vessel, the 'Storm Chaser,' is moored here, its patched balloon and scarred hull telling tales of countless journeys through dangerous skies. The captain herself sits on a crate, mending a rope with practiced hands. She looks up as you approach, her weathered face showing a mix of curiosity and wariness.",
+    "return": "Captain Zara's private dock. The Storm Chaser rocks gently in the perpetual breeze of the floating city.",
+    "atmospheric": "The smell of airship grease and canvas mixes with the clean mountain air. Wind chimes made from old ship parts create a gentle melody."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "A7",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "C7",
+      "blocked": true,
+      "blockedMessage": "The platform drops off into open sky. There is no way down from here."
+    },
+    "east": {
+      "quadrantId": "B8",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "B6",
+      "blocked": true,
+      "blockedMessage": "The lift shaft opens here, but you cannot walk back through it. Use the lift platform to descend."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "captain_zara",
+        "npcName": "Captain Zara",
+        "dialogue": "\"Another surface dweller. You came up through the mining lift, did you not? Name is Zara. I would shake your hand but I am a bit busy. Listen, I have a problem you might be able to help with. A shipment of mine got stranded out on the Windy Platform to the east. The winds there are brutal and I cannot leave my ship unattended. Fetch my cargo and bring it back, and I will make it worth your while. I know things about these skies and the lands below that might help you on your journey.\"",
+        "dialogueConditions": [
+          {
+            "flag": "cargo_delivered",
+            "text": "\"You actually did it! Not bad for a ground walker. A deal is a deal. Your father, yes I knew him. He came through here years ago chasing the Island of Bliss, like so many before him. Most who go looking for it never come back. I dropped him off above the open ocean south of here, that is as far as my ship could take him. Brave man, or maybe just desperate. I can take you the same route if you are ready. The Storm Chaser is right here, just hop on and use her when you are ready to go.\""
+          }
+        ],
+        "isActive": true
+      }
+    ],
+    "items": [],
+    "interactables": [
+      {
+        "id": "storm_chaser",
+        "name": "The Storm Chaser",
+        "examineText": "Captain Zara's airship is a medium-sized vessel, built for speed and maneuverability rather than cargo capacity. Every inch shows careful maintenance despite visible battle damage. The name 'Storm Chaser' is painted on the bow in faded letters.",
+        "canInteract": true,
+        "interactionText": "You climb aboard the Storm Chaser. Zara casts off the mooring lines and takes the wheel. The airship rises above Nephelia, the floating city shrinking beneath you. The wind fills the sails as you soar south over endless blue ocean. Clouds streak past and the air grows warm and salty. After what feels like hours, Zara begins to descend. Below you, the ocean stretches in every direction, deep and dark. This is where your father's trail went cold. Zara gives you a nod. Time to dive."
+      },
+      {
+        "id": "memorial_plaque",
+        "name": "Small Plaque",
+        "examineText": "A small brass plaque is mounted near the gangway: 'In memory of Marcus, co-pilot and friend. Lost in the Great Storm, Year 47. May the winds carry you home.'",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "reached_sky_city"
+  ],
+  "unlockFlags": [
+    "met_zara"
+  ]
+}

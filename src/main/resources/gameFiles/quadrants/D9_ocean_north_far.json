@@ -1,0 +1,43 @@
+{
+  "quadrantId": "D9",
+  "name": "Ocean North Far",
+  "description": {
+    "initial": "You've reached the far northern waters, where the ocean grows colder and the sky seems vast and empty. Seabirds are rare here, and the water takes on a steely grey color. This feels like the edge of the navigable world, a place where few sailors venture.",
+    "return": "The far northern ocean. Cold, grey, and lonely.",
+    "atmospheric": "The wind carries a chill that penetrates to your bones. The silence is profound."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "C9",
+      "blocked": true,
+      "blockedMessage": "The sky city floats too high above to be reached from the water."
+    },
+    "south": {
+      "quadrantId": "E9",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "D10",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "D8",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "lonely_albatross",
+        "name": "Albatross",
+        "examineText": "A single albatross circles overhead, its enormous wingspan carrying it effortlessly on the wind. It seems to be watching you.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

@@ -1,0 +1,63 @@
+{
+  "quadrantId": "E4",
+  "name": "Father's Campsite",
+  "description": {
+    "initial": "You've found it, the campsite Kira mentioned, where your father stayed when he explored the Crystal Caves. The remains of a fire pit, a cleared sleeping area, and there, half-buried in crystal dust, his water flask. Your hands tremble as you pick it up. He was here. He held this. The flask still bears his initials, scratched into the metal. A piece of him to carry with you.",
+    "return": "Your father's old campsite. The memory of his presence lingers in this quiet place.",
+    "atmospheric": "The crystals here seem to hum more softly, as if in respect for this sacred space."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "D4",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "F4",
+      "blocked": true,
+      "blockedMessage": "The cave system doesn't extend this direction. Solid rock blocks your path."
+    },
+    "east": {
+      "quadrantId": "E5",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "E3",
+      "blocked": true,
+      "blockedMessage": "Solid stone fills every crack and gap. The cave ends completely here."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "water_flask",
+        "itemName": "Water Flask",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink from your father's flask. The water is cool and refreshing."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "old_firepit",
+        "name": "Cold Fire Pit",
+        "examineText": "The fire pit hasn't been used in years. Ashes have compacted and crystals have begun to grow among the stones. Your father sat here, warming himself, thinking about the chronicle he had left behind.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "sleeping_area",
+        "name": "Sleeping Area",
+        "examineText": "A flat area of sand where someone once made their bed. You can still see the impression of a body, preserved by the cave's unchanging conditions.",
+        "canInteract": true,
+        "interactionText": "You lie down where your father once slept, staring up at the crystal-studded ceiling. For a moment, you feel close to him, sharing the same view he once had."
+      }
+    ]
+  },
+  "requiredFlags": [
+    "met_kira"
+  ],
+  "unlockFlags": [
+    "found_flask"
+  ]
+}

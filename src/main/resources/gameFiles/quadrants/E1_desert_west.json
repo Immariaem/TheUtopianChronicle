@@ -1,0 +1,43 @@
+{
+  "quadrantId": "E1",
+  "name": "Desert West",
+  "description": {
+    "initial": "You've entered the western reaches of the Desert of Truth. The sand here is pale gold, almost white in the harsh sunlight. Dunes rise and fall like frozen waves, and the heat is oppressive. There's a stark beauty to this place, but also danger. Without water and shelter, the desert claims all who underestimate it.",
+    "return": "The western desert. The endless dunes shimmer in the heat.",
+    "atmospheric": "Heat radiates from the sand in visible waves. The silence is broken only by the whisper of wind-blown grains."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "D1",
+      "blocked": true,
+      "blockedMessage": "Steep cliffs separate the desert from the lands to the north."
+    },
+    "south": {
+      "quadrantId": "F1",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "E2",
+      "blocked": false
+    },
+    "west": {
+      "blocked": true,
+      "blockedMessage": "The western desert stretches endlessly. There is nothing for you in that direction."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "bleached_bones",
+        "name": "Bleached Bones",
+        "examineText": "The skeleton of some large animal lies half-buried in the sand, a stark reminder of the desert's indifference to life.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

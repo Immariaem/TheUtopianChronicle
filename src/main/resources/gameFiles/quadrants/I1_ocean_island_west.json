@@ -1,0 +1,42 @@
+{
+  "quadrantId": "I1",
+  "name": "Ocean Island West",
+  "description": {
+    "initial": "You sail through the western waters near the Island of Bliss. The water here has an unusual quality, almost glowing from within. The island is visible to the east, its perfect beaches and palm trees beckoning. Something about this place feels wrong, too perfect, too still.",
+    "return": "The western waters near the island. The unnatural perfection is unsettling.",
+    "atmospheric": "The air is too sweet, the water too clear. Everything here is flawless, and that feels wrong."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "H1",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "J1",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "I2",
+      "blocked": false
+    },
+    "west": {
+      "blocked": true,
+      "blockedMessage": "The western ocean continues endlessly. The island lies to the east."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "glowing_water",
+        "name": "Luminescent Water",
+        "examineText": "The water glows softly, as if lit from within. It's beautiful but unnatural, like everything else near the island.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

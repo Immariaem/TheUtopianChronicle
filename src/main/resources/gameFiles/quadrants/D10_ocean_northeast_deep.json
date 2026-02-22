@@ -1,0 +1,42 @@
+{
+  "quadrantId": "D10",
+  "name": "Ocean Northeast Deep",
+  "description": {
+    "initial": "You've reached the northeastern corner of the charted waters. The ocean here is impossibly deep, its color shifting to an almost black blue. Strange currents move beneath the surface, and occasionally you see lights in the depths, perhaps bioluminescent creatures, perhaps something else entirely.",
+    "return": "The deep northeastern ocean. Mysteries lurk beneath the dark waters.",
+    "atmospheric": "The water seems to absorb all light and sound. An ancient silence pervades."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "C10",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "E10",
+      "blocked": false
+    },
+    "east": {
+      "blocked": true,
+      "blockedMessage": "The eastern ocean stretches beyond all maps. There is nothing for you there."
+    },
+    "west": {
+      "quadrantId": "D9",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "deep_lights",
+        "name": "Deep Lights",
+        "examineText": "Occasional lights flash in the depths below, patterns that seem almost like communication. The underwater realm lies somewhere beneath these waters.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

@@ -1,0 +1,53 @@
+{
+  "quadrantId": "E7",
+  "name": "Coastal Drop",
+  "description": {
+    "initial": "You've reached where the land meets the sea, a dramatic cliff overlooking the vast ocean. The water below is deep and blue, and you can see currents swirling in patterns that suggest great depths. Captain Zara mentioned diving at 'the barrier where sky meets sea.' This must be the place. With Kira's crystal, you could breathe underwater.",
+    "return": "The coastal drop. The diving point to the Underwater Realm awaits.",
+    "atmospheric": "Waves crash against the cliffs far below. Salt spray reaches even this height."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "D7",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "F7",
+      "blocked": true,
+      "blockedMessage": "The cliffs are too sheer to climb down. You need to dive from the proper point."
+    },
+    "east": {
+      "quadrantId": "E8",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "E6",
+      "blocked": true,
+      "blockedMessage": "You have reached the coast where you started. There is nothing left for you back there."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "cliff_edge",
+        "name": "Cliff Edge",
+        "examineText": "The cliff drops away sharply, perhaps a hundred feet to the water below. The dive would be dangerous without magical protection.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "dive_marker",
+        "name": "Ancient Marker",
+        "examineText": "A weathered stone marker stands at the cliff's edge, carved with symbols that look like waves and fish. This must be the traditional diving point for reaching the Underwater Realm.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "windy_platform_complete"
+  ],
+  "unlockFlags": []
+}

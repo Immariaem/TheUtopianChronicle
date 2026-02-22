@@ -1,0 +1,66 @@
+{
+  "quadrantId": "C9",
+  "name": "Airship Hangar",
+  "description": {
+    "initial": "You've found the main airship hangar of Nephelia, a vast covered structure where vessels are repaired and maintained. Partially-assembled airships hang from scaffolding, and workers move about with tools and materials. The smell of varnish, canvas, and engine oil fills the air. A foreman oversees the work, occasionally shouting instructions to the crews above.",
+    "return": "The airship hangar. The work of building and maintaining Nephelia's fleet continues without pause.",
+    "atmospheric": "The clang of hammers on metal and the whoosh of bellows create an industrial symphony."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "B9",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "D9",
+      "blocked": true,
+      "blockedMessage": "The hangar opens onto empty sky. Only airships leave this way."
+    },
+    "east": {
+      "quadrantId": "C10",
+      "blocked": true,
+      "blockedMessage": "The hangar wall blocks your path. The eastern exit leads only to open sky."
+    },
+    "west": {
+      "quadrantId": "C8",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "hangar_foreman",
+        "npcName": "Foreman",
+        "dialogue": "\"Mind the scaffolding, traveler. We are building three new ships this season. Captain Zara's Storm Chaser is the fastest vessel in our fleet, even if it does not look like much. If anyone can get you where you need to go, it is her.\"",
+        "dialogueConditions": [
+          {
+            "flag": "cargo_delivered",
+            "text": "\"I saw Zara prepping the Storm Chaser. Looks like you two are heading out soon. Safe skies.\""
+          }
+        ],
+        "isActive": true
+      }
+    ],
+    "items": [],
+    "interactables": [
+      {
+        "id": "unfinished_ship",
+        "name": "Ship Under Construction",
+        "examineText": "A sleek new airship is taking shape on the scaffolding. Its hull is complete, but the balloon is still being sewn together by skilled craftsmen.",
+        "canInteract": false,
+        "interactionText": null
+      },
+      {
+        "id": "parts_storage",
+        "name": "Parts Storage",
+        "examineText": "Shelves and bins hold countless airship components: gears, ropes, valves, and instruments. Everything needed to keep Nephelia's fleet flying.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "reached_sky_city"
+  ],
+  "unlockFlags": []
+}

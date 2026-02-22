@@ -1,0 +1,44 @@
+{
+  "quadrantId": "D7",
+  "name": "Ocean North",
+  "description": {
+    "initial": "You're sailing through the northern reaches of the great ocean. The water here is deep blue, almost purple, and remarkably calm. The coast is a distant line to the west, while the open sea stretches endlessly east and south. Occasionally, dolphins break the surface, arcing gracefully before disappearing again.",
+    "return": "The northern ocean. Calm waters stretch in every direction.",
+    "atmospheric": "The rhythmic slap of waves against your vessel creates a hypnotic soundtrack. Salt air fills your lungs."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "C7",
+      "blocked": true,
+      "blockedMessage": "Rocky cliffs and dangerous shoals block passage to the north."
+    },
+    "south": {
+      "quadrantId": "E7",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "D8",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "D6",
+      "blocked": true,
+      "blockedMessage": "The coast here is all sheer cliffs. There's no landing possible."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "dolphin_pod",
+        "name": "Dolphins",
+        "examineText": "A pod of dolphins follows your vessel, seemingly playing in the wake. Their joyful energy is contagious.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

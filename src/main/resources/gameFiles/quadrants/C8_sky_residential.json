@@ -1,0 +1,66 @@
+{
+  "quadrantId": "C8",
+  "name": "Residential Quarter",
+  "description": {
+    "initial": "You wander through the residential quarter of Nephelia, where the city's permanent inhabitants make their homes. The buildings here are elegant but lived-in, with balconies overflowing with flowering plants and windows thrown open to catch the breeze. Children play in small courtyards, and the smell of cooking drifts from open doors. This is what makes a floating city feel like a real home.",
+    "return": "The residential quarter. The daily life of Nephelia continues around you.",
+    "atmospheric": "Laundry flutters on lines strung between buildings. The sounds of family life create a warm backdrop."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "B8",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "D8",
+      "blocked": true,
+      "blockedMessage": "The residential quarter ends here. Beyond is only sky and the distant ocean below."
+    },
+    "east": {
+      "quadrantId": "C9",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "C7",
+      "blocked": true,
+      "blockedMessage": "The edge of Nephelia. You cannot walk off into the sky."
+    }
+  },
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "sky_resident",
+        "npcName": "Resident",
+        "dialogue": "\"You are not from around here, are you? Word travels fast in a floating city. I heard Captain Zara has been looking for someone brave enough to fetch her cargo from the Windy Platform. Nobody else will do it. The winds out there are no joke. You might want to talk to her if you need a way off Nephelia.\"",
+        "dialogueConditions": [
+          {
+            "flag": "cargo_delivered",
+            "text": "\"I heard you got Zara's cargo back! You have guts, I will give you that.\""
+          }
+        ],
+        "isActive": true
+      }
+    ],
+    "items": [],
+    "interactables": [
+      {
+        "id": "public_fountain",
+        "name": "Cloud Fountain",
+        "examineText": "A beautiful fountain where water seems to fall from a small personal cloud hovering above it. Children splash in its basin while adults rest on benches nearby.",
+        "canInteract": true,
+        "interactionText": "You cup your hands and drink from the fountain. The water is pure and refreshing, with a faint taste of rain."
+      },
+      {
+        "id": "message_board",
+        "name": "Community Board",
+        "examineText": "A board covered with notices: lost items, community events, job postings for airship crews. Normal life, suspended in the sky.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "reached_sky_city"
+  ],
+  "unlockFlags": []
+}

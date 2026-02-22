@@ -1,0 +1,76 @@
+{
+  "quadrantId": "E2",
+  "name": "Desert Oasis",
+  "description": {
+    "initial": "An oasis rises from the desert like a miracle. Palm trees provide shade over a clear pool of water, and the air here is blessedly cool. Sitting by a small fire is an old man with knowing eyes, the Hermit. He watches you approach without surprise, as if he's been expecting you. When you tell him about your father, his expression becomes unreadable. 'Did he die?' he asks quietly. 'I'm sorry. He sat by this fire, right where you sit now.'",
+    "return": "The oasis. The Hermit tends his fire, at peace with his chosen solitude.",
+    "atmospheric": "Water trickles from a spring, creating the most beautiful sound in the desert. The shade feels like salvation."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "D2",
+      "blocked": true,
+      "blockedMessage": "The forest cannot be reached from here. The terrain is impassable."
+    },
+    "south": {
+      "quadrantId": "F2",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "E3",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "E1",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [
+      {
+        "npcId": "hermit",
+        "npcName": "Hermit",
+        "dialogue": "\"You look very familiar... But if I am being honest I did already expect you. Your father had the same look you do now. Desperate and certain at the same \n  time. He sat at this fire for two nights before moving on. He left his compass\n   behind by accident, or perhaps on purpose, I was never sure. Take it. Head \n  south from here to the Star Observation Point. On a clear night the three \n  constellations align and point the way to the hidden cove where his boat still\n   waits. I know because I made this same journey once. I stopped here. Some \n  days I wonder if I was a coward. Most days I think I was wise.\"",
+        "dialogueConditions": [
+          {
+            "flag": "found_star_point",
+            "text": "\"You found the observation point and were able to solve the puzzle. Good. The stars don't lie. Follow where they point and you will find the cove.\""
+          }
+        ],
+        "isActive": true
+      }
+    ],
+    "items": [
+      {
+        "itemId": "fathers_compass",
+        "itemName": "Fathers Compass",
+        "isCollectable": true,
+        "itemType": "tool",
+        "itemMessage": "You hold the compass up. The needle spins, then points steadily toward the Island of Bliss."
+      },
+      {
+        "itemId": "oasis_pool_water",
+        "itemName": "Clear Pool",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink deeply from the pool. The water refreshes you body and spirit, washing away the desert's harsh touch."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "hermit_fire",
+        "name": "Campfire",
+        "examineText": "A small fire burns with wood that seems to come from nowhere. The Hermit has lived here long enough to know the desert's secrets, including where to find fuel.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [
+    "guardian_trial_complete"
+  ],
+  "unlockFlags": [
+    "met_hermit",
+    "received_compass"
+  ]
+}

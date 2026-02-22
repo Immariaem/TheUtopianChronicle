@@ -1,0 +1,42 @@
+{
+  "quadrantId": "I7",
+  "name": "Ocean Island Northeast",
+  "description": {
+    "initial": "The northeastern waters mark the boundary between the island's influence and the normal ocean. Here, you can see the contrast: the perfect, glowing waters near the island fade into the natural, imperfect ocean you know. Reality waits just beyond the island's reach.",
+    "return": "The northeastern waters. The boundary between perfection and reality.",
+    "atmospheric": "The island's influence fades where the open ocean begins. Two waters, side by side."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "H7",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "J7",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "I8",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "I6",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [],
+    "interactables": [
+      {
+        "id": "boundary_line",
+        "name": "Reality's Edge",
+        "examineText": "A visible line in the water where the island's influence ends. On one side, unnatural perfection. On the other, the real ocean with its chaos and beauty.",
+        "canInteract": false,
+        "interactionText": null
+      }
+    ]
+  },
+  "requiredFlags": [],
+  "unlockFlags": []
+}

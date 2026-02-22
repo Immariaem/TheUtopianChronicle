@@ -1,0 +1,54 @@
+{
+  "quadrantId": "I9",
+  "name": "Oyster Beds",
+  "description": {
+    "initial": "You have discovered the Oyster Beds. Massive oysters cover the seafloor, some large enough to sit inside. The merfolk harvest pearls here, but among the shells you notice something out of place. A pearl that glows differently from the rest, left behind by a seeker who passed through long ago.",
+    "return": "The Oyster Beds. Giant oysters and hidden treasures await.",
+    "atmospheric": "Pearls gleam from half-open shells. The water here carries the whisper of secrets."
+  },
+  "connections": {
+    "north": {
+      "quadrantId": "H9",
+      "blocked": false
+    },
+    "south": {
+      "quadrantId": "J9",
+      "blocked": false
+    },
+    "east": {
+      "quadrantId": "I10",
+      "blocked": false
+    },
+    "west": {
+      "quadrantId": "I8",
+      "blocked": false
+    }
+  },
+  "visibleObjects": {
+    "npcs": [],
+    "items": [
+      {
+        "itemId": "pearl_relic",
+        "itemName": "Pearl Relic",
+        "isCollectable": true,
+        "itemType": "quest",
+        "itemMessage": "You take the glowing pearl. It is warm to the touch and pulses faintly with light. A keepsake from a seeker who never returned."
+      }
+    ],
+    "interactables": [
+      {
+        "id": "giant_oyster",
+        "name": "Giant Oyster",
+        "examineText": "An oyster large enough to climb inside. Its shell is encrusted with smaller shells and barnacles, a miniature ecosystem unto itself.",
+        "canInteract": true,
+        "interactionText": "You peer inside the giant oyster. At its heart rests a pearl the size of your fist, gleaming with inner light. Beautiful, but you leave it undisturbed."
+      }
+    ]
+  },
+  "requiredFlags": [
+    "met_nerina"
+  ],
+  "unlockFlags": [
+    "found_oyster_relic"
+  ]
+}
