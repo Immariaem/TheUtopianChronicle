@@ -5,6 +5,10 @@ let gameState = {
     saturation: 20
 };
 
+// command history for ↑/↓ navigation
+const commandHistory = [];
+let historyIndex = -1;
+
 // DOM elements
 const outputDiv = document.getElementById('output');
 const scrollContainer = document.querySelector('.page-left-content');
@@ -18,6 +22,7 @@ const btnMap = document.getElementById('btn-map');
 document.addEventListener('DOMContentLoaded', () => {
     fetchStatus();
     commandInput.addEventListener('keypress', handleCommand);
+    commandInput.addEventListener('keydown', handleHistory);
 
     btnHome.addEventListener('click', () => {
         bookBg.src = 'images/book.png';
@@ -41,6 +46,20 @@ async function fetchStatus() {
     }
 }
 
+// Navigate command history with ↑/↓ arrow keys
+function handleHistory(event) {
+    if (commandHistory.length === 0) return;
+    if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        historyIndex = Math.min(historyIndex + 1, commandHistory.length - 1);
+        commandInput.value = commandHistory[historyIndex];
+    } else if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        historyIndex = Math.max(historyIndex - 1, -1);
+        commandInput.value = historyIndex === -1 ? '' : commandHistory[historyIndex];
+    }
+}
+
 // Handle command input
 async function handleCommand(event) {
     if (event.key !== 'Enter') return;
@@ -48,6 +67,8 @@ async function handleCommand(event) {
     const input = commandInput.value.trim();
     if (!input) return;
 
+    commandHistory.unshift(input);
+    historyIndex = -1;
     commandInput.value = '';
 
     // Show the player's command in the output
