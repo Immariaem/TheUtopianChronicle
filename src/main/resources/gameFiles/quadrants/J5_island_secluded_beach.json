@@ -68,7 +68,5 @@
   "requiredFlags": [
     "met_smiling_ones"
   ],
-  "unlockFlags": [
-    "found_father"
-  ]
+  "unlockFlags": []
 }

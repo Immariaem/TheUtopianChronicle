@@ -109,17 +109,16 @@ class MovementHandler(state: GameState,
             "cargo_delivered"
         ),
         "F5" to setOf(
-            "reached_desert", "found_star_point",
+            "found_star_point",
             "met_hermit", "received_compass",
             "star_navigation_complete"
         ),
         "E8" to setOf(
-            "entered_underwater",
             "dropped_coral_relic", "dropped_pearl_relic", "dropped_stone_relic", "relics_offered",
             "guardian_trial_complete"
         ),
         "I4" to setOf(
-            "met_smiling_ones", "mirror_labyrinth_complete"
+            "met_smiling_ones", "found_father", "mirror_labyrinth_complete"
         )
     )
 

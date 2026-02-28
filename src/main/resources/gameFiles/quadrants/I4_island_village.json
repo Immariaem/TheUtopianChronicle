@@ -76,7 +76,5 @@
   "requiredFlags": [
     "reached_island"
   ],
-  "unlockFlags": [
-    "met_smiling_ones"
-  ]
+  "unlockFlags": []
 }

@@ -24,6 +24,16 @@ class DialogueHandler(state: GameState, world: World) : BaseHandler(state, world
             }
         }
 
+        // talking to the smiling ones unlocks the path to the secluded beach
+        if (npc.npcId == "smiling_ones" && "met_smiling_ones" !in state.gameFlags) {
+            state.gameFlags.add("met_smiling_ones")
+        }
+
+        // talking to father for the first time unlocks the labyrinth
+        if (npc.npcId == "father" && "found_father" !in state.gameFlags) {
+            state.gameFlags.add("found_father")
+        }
+
         // cargo delivery: talking to Zara with cargo in inventory delivers it
         if (npc.npcId == "captain_zara" && "cargo_delivered" !in state.gameFlags) {
             val cargo = state.playerInventory.find { it.itemId == "zaras_cargo" }

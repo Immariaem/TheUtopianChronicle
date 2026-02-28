@@ -368,8 +368,6 @@ function appendResponse(data) {
                         <div class="credits-spacer small"></div>
                         <p class="credits-name">My Family & Friends</p>
                         <div class="credits-spacer small"></div>
-                        <p class="credits-name">Claude & the magic of AI</p>
-                        <div class="credits-spacer small"></div>
                         <p class="credits-note">And everyone who believed in this<br>before it believed in itself</p>
                         <div class="credits-spacer large"></div>
                         <p class="credits-quote">"Utopia is not a place to be found.<br>It is the moment you stop searching<br>and realise you were already there."</p>
