@@ -2,7 +2,7 @@
   "quadrantId": "B10",
   "name": "Windy Platform",
   "description": {
-    "initial": "You've reached the easternmost edge of Nephelia, a cargo platform exposed to the full force of the wind currents that flow around the floating city. Crates and barrels are scattered across the platform, and among them you can see Captain Zara's cargo, marked with her distinctive symbol. The wind here is fierce and unpredictable, gusting from different directions without warning. One wrong step could send you tumbling into the endless sky below.",
+    "initial": "An exposed cargo platform at Nephelia's eastern edge. Crates and barrels are scattered across it - among them, one marked with Captain Zara's symbol. The wind here is something else entirely, unpredictable and sharp. The platform's edge is not railed.",
     "return": "The treacherous Windy Platform. The wind still howls, but you know its patterns now.",
     "atmospheric": "Wind screams past your ears, drowning out all other sound. The platform creaks and sways with each gust."
   },
@@ -39,14 +39,14 @@
     "interactables": [
       {
         "id": "scattered_crates",
-        "name": "Scattered Cargo",
+        "name": "Cargo",
         "examineText": "Various crates and barrels have been left here, either forgotten or abandoned due to the dangerous conditions. Most bear shipping marks from distant ports.",
         "canInteract": false,
         "interactionText": null
       },
       {
         "id": "safety_rope",
-        "name": "Frayed Safety Rope",
+        "name": "Safety Rope",
         "examineText": "A rope that once served as a safety line has mostly frayed away. Only a few feet remain attached to a metal ring bolted into the platform.",
         "canInteract": true,
         "interactionText": "You grab the remaining rope, using it to steady yourself against the wind. It helps, but barely."
@@ -57,6 +57,7 @@
     "met_zara"
   ],
   "unlockFlags": [
-    "reached_windy_platform"
+    "reached_windy_platform",
+    "windy_platform_complete"
   ]
 }

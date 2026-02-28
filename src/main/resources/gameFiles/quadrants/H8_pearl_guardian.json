@@ -2,7 +2,7 @@
   "quadrantId": "H8",
   "name": "Pearl Guardian's Chamber",
   "description": {
-    "initial": "You have found the chamber of the Pearl Guardian, an ancient sea turtle who has watched over these waters for centuries. The chamber is lined with pearls of every size and color, their soft glow providing gentle illumination. The Pearl Guardian rests at the center, massive and ancient, his wise eyes watching as you approach. He is the keeper of the path to the surface and the one who decides which seekers are worthy of finding the Island of Bliss.",
+    "initial": "The chamber is lined with pearls of every size and color, their glow the only light. At the center, a sea turtle rests - ancient and enormous, larger than you expected. His eyes find you the moment you enter and do not look away.",
     "return": "The Pearl Guardian's Chamber. The ancient turtle watches you with knowing eyes.",
     "atmospheric": "The pearls create a soft, dreamlike light. Time seems to move differently here."
   },

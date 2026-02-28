@@ -4,7 +4,7 @@
   "description": {
     "initial": "You have discovered the Coral Garden, a place of impossible beauty deep beneath the waves. The coral here grows in spirals and towers and delicate fans in every color imaginable. Among the formations, half buried in living coral, you notice something that does not belong. A relic left behind by someone who passed through here long ago.",
     "return": "The Coral Garden. Living coral creates an underwater paradise.",
-    "atmospheric": "Colors explode from every surface. This is nature's art gallery, curated by millennia."
+    "atmospheric": "Colors explode from every surface. This is nature's art gallery, shaped by millions of years."
   },
   "connections": {
     "north": {

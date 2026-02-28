@@ -39,9 +39,9 @@ class ExplorationHandler(state: GameState, world: World) : BaseHandler(state, wo
         if (interactable != null) return interactable.examineText
 
         val item = state.currentQuadrant.visibleObjects.items
-            .find { it.itemId.lowercase() == target.lowercase() }
+            .find { it.itemName.lowercase() == target.lowercase() }
 
-        if (item != null) return "You see: ${item.itemId}"
+        if (item != null) return item.itemMessage ?: item.itemName
 
         return "You don't see '$target' here."
     }

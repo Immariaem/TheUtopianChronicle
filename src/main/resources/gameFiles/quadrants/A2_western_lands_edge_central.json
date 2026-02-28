@@ -2,9 +2,9 @@
   "quadrantId": "A2",
   "name": "Western Lands Edge Central",
   "description": {
-    "initial": "You've reached the northernmost edge of the western lands. Rolling hills stretch endlessly to the west, covered in wild grasses that sway in the wind. This is as far north and west as your journey needs to take you. Your path lies to the southeast, toward the Enchanted Forest and beyond.",
+    "initial": "A stretch of open grassland at the edge of the western wilds. Wildflowers dot the hills. The tree line of the Enchanted Forest rises to the southeast.",
     "return": "The edge between the western wilderness and the lands of your journey. The forest lies to the south.",
-    "atmospheric": "Wildflowers dot the grassland. Birds circle overhead, riding the thermal currents."
+    "atmospheric": "Wildflowers dot the grassland. Birds circle overhead, riding the warm air currents."
   },
   "connections": {
     "north": {

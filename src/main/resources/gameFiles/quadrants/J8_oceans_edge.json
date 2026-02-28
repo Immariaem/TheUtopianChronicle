@@ -2,7 +2,7 @@
   "quadrantId": "J8",
   "name": "Ocean's Edge",
   "description": {
-    "initial": "You've reached the edge of the explored ocean, where maps end and mystery begins. The water here is deep and dark, filled with currents from unknown places. Ancient mariners believed the world ended here. Perhaps in some ways, it does, not with an edge, but with a return to the unknown.",
+    "initial": "You've reached the edge of the explored ocean, where maps end and mystery begins. The water here is deep and dark, filled with currents from unknown places. Ancient sailors believed the world ended here. Perhaps in some ways, it does, not with an edge, but with a return to the unknown.",
     "return": "The ocean's edge. Where the known world meets the infinite unknown.",
     "atmospheric": "Mystery and possibility stretch in all directions. The world is larger than any map."
   },
@@ -30,7 +30,7 @@
     "interactables": [
       {
         "id": "unknown_depths",
-        "name": "Unfathomed Waters",
+        "name": "Unknown Waters",
         "examineText": "The water here is deeper than any measurement, darker than any night. What swims in these depths has never been seen by human eyes.",
         "canInteract": false,
         "interactionText": null

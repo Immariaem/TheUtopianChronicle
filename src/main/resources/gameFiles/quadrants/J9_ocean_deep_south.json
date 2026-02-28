@@ -2,9 +2,9 @@
   "quadrantId": "J9",
   "name": "Underwater Deep South",
   "description": {
-    "initial": "The deepest southern reaches of the Underwater Realm are cold and dark, barely touched by the merfolk civilization. Only the bravest explorers come here, and many don't return. The pressure is immense, and strange things move in the darkness, things that predate even the ancient civilizations whose ruins dot the seafloor.",
+    "initial": "The water is colder here, darker. The merfolk don't come this far south. Strange shapes move beyond your range of vision - things that are older than the ruins, that are older than any civilization you've seen traces of.",
     "return": "The deep southern waters. Cold, dark, and ancient beyond measure.",
-    "atmospheric": "Primordial darkness. Things older than memory swim here."
+    "atmospheric": "Ancient darkness. Things older than memory swim here."
   },
   "connections": {
     "north": {

@@ -2,7 +2,7 @@
   "quadrantId": "B2",
   "name": "Forest Entrance",
   "description": {
-    "initial": "You stand at the threshold of the Enchanted Forest, your father's book clutched tightly in your hands. The trees lean inward, curious about the newcomer. Sunlight filters through the canopy in golden shafts. This is where your journey begins, following the path your father walked three years ago.",
+    "initial": "You stand at the threshold of the Enchanted Forest, your father's book clutched tightly in your hands. The trees lean inward, curious about the newcomer. Sunlight filters through the canopy in golden shafts. This is where your journey begins, following the path your father walked three years ago.\n\nNew here? Type 'help' to see all available commands.",
     "return": "The entrance to the Enchanted Forest. The trees still seem to watch you with ancient curiosity.",
     "atmospheric": "The forest hums with an energy you can feel in your bones. Somewhere ahead, adventure awaits."
   },
@@ -29,10 +29,10 @@
     "items": [
       {
         "itemId": "wild_berries",
-        "itemName": "Wild Berries",
+        "itemName": "Forest Berries",
         "isCollectable": true,
         "itemType": "consumable",
-        "itemMessage": "You eat the sweet wild berries. They taste like summer sunshine."
+        "itemMessage": "You eat the sweet forest berries. They taste like summer sunshine."
       }
     ],
     "interactables": [

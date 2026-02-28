@@ -2,7 +2,7 @@
   "quadrantId": "H7",
   "name": "Ocean Trench East",
   "description": {
-    "initial": "The eastern edge of the great trench is marked by ancient coral formations, some grown to monstrous size over millennia. These corals form natural bridges across the narrowest parts of the chasm, allowing passage for those brave enough to cross.",
+    "initial": "The eastern edge of the great trench is marked by ancient coral formations, some grown to enormous size over millions of years. These corals form natural bridges across the narrowest parts of the chasm, allowing passage for those brave enough to cross.",
     "return": "The eastern trench edge. Ancient coral bridges span the darkness.",
     "atmospheric": "The coral seems to hum with ancient memory. These formations were old when the merfolk first came."
   },
@@ -29,7 +29,7 @@
     "items": [
       {
         "itemId": "luminous_kelp",
-        "itemName": "Luminous Kelp",
+        "itemName": "Kelp",
         "isCollectable": true,
         "itemType": "consumable",
         "itemMessage": "You chew on the glowing kelp. It tastes of the sea and fills your stomach with a gentle warmth."

@@ -2,9 +2,9 @@
   "quadrantId": "B8",
   "name": "Scholar's Quarter",
   "description": {
-    "initial": "You enter the Scholar's Quarter, where Nephelia's academics and historians make their home. White marble buildings house libraries, scriptoriums, and lecture halls. Students in flowing robes hurry between classes, clutching scrolls and books. The architecture here is more restrained than elsewhere in the city, designed for contemplation rather than spectacle. A elderly scholar named Malik sits on a bench, watching the clouds drift by.",
+    "initial": "White marble buildings, quieter than the rest of the city. Students in robes move between lecture halls and study halls. The architecture is restrained, built for work rather than display. An elderly man sits alone on a bench, watching the clouds.",
     "return": "The Scholar's Quarter of Nephelia. The pursuit of knowledge continues among these white marble halls.",
-    "atmospheric": "The rustle of pages and murmur of academic debate fills the air. Ink and parchment scent the breeze."
+    "atmospheric": "The rustle of pages and murmur of academic debate fills the air. Ink and paper scrolls scent the breeze."
   },
   "connections": {
     "north": {
@@ -39,19 +39,27 @@
         "isActive": true
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "itemId": "scholars_brew",
+        "itemName": "Herbal Brew",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "A warm cup left on a bench, still steaming. It tastes of dried herbs and mountain air. Nourishing."
+      }
+    ],
     "interactables": [
       {
         "id": "library_entrance",
         "name": "Great Library",
         "examineText": "The entrance to Nephelia's Great Library, a magnificent building with columns carved to look like clouds. Inside, thousands of scrolls and books contain the accumulated wisdom of the sky city.",
         "canInteract": true,
-        "interactionText": "You browse the library's collection. Among texts on navigation, weather patterns, and philosophy, you find references to the Island of Bliss, described as 'the mortal echo of Elysium, where the worthy might find eternal peace.'"
+        "interactionText": "You browse the library's collection. Among texts on navigation, weather patterns, and philosophy, you find references to the Island of Bliss, described as 'a reflection of paradise, where the worthy might find eternal peace.'"
       },
       {
         "id": "sundial",
         "name": "Cloud Sundial",
-        "examineText": "An ingenious sundial that somehow works despite Nephelia's constant movement through the sky. The shadow falls on a Greek letter: Theta, symbol of death and eternal life.",
+        "examineText": "A clever sundial that somehow works despite Nephelia's constant movement through the sky. The shadow falls on a Greek letter: Theta, symbol of death and eternal life.",
         "canInteract": false,
         "interactionText": null
       }

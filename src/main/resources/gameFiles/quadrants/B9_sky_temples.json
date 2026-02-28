@@ -2,7 +2,7 @@
   "quadrantId": "B9",
   "name": "Sky Temples",
   "description": {
-    "initial": "The temples of Nephelia rise before you, dedicated to the old gods who were believed to dwell in the sky. The largest temple honors Zeus, father of the gods, but smaller shrines surround it for Nephele (the cloud nymph for whom the city is named), Aeolus (keeper of winds), and others. Priests in white robes tend eternal flames that somehow burn without consuming their fuel, and the air is thick with incense.",
+    "initial": "Temples rise around you dedicated to the sky gods - Zeus largest among them, with shrines to Nephele and Aeolus nearby. Priests tend flames that burn without using up their fuel. Incense smoke fills the air.",
     "return": "The temple district of Nephelia. Eternal flames flicker in shrines to the sky gods.",
     "atmospheric": "Incense smoke curls toward the heavens. Distant chanting echoes from within the temples."
   },

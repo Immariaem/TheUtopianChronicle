@@ -2,7 +2,7 @@
   "quadrantId": "B6",
   "name": "Mining Lift",
   "description": {
-    "initial": " An ancient lift stands before you, its platform suspended by thick chains and\n  crystal-powered gears. The mechanism hums with renewed energy from the Singing\n   Chamber below. Step on and travel north to ascend to the sky city Nephelia\n  above.",
+    "initial": "An ancient lift stands before you, its platform suspended by thick chains and crystal-powered gears. The mechanism hums with renewed energy from the Singing Chamber below. Step on and travel north to ascend to the sky city Nephelia above.",
     "return": "The mining lift chamber. The platform waits to carry you up to Nephelia. Go north.",
     "atmospheric": "The shaft above creates a natural chimney, carrying the scent of clouds and the distant sounds of the sky city."
   },
@@ -33,13 +33,13 @@
       {
         "id": "mining_lift",
         "name": "Ancient Lift",
-        "examineText": "The lift platform is made of thick wooden planks, worn smooth by centuries of use. A lever controls the counterweight system. Someone has oiled the mechanisms recently, Kira's work no doubt.",
+        "examineText": "The lift platform is made of thick wooden planks, worn smooth by centuries of use. A lever controls the balance system. Someone has oiled the mechanisms recently, Kira's work no doubt.",
         "canInteract": true,
         "interactionText": "You step onto the platform and pull the lever. With a groan of ancient gears, the lift begins to rise. The crystal caves fall away below as you ascend through the mountain, emerging into brilliant sunlight and the magnificent floating city of Nephelia."
       },
       {
         "id": "carved_instructions",
-        "name": "Carved Instructions",
+        "name": "Instructions",
         "examineText": "Instructions carved into the stone beside the lift: 'Pull lever once to ascend. Pull twice to descend. The journey takes several minutes. Enjoy the view.'",
         "canInteract": false,
         "interactionText": null

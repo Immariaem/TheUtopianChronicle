@@ -2,9 +2,9 @@
   "quadrantId": "A9",
   "name": "Sky Gardens",
   "description": {
-    "initial": "You enter the Sky Gardens, and the noise and bustle of the market falls away, replaced by tranquil beauty. These floating gardens are a marvel,somehow, trees and flowers grow here in the open air, their roots planted in large stone planters filled with rich soil. Vines cascade over the edges of platforms, flowers bloom in impossible profusion, and the air is thick with the scent of jasmine and roses. Paths of smooth stone wind between the plantings, and small fountains burble peacefully. Butterflies flit from flower to flower, and hummingbirds hover near bright blossoms. It feels like a secret paradise suspended in the sky.",
-    "return": "The peaceful Sky Gardens. Flowers bloom, water burbles in fountains, and butterflies dance in the sunlight.",
-    "atmospheric": "A gentle breeze carries flower petals through the air like confetti. Somewhere, bees hum drowsily among the blossoms."
+    "initial": "The market noise drops away. Vines hang down over platform edges, flowers bloom in unexpected abundance, and stone paths wind between enormous planters somehow growing full trees in open air. Small fountains trickle softly. The air is thick with jasmine. Butterflies move from blossom to blossom.",
+    "return": "The peaceful Sky Gardens. Flowers bloom, water trickles softly in fountains, and butterflies dance in the sunlight.",
+    "atmospheric": "A gentle breeze carries flower petals through the air like tiny scattered flowers. Somewhere, bees hum lazily among the blossoms."
   },
   "connections": {
     "north": {
@@ -44,7 +44,7 @@
       {
         "id": "rose_garden",
         "name": "Rose Garden",
-        "examineText": "Dozens of rose bushes in every color imaginable, red, white, pink, yellow, and even blue roses that seem almost to glow. Their perfume is heady and sweet.",
+        "examineText": "Dozens of rose bushes in every color imaginable, red, white, pink, yellow, and even blue roses that seem almost to glow. Their perfume is strong and sweet.",
         "canInteract": true,
         "interactionText": "You breathe in the roses' scent. For a moment, you feel at peace, your worries about your father fading just slightly."
       },

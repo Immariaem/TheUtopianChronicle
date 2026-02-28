@@ -2,7 +2,7 @@
   "quadrantId": "G4",
   "name": "Hidden Cove",
   "description": {
-    "initial": "You've found it, the hidden cove the Hermit spoke of. A natural harbour\nsheltered by high cliffs, invisible from the sea and nearly impossible to find\nwithout the star navigation. And there, bobbing gently in the protected\nwaters, is a small sailing boat. Old but sound, as if it has been waiting here\nsince before memory.",
+    "initial": "You've found it, the hidden cove the Hermit spoke of. A natural harbour sheltered by high cliffs, invisible from the sea and nearly impossible to find without the star navigation. And there, bobbing gently in the protected waters, is a small sailing boat. Old but sound, as if it has been waiting here since before memory.",
     "return": "The hidden cove. The old vessel waits to carry you to the Island of Bliss.",
     "atmospheric": "Waves lap gently against the hull of the waiting boat. Everything is ready for the final journey."
   },
@@ -29,18 +29,25 @@
     "npcs": [],
     "items": [
       {
+        "itemId": "hermit_water_jug",
+        "itemName": "Water Jug",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "A ceramic jug left beside the buried spot. The Hermit thought of everything. The water inside is still fresh."
+      },
+      {
         "itemId": "hermits_journal",
-        "itemName": "Hermits Journal",
+        "itemName": "Journal",
         "isCollectable": true,
         "itemType": "readable",
-        "itemMessage": "You read the Hermit's journal. It contains detailed sailing directions to the Island of Bliss and his personal reflections on the journey."
+        "itemMessage": "You open the journal. The handwriting is careful, the ink faded but legible.\n\n\"I reached the island on the fortieth day. It was everything the stories promised. The Smiling Ones welcomed me. The air was warm. There was no hunger, no grief, no memory of either.\n\nI stayed for three months. Then I left.\n\nI cannot explain it fully. The place was perfect. That was precisely the problem. I had stopped asking questions. I had stopped wanting anything. I was content in the way a stone is content.\n\nThe boat will still be there. I have kept it. Not for myself. I am done with journeys. But someone will come after me, following the same stars, carrying the same need. Let them decide for themselves what they find and whether they stay.\n\nSailing directions: depart at dusk with the twin stars at your back. Hold the southern heading through the crossing. The island rises on the fourth morning.\n\nThat is all you need. The rest you will have to work out yourself.\"\n\nThe last page is blank except for a single line: I do not regret leaving."
       }
     ],
     "interactables": [
       {
         "id": "sailing_boat",
         "name": "Sailing Boat",
-        "examineText": "A small vessel, old wood worn smooth by years of salt and sun. No name on the\n   bow. The Hermit's notes spoke of a boat kept here by tradition, left for\n  those who follow the stars, so they might complete the journey their searching\n   led them to.",
+        "examineText": "A small vessel, old wood worn smooth by years of salt and sun. No name on the bow. The Hermit's notes spoke of a boat kept here by tradition, left for those who follow the stars, so they might complete the journey their searching led them to.",
         "canInteract": true,
         "interactionText": "You step aboard the old vessel. Everything is ready: sails, provisions, navigation tools. All that remains is to set sail."
       },

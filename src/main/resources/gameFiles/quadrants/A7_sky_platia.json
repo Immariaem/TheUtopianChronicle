@@ -2,7 +2,7 @@
   "quadrantId": "A7",
   "name": "Sky Platia",
   "description": {
-    "initial": "You stand in the central plaza of Nephelia, the Sky Platia. White marble stretches in all directions, polished to a mirror shine that reflects the ever-changing sky above. At the center, a massive fountain depicts the nymph Nephele, born of Zeus's breath, her form made of swirling clouds captured in marble. Water flows upward in defiance of gravity, forming misty clouds before falling back down. Citizens of the sky city move about their business. Scholars in flowing robes, merchants haggling, children laughing and playing. The sound of distant music drifts on the breeze. Golden domes rise above you, and rope bridges connect to other floating platforms.",
+    "initial": "White marble stretches in every direction, so polished it reflects like a mirror. At the center, water rises impossibly upward from a marble fountain before falling back as mist. Around you, the city moves: scholars, merchants, children, music drifting from somewhere unseen. Golden domes catch the light above.",
     "return": "The grand central plaza of Nephelia. The fountain of Nephele continues its eternal dance, and sky citizens go about their day.",
     "atmospheric": "The air here smells of incense and distant rain. The marble reflects the ever-changing colors of the sky - blue, gold, purple, pink as clouds drift past."
   },
@@ -51,8 +51,8 @@
     "interactables": [
       {
         "id": "nephele_fountain",
-        "name": "Fountain of Nephele",
-        "examineText": "A magnificent marble fountain showing the cloud nymph Nephele. Water flows upward in defiance of gravity, forming misty clouds before falling back down. An inscription in ancient Greek reads: 'Ἐκ πνεύματος γεννηθεῖσα' - Born of breath. Below in common tongue: 'Born of breath, dwelling in air, forever between earth and sky.'",
+        "name": "Fountain",
+        "examineText": "A magnificent marble fountain showing the cloud nymph Nephele. Water flows upward against gravity, forming misty clouds before falling back down. An inscription in ancient Greek reads: 'Ἐκ πνεύματος γεννηθεῖσα' - Born of breath. Below in common tongue: 'Born of breath, dwelling in air, forever between earth and sky.'",
         "canInteract": true,
         "interactionText": "You touch the fountain's water. It's cool and refreshing, and leaves your hand feeling oddly light, as if gravity has less hold on you for a moment."
       }

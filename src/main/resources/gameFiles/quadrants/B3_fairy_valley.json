@@ -2,7 +2,7 @@
   "quadrantId": "B3",
   "name": "Fairy Valley",
   "description": {
-    "initial": "You descend into a sun-dappled valley where the air sparkles with what can only be described as magic made visible. Tiny winged creatures flit between flowers that glow with inner light, and the sound of tinkling laughter fills the air. The fairies of the Enchanted Forest make their home here, and they seem distressed about something. Several cluster together, pointing toward the west and speaking in urgent, chiming voices.",
+    "initial": "You descend into a sun-dappled valley where the air sparkles with what can only be described as magic made visible. Tiny winged creatures flit between flowers that glow with inner light, and the sound of tinkling laughter fills the air. The fairies of the Enchanted Forest make their home here, and they seem distressed about something. Several cluster together, pointing toward the southwest and speaking in urgent, chiming voices.",
     "return": "Fairy Valley, where magical creatures dance among glowing flowers. The fairies acknowledge you with friendly waves.",
     "atmospheric": "The air itself seems alive here, shimmering with possibility and the soft glow of fairy light."
   },
@@ -29,7 +29,7 @@
       {
         "npcId": "fairies",
         "npcName": "Fairies",
-        "dialogue": "\"Oh, traveler! Please help us! Our dear friend, a forest spirit, wandered too far west and became trapped in magical vines in the Hidden Valley! We are too small to free them ourselves. Please, find the valley and save our friend. The Wise Deer will surely reward your kindness!\"",
+        "dialogue": "\"Oh, traveler! Please help us! Our dear friend, a forest spirit, wandered too far to the southwest and became trapped in magical vines in the Hidden Valley! We are too small to free them ourselves. Please, find the valley and save our friend. The Wise Deer will surely reward your kindness!\"",
         "dialogueConditions": [
           {
             "flag": "spirit_rescued",
@@ -42,7 +42,7 @@
     "items": [
       {
         "itemId": "fresh_berries",
-        "itemName": "Fresh Berries",
+        "itemName": "Wild Berries",
         "isCollectable": true,
         "itemType": "consumable",
         "itemMessage": "You eat the fresh berries picked from the fairy valley. They taste magical!"
@@ -51,7 +51,7 @@
     "interactables": [
       {
         "id": "glowing_flowers",
-        "name": "Luminescent Flowers",
+        "name": "Flowers",
         "examineText": "These flowers emit a soft, steady glow that pulses gently like a heartbeat. The fairies seem to draw energy from them, their wings brightening when they fly near.",
         "canInteract": false,
         "interactionText": null

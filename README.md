@@ -6,7 +6,7 @@ Now you hold his unfinished chronicle. You add your own words to the last page:
 
 *"I'm coming to find you. To finish what you started. To bring you home."*
 
----
+✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦
 
 ## Running the Game
 
@@ -21,7 +21,13 @@ java -jar build/libs/text-adventure.jar
 http://localhost:8080
 ```
 
----
+✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦
+
+## Hosting
+
+> Work in progress - I am currently exploring options to host the game publicly so it can be played without a local setup.
+
+✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦
 
 ## Commands
 
@@ -30,15 +36,17 @@ http://localhost:8080
 | `n` / `s` / `e` / `w` | move north, south, east, west |
 | `t <object>` | take an object |
 | `d <object>` | drop an object |
-| `u <object>` | use an object |
-| `i` | show your inventory |
+| `u <object>` / `eat <object>` / `drink <object>` | use, eat or drink an object |
+| `i` | show your inventory (10 slots) |
 | `l` | look around |
 | `x <object>` | examine something closely |
 | `talk <name>` | talk to someone |
+| `sts` | show hunger and thirst levels |
+| `dive` | dive below the ocean surface |
 | `h` | show all commands |
 | `q` | quit and restart |
 
----
+✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦
 
 ## Multiple Players
 

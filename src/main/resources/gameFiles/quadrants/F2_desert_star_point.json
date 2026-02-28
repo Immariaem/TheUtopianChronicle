@@ -2,9 +2,9 @@
   "quadrantId": "F2",
   "name": "Star Observation Point",
   "description": {
-    "initial": "You've found the Star Observation Point the Hermit mentioned, a flat-topped hill rising above the surrounding dunes. From here, the night sky is unobstructed in all directions. Ancient stones mark the cardinal directions, and worn grooves in the rock suggest where countless observers have lain to watch the heavens. At night, this is where the three constellations align.",
+    "initial": "You've found the Star Observation Point the Hermit mentioned, a flat-topped hill rising above the surrounding dunes. From here, the night sky is unobstructed in all directions. Ancient stones mark north, south, east, and west, and worn grooves in the rock suggest where countless observers have lain to watch the heavens. At night, this is where the three constellations align.",
     "return": "The Star Observation Point. The ancient stones wait for nightfall.",
-    "atmospheric": "Even by day, you can feel the cosmic significance of this place. The sky seems closer here."
+    "atmospheric": "Even by day, you can feel the special connection of this place to the sky. The sky seems closer here."
   },
   "connections": {
     "north": {
@@ -26,18 +26,26 @@
   },
   "visibleObjects": {
     "npcs": [],
-    "items": [],
+    "items": [
+      {
+        "itemId": "hilltop_cactus_water",
+        "itemName": "Cactus Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You slice open a small cactus growing near the stones. Bitter but hydrating water seeps into your hands."
+      }
+    ],
     "interactables": [
       {
         "id": "observation_stones",
         "name": "Cardinal Stones",
-        "examineText": "Four stones mark north, south, east, and west. They're perfectly aligned, placed by ancient astronomers who understood the desert's gift of clear skies.",
+        "examineText": "Four stones mark north, south, east, and west. They're perfectly aligned, placed by ancient stargazers who understood the desert's gift of clear skies.",
         "canInteract": true,
         "interactionText": "You touch each stone in turn, feeling the weight of centuries of observation. How many seekers have stood here, looking for the same answer?"
       },
       {
         "id": "viewing_groove",
-        "name": "Observation Groove",
+        "name": "Star Groove",
         "examineText": "A worn groove in the rock, shaped by countless bodies lying here to watch the stars. It's surprisingly comfortable.",
         "canInteract": true,
         "interactionText": "You lie in the groove and look up. Even in daylight, you can imagine the stars wheeling overhead, forming the patterns that will guide you to the hidden cove."

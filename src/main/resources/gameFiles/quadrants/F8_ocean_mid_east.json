@@ -39,7 +39,7 @@
       {
         "id": "anemone_rocks",
         "name": "Anemone Garden",
-        "examineText": "Colorful anemones cover the rocks, their tentacles waving gently in the current. Clownfish dart among them, protected by their symbiotic relationship.",
+        "examineText": "Colorful anemones cover the rocks, their tentacles waving gently in the current. Clownfish dart among them, living together and helping each other.",
         "canInteract": false,
         "interactionText": null
       }

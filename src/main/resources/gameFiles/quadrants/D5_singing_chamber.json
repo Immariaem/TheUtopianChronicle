@@ -2,9 +2,9 @@
   "quadrantId": "D5",
   "name": "Singing Chamber",
   "description": {
-    "initial": "You've found the legendary Singing Chamber, the heart of the Crystal Caves. Here, the crystals' harmonies converge into a single, overwhelming song that seems to touch your soul. The chamber is perfectly circular, with crystals arranged like the pipes of an organ. At the center stands a crystalline console with spaces for three color sequences. This is where you must prove you've memorized all three tablets.",
+    "initial": "The chamber is perfectly circular, crystals arranged along the walls like the pipes of a grand organ. Their harmonies meet here in a single powerful sound. At the center, a crystalline console holds three blank input sections. The song waits.",
     "return": "The Singing Chamber. The crystal song continues its eternal melody.",
-    "atmospheric": "The music here is almost visible, the air shimmering with harmonics that transcend normal sound."
+    "atmospheric": "The music here is almost visible, the air shimmering with sounds that go beyond normal music."
   },
   "connections": {
     "north": {
@@ -26,14 +26,22 @@
   },
   "visibleObjects": {
     "npcs": [],
-    "items": [],
+    "items": [
+      {
+        "itemId": "crystal_bowl_water",
+        "itemName": "Bowl Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink from a crystal bowl filled with clear water. It hums faintly as you swallow, a single pure note that fades into silence."
+      }
+    ],
     "interactables": [
       {
         "id": "crystal_console",
         "name": "Crystal Console",
         "examineText": "A console made of interlocked crystals, with three input sections labeled 'Blue,' 'Red,' and 'Green.' Each section has five crystal buttons in different colors. You must input the sequences you memorized from the three chambers.",
         "canInteract": true,
-        "interactionText": "You carefully input the three sequences you memorized. The crystals chime as you press each one. When the final sequence is complete, the chamber's song shifts to a triumphant chord. A hidden passage opens in the wall, revealing the deeper archives Kira mentioned, and a path to the mining lift that leads to Nephelia."
+        "interactionText": "You carefully input the three sequences you memorized. The crystals chime as you press each one. When the final sequence is complete, the chamber's song shifts to a loud, joyful sound. A hidden passage opens in the wall, revealing the deeper archives Kira mentioned, and a path to the mining lift that leads to Nephelia."
       },
       {
         "id": "organ_crystals",
@@ -45,9 +53,7 @@
     ]
   },
   "requiredFlags": [
-    "viewed_blue_tablet",
-    "viewed_red_tablet",
-    "viewed_green_tablet"
+    "met_kira"
   ],
   "unlockFlags": []
 }

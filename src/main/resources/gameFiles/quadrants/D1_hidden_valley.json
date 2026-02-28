@@ -44,7 +44,7 @@
     "interactables": [
       {
         "id": "magical_vines",
-        "name": "Entangling Vines",
+        "name": "Vines",
         "examineText": "Thick, dark vines have wrapped around the forest spirit.",
         "canInteract": true,
         "interactionText": "You work carefully, speaking softly to both the vines and the spirit. Slowly, the vines relax their grip, and the spirit floats free, its glow intensifying with gratitude. It gestures toward the east, toward the Wise Deer, before fading away.",

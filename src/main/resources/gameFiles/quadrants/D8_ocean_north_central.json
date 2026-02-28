@@ -2,7 +2,7 @@
   "quadrantId": "D8",
   "name": "Ocean North Central",
   "description": {
-    "initial": "You're deep in the ocean now, far from any land. The water here takes on an almost luminous quality, hints of bioluminescence visible even in daylight. Schools of fish dart beneath your vessel, and the occasional larger shape moves in the depths, mysterious and ancient.",
+    "initial": "You're deep in the ocean now, far from any land. The water here takes on an almost luminous quality, hints of a faint natural glow from sea creatures visible even in daylight. Schools of fish dart beneath your vessel, and the occasional larger shape moves in the depths, mysterious and ancient.",
     "return": "The north-central ocean. Life teems beneath the surface.",
     "atmospheric": "The water seems to glow from within. You feel small against the ocean's vastness."
   },

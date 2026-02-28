@@ -38,7 +38,7 @@
     "interactables": [
       {
         "id": "entry_crystals",
-        "name": "Entrance Crystals",
+        "name": "Crystals",
         "examineText": "Large crystals frame the cave entrance, their colors shifting slowly through the spectrum. They seem to respond to your presence, glowing brighter as you approach.",
         "canInteract": true,
         "interactionText": "You touch one of the crystals. It's warm, almost alive, and emits a soft chime at your touch. The other crystals pick up the note, creating a brief harmony."

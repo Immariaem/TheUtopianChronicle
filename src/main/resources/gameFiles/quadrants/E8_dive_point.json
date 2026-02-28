@@ -2,7 +2,7 @@
   "quadrantId": "E8",
   "name": "Dive Point",
   "description": {
-    "initial": "You stand at the sacred diving point, where generations of seekers have descended to meet the merfolk. The water below glows with bioluminescence, welcoming lights from the Underwater Realm. Kira's crystal pulses warmly in your hand, ready to grant you the ability to breathe beneath the waves. One deep breath, one leap of faith.",
+    "initial": "You stand at the sacred diving point, where generations of seekers have descended to meet the merfolk. The water below glows with light from sea creatures, welcoming lights from the Underwater Realm. Kira's crystal pulses warmly in your hand, ready to grant you the ability to breathe beneath the waves. One deep breath, one brave jump.",
     "return": "The dive point. The underwater lights still beckon from below.",
     "atmospheric": "The boundary between worlds is thin here. You can almost hear singing from beneath the waves."
   },
@@ -28,22 +28,7 @@
   "visibleObjects": {
     "npcs": [],
     "items": [],
-    "interactables": [
-      {
-        "id": "diving_platform",
-        "name": "Diving Platform",
-        "examineText": "A natural rock platform extends over the water, smoothed by countless feet over countless years. This is where you dive.",
-        "canInteract": true,
-        "interactionText": "You hold Kira's crystal tightly, feel its warmth spread through you, and dive. The water closes over you, cool and welcoming. You can breathe. The crystal's magic works. Below, the Underwater Realm awaits."
-      },
-      {
-        "id": "offering_bowl",
-        "name": "Stone Bowl",
-        "examineText": "A bowl carved into the rock holds offerings for safe passage: shells, pearls, small carved fish. Visitors have been leaving gifts here for centuries.",
-        "canInteract": true,
-        "interactionText": "You add a small token of your own to the bowl, a gesture of respect for the realm you're about to enter."
-      }
-    ]
+    "interactables": []
   },
   "requiredFlags": [
     "met_zara"

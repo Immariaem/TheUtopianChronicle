@@ -2,14 +2,15 @@
   "quadrantId": "I3",
   "name": "Island Approach",
   "description": {
-    "initial": "You've finally reached the Island of Bliss. As your boat approaches the shore, you see it clearly: golden beaches, perfect palm trees, flowers in eternal bloom. The sun hangs at a perfect afternoon angle, casting everything in warm, golden light. It's exactly as the legends described. You've done it. You've finished your father's journey. But why does it feel so wrong?",
+    "initial": "Golden beaches, perfect palm trees, flowers in full bloom. The sun hangs at a permanent afternoon angle, everything bathed in warm light. Exactly as the legends described. You've come a long way for this. The island is beautiful. Completely, flawlessly beautiful. And perfectly still.",
     "return": "The approach to the Island of Bliss. Perfect beauty stretches before you.",
     "atmospheric": "Everything is flawless. The temperature, the light, the colors. It should feel like heaven. It feels like a painting."
   },
   "connections": {
     "north": {
       "quadrantId": "H3",
-      "blocked": false
+      "blocked": true,
+      "blockedMessage": "Rocky outcrops rise from the water here. There is no safe way back through them."
     },
     "south": {
       "quadrantId": "J3",
@@ -26,12 +27,20 @@
   },
   "visibleObjects": {
     "npcs": [],
-    "items": [],
+    "items": [
+      {
+        "itemId": "island_stream_water",
+        "itemName": "Stream Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "A small stream flows with impossibly clear water. Perfect temperature. No taste at all. But it restores you."
+      }
+    ],
     "interactables": [
       {
         "id": "landing_beach",
         "name": "Golden Beach",
-        "examineText": "The sand is perfectly golden, not a single shell or piece of seaweed mars its surface. It's beautiful and sterile, like a picture rather than a real place.",
+        "examineText": "The sand is perfectly golden, not a single shell or piece of seaweed mars its surface. It's beautiful and lifeless, like a picture rather than a real place.",
         "canInteract": true,
         "interactionText": "You step onto the beach. The sand is warm but not hot, soft but not sinking. Perfect. Everything here is perfect. You've never been anywhere so perfect. It's terrifying."
       }

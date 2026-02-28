@@ -2,9 +2,9 @@
   "quadrantId": "A5",
   "name": "Forest Northeast",
   "description": {
-    "initial": "The northeastern corner of the Enchanted Forest. Here, the trees begin to thin slightly as the forest transitions toward the mountains in the distance. You can see rocky outcroppings between the trees, and the ground becomes more uneven. The magical atmosphere of the forest mingles with something else, a crystalline energy that seems to emanate from the mountains ahead.",
+    "initial": "The trees thin here, giving way to rocky formations and uneven ground. A sharp, stony smell mixes with the earthy smell of the forest. The mountains are closer than they look.",
     "return": "Where the forest meets the approach to the mountains. Trees give way to rock and stone.",
-    "atmospheric": "The air here carries two scents, the earthiness of the forest and a sharp, mineral smell from the mountains."
+    "atmospheric": "The air here carries two scents, the earthy smell of the forest and a sharp, stony smell from the mountains."
   },
   "connections": {
     "north": {
@@ -13,7 +13,8 @@
     },
     "south": {
       "quadrantId": "B5",
-      "blocked": false
+      "blocked": true,
+      "blockedMessage": "The rocky slopes here lead nowhere useful. The cave entrance is further west."
     },
     "east": {
       "quadrantId": "A6",

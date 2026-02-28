@@ -2,7 +2,7 @@
   "quadrantId": "E9",
   "name": "Nerina's Archives",
   "description": {
-    "initial": "You descend into the personal archives of Nerina, an ancient mermaid scholar who has lived for centuries beneath the waves. The chamber is filled with scrolls preserved in waterproof cases, tablets of coral carved with ancient texts, and glowing jellyfish that provide gentle illumination. Nerina herself floats among her treasures, her silver hair drifting like seaweed, her ancient eyes filled with curiosity and sorrow as she hears of your father.",
+    "initial": "A chamber of preserved scrolls, coral tablets, and glowing jellyfish drifting as lanterns. Waterproof cases line every wall, centuries of knowledge sealed against the sea. Among them, a figure moves - silver hair drifting, ancient eyes turning toward you as you enter.",
     "return": "Nerina's Archives. The ancient scholar continues her eternal work of preserving knowledge.",
     "atmospheric": "The water here is perfectly still, preserving these treasures for eternity. Knowledge floats all around you."
   },
@@ -43,15 +43,15 @@
     "interactables": [
       {
         "id": "ancient_scrolls",
-        "name": "Preserved Scrolls",
+        "name": "Scrolls",
         "examineText": "Scrolls from civilizations long forgotten, preserved perfectly in their waterproof cases. Nerina has collected knowledge for centuries.",
         "canInteract": true,
         "interactionText": "You browse the scrolls with Nerina's permission. One speaks of the Island of Bliss: 'Beyond the western waters, where perfection awaits. Those who reach its shores find peace beyond measure, a paradise where all suffering ends and joy is eternal.'"
       },
       {
         "id": "glowing_jellyfish",
-        "name": "Lantern Jellyfish",
-        "examineText": "Bioluminescent jellyfish drift through the chamber, providing soft, ever-shifting light. They seem tame, perhaps bred over centuries for this purpose.",
+        "name": "Jellyfish",
+        "examineText": "Glowing jellyfish drift through the chamber, providing soft, ever-shifting light. They seem tame, perhaps bred over centuries for this purpose.",
         "canInteract": false,
         "interactionText": null
       }

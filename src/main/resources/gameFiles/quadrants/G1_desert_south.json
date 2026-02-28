@@ -31,7 +31,7 @@
       {
         "id": "exposed_bedrock",
         "name": "Exposed Rock",
-        "examineText": "Ancient bedrock shows through the sand here, dark stone worn smooth by millennia of wind and sand. It's hot to the touch.",
+        "examineText": "Ancient bedrock shows through the sand here, dark stone worn smooth by thousands of years of wind and sand. It's hot to the touch.",
         "canInteract": false,
         "interactionText": null
       }

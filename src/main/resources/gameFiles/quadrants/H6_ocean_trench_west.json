@@ -2,7 +2,7 @@
   "quadrantId": "H6",
   "name": "Ocean Trench West",
   "description": {
-    "initial": "You swim along the western edge of a massive underwater trench. The chasm drops away into darkness so complete that even bioluminescent creatures avoid it. The merfolk call this place the Void's Edge, and they speak of it in whispers.",
+    "initial": "You swim along the western edge of a massive underwater trench. The deep crack drops away into darkness so complete that even glowing creatures avoid it. The merfolk call this place the Void's Edge, and they speak of it in whispers.",
     "return": "The western trench edge. The Void yawns below, bottomless and dark.",
     "atmospheric": "A cold current rises from the depths, carrying whispers of things best left undiscovered."
   },

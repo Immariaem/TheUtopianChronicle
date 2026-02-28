@@ -4,7 +4,7 @@
   "description": {
     "initial": "The central deep waters hold ancient secrets. Massive shapes move in the darkness beyond your vision, creatures that have never seen the sun. The merfolk rarely come here, these depths belong to older things.",
     "return": "The central deep waters. Ancient mysteries drift through the darkness.",
-    "atmospheric": "The pressure of the deep is palpable. You feel small, an intruder in an alien world."
+    "atmospheric": "The pressure of the deep is something you can feel. You feel small, an intruder in an alien world."
   },
   "connections": {
     "north": {

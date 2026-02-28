@@ -2,7 +2,7 @@
   "quadrantId": "D9",
   "name": "Ocean North Far",
   "description": {
-    "initial": "You've reached the far northern waters, where the ocean grows colder and the sky seems vast and empty. Seabirds are rare here, and the water takes on a steely grey color. This feels like the edge of the navigable world, a place where few sailors venture.",
+    "initial": "You've reached the far northern waters, where the ocean grows colder and the sky seems vast and empty. Seabirds are rare here, and the water takes on a steely grey color. This feels like the edge of the safe-to-sail world, a place where few sailors venture.",
     "return": "The far northern ocean. Cold, grey, and lonely.",
     "atmospheric": "The wind carries a chill that penetrates to your bones. The silence is profound."
   },

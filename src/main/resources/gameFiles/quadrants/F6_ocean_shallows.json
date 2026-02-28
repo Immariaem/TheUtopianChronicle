@@ -27,7 +27,15 @@
   },
   "visibleObjects": {
     "npcs": [],
-    "items": [],
+    "items": [
+      {
+        "itemId": "shallows_spring_water",
+        "itemName": "Spring Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink from a trickle of fresh water where a desert spring meets the sea. Cool and clean."
+      }
+    ],
     "interactables": [
       {
         "id": "sandbar",

@@ -52,7 +52,7 @@
       },
       {
         "id": "message_board",
-        "name": "Community Board",
+        "name": "Notice Board",
         "examineText": "A board covered with notices: lost items, community events, job postings for airship crews. Normal life, suspended in the sky.",
         "canInteract": false,
         "interactionText": null

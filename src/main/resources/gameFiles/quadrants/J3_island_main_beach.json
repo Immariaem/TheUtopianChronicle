@@ -2,9 +2,9 @@
   "quadrantId": "J3",
   "name": "Island Main Beach",
   "description": {
-    "initial": "The main beach. The boat that carried you here still waits at anchor, rope   \n  tied to a palm tree, patient as ever. The golden sand stretches in perfect \n  curves. Everything on this island is perfect. You've never been more ready to \n  leave.",
+    "initial": "The main beach. A weathered boat is tied to a palm tree at the water's edge, patient as the island itself. The golden sand stretches in perfect curves. Everything on this island is perfect. You've never been more ready to leave.",
     "return": "The main beach. Something is waiting for you here.",
-    "atmospheric": "The waves break in perfect intervals. The sand is warm and flawless beneath  \n  your feet. The island breathes its eternal, unchanged breath behind you.      \n  Ahead, the open ocean, vast, unpredictable, and real."
+    "atmospheric": "The waves break in perfect intervals. The sand is warm and flawless beneath your feet. The island breathes its eternal, unchanged breath behind you. Ahead, the open ocean, vast, unpredictable, and real."
   },
   "connections": {
     "north": {
@@ -40,7 +40,7 @@
       {
         "id": "weathered_boat",
         "name": "Weathered boat",
-        "examineText": "A small sailboat tied to a palm tree at the water's edge. It has been herefor some time, the rope is faded, the hull marked by sun and salt. Whoever left it here hasn't returned to claim it. Yet.",
+        "examineText": "A weathered boat, old but seaworthy. The hull is salt-stained, the rope faded, the wood worn smooth by years of ocean. Wherever it came from, it has seen a long journey.",
         "canInteract": true
       },
       {

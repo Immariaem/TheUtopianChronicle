@@ -5,13 +5,17 @@ class InventoryHandler(state: GameState, world: World) : BaseHandler(state, worl
 
     // picks up an item from the current quadrant
     fun take(target: String): String {
-        if (target.isBlank()) return "Take what? Try: t <name>"
+        if (target.isBlank()) return "Take what? Try: take <name>"
 
         val item = state.currentQuadrant.visibleObjects.items
             .find { it.itemName.lowercase() == target.lowercase() }
+            ?: state.currentQuadrant.visibleObjects.items
+            .find { it.itemName.lowercase().contains(target.lowercase()) }
             ?: return "There's no '$target' here to take."
 
         if (!item.isCollectable) return "You can't take that."
+
+        if (state.playerInventory.size >= 10) return "Your pack is full. You can only carry so much on this journey. Drop something first."
 
         state.itemSources[item] = state.currentQuadrant.quadrantId
         state.playerInventory.add(item)
@@ -21,9 +25,10 @@ class InventoryHandler(state: GameState, world: World) : BaseHandler(state, worl
 
     // drops an item, with special handling for quest items
     fun drop(target: String): String {
-        if (target.isBlank()) return "Drop what? Try: d <name>"
+        if (target.isBlank()) return "Drop what? Try: drop <name>"
 
         val item = state.playerInventory.find { it.itemName.lowercase() == target.lowercase() }
+            ?: state.playerInventory.find { it.itemName.lowercase().contains(target.lowercase()) }
             ?: return "You don't have '$target' in your inventory."
 
         // cargo delivery to zara's dock
@@ -35,6 +40,25 @@ class InventoryHandler(state: GameState, world: World) : BaseHandler(state, worl
             } else {
                 return "You should bring this back to Zara's dock."
             }
+        }
+
+        // crystal key placement at the singing chamber console
+        if (state.currentQuadrant.quadrantId == "D5" && item.itemName.lowercase().contains("crystal key")) {
+            val correctOrder = listOf("blue_crystal_key", "red_crystal_key", "green_crystal_key")
+            state.placedKeys.add(item)
+            state.playerInventory.remove(item)
+
+            if (state.placedKeys.size == 3) {
+                if (state.placedKeys.map { it.itemId } == correctOrder) {
+                    state.gameFlags.add("crystal_keys_complete")
+                    return "The crystals begin to sing... \n All three keys glow in unison. A light and comfortable ringing echos trough the caves. Kira will be more than happy to help any seeker find their way to the clouds now."
+                } else {
+                    state.placedKeys.forEach { key -> state.currentQuadrant.visibleObjects.items.add(key) }
+                    state.placedKeys.clear()
+                    return "The console rejects the sequence. The keys fall to the ground."
+                }
+            }
+            return "You place the ${item.itemName} on the console."
         }
 
         // relic offering at the pearl guardian altar

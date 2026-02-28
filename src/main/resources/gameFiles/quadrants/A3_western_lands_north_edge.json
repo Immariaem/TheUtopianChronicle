@@ -2,7 +2,7 @@
   "quadrantId": "A3",
   "name": "Western Lands North Edge",
   "description": {
-    "initial": "The western lands continue here, a buffer zone between the wilderness and the enchanted territories ahead. Scrub brush and weathered rocks dot the landscape. There's a sense of being between places, no longer in the wild west, but not yet in the magical east. You can see the tops of ancient trees rising in the distance.",
+    "initial": "Dry bushes and weathered rocks replace the open grassland. The air feels heavier here. Ancient treetops are just visible on the eastern horizon, showing what lies ahead.",
     "return": "The northern edge where western lands meet the approach to the Enchanted Forest.",
     "atmospheric": "The air feels different here, heavier with magic from the forest nearby."
   },

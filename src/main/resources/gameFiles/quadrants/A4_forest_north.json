@@ -2,7 +2,7 @@
   "quadrantId": "A4",
   "name": "Forest North",
   "description": {
-    "initial": "You've entered the northern reaches of the Enchanted Forest. The trees here are ancient and tall, their branches forming a canopy high above that filters the sunlight into soft, green-tinted beams. The air smells of moss and earth. This is the edge of the forest's magic, you can feel it tingling on your skin, like the forest is aware of your presence and is deciding whether to welcome you.",
+    "initial": "Ancient trees rise on all sides, their canopy turning sunlight a deep green. The air smells of moss and something older. The forest goes quiet as you step further in.",
     "return": "The northern part of the Enchanted Forest. Ancient trees tower above, and magic whispers through the leaves.",
     "atmospheric": "Somewhere in the distance, you hear what might be wind chimes, or perhaps fairy laughter. It's hard to tell."
   },

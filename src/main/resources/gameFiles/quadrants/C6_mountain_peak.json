@@ -2,7 +2,7 @@
   "quadrantId": "C6",
   "name": "Mountain Peak",
   "description": {
-    "initial": "You've climbed to one of the mountain peaks, where the caves open onto a rocky outcrop with a stunning view. To the east, you can see the impossible sight of Nephelia, the floating city, drifting among the clouds. To the west, the Enchanted Forest spreads like a green carpet. The wind is strong here, carrying the scent of snow from higher peaks.",
+    "initial": "The cave opens onto a rocky outcrop. To one side, the Enchanted Forest spreads far below. To the other, Nephelia drifts among the clouds - close enough to see its golden domes. A cold wind carries the smell of higher snow.",
     "return": "The mountain peak viewpoint. Nephelia floats majestically to the east.",
     "atmospheric": "The wind sings through the rocky crags. You feel on top of the world."
   },
@@ -31,7 +31,7 @@
     "interactables": [
       {
         "id": "viewing_platform",
-        "name": "Natural Viewpoint",
+        "name": "Viewpoint",
         "examineText": "A flat rock formation creates a natural viewing platform. From here, you can see for miles in every direction.",
         "canInteract": true,
         "interactionText": "You stand on the platform and take in the view. The world seems so vast from here, full of wonders waiting to be discovered. Somewhere out there is the Island of Bliss. Somewhere out there is your father."
@@ -39,7 +39,7 @@
       {
         "id": "mountain_flowers",
         "name": "Alpine Flowers",
-        "examineText": "Hardy flowers cling to cracks in the rock, their bright colors defying the harsh mountain conditions. Life persists even here.",
+        "examineText": "Tough flowers cling to cracks in the rock, their bright colors defying the harsh mountain conditions. Life persists even here.",
         "canInteract": false,
         "interactionText": null
       }

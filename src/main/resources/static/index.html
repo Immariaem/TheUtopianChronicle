@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -23,6 +23,22 @@
         <!-- Stat cirlce for icon -->
         <clipPath id="clip-circle" clipPathUnits="objectBoundingBox">
             <path d="M 0.50 0.02 C 0.70 0.0, 0.88 0.10, 0.95 0.28 C 1.02 0.46, 1.0 0.62, 0.94 0.78 C 0.88 0.94, 0.72 1.01, 0.52 0.98 C 0.32 0.95, 0.12 0.90, 0.05 0.72 C -0.02 0.54, 0.0 0.38, 0.06 0.22 C 0.12 0.06, 0.30 0.04, 0.50 0.02 Z"/>
+        </clipPath>
+        <!-- Quest bar -->
+        <clipPath id="clip-quest" clipPathUnits="objectBoundingBox">
+            <path d="M 0.09 0.03
+                     C 0.17 -0.05, 0.28 0.12, 0.36 0.03
+                     C 0.45 -0.07, 0.54 0.11, 0.63 0.02
+                     C 0.72 -0.04, 0.82 0.08, 0.91 0.03
+                     C 0.95 0.01, 0.98 0.10, 0.99 0.22
+                     C 1.00 0.35, 1.00 0.50, 0.99 0.65
+                     C 0.98 0.80, 0.95 0.93, 0.91 0.97
+                     C 0.82 0.92, 0.72 1.04, 0.63 0.98
+                     C 0.54 0.89, 0.45 1.07, 0.36 0.97
+                     C 0.28 0.88, 0.17 1.05, 0.09 0.97
+                     C 0.05 0.93, 0.02 0.80, 0.01 0.65
+                     C 0.00 0.50, 0.00 0.35, 0.01 0.22
+                     C 0.02 0.10, 0.05 0.01, 0.09 0.03 Z"/>
         </clipPath>
         <!-- Stat bar -->
         <clipPath id="clip-pill" clipPathUnits="objectBoundingBox">
@@ -77,19 +93,44 @@
 </svg>
 
 <div class="game-container">
+    <div id="area-bg"></div>
+    <div id="area-bg-next"></div>
     <h1 class="game-title">The Utopian Chronicle</h1>
     <div class="book">
         <!-- Book png Background -->
         <img src="images/book.png" class="book-bg" id="book-bg" alt="">
 
-        <!-- Map Layers (revealed progressively) -->
+        <!-- Intro overlay (shown on first visit and after quit) -->
+        <div class="intro-overlay" id="intro-overlay">
+            <p class="intro-text">
+                Your father was a writer and explorer, obsessed with a legend: the <em>Island of Bliss</em>,
+                a utopia south beyond the ocean where no suffering exists and every day is perfect.
+                He spent years researching it, filling a leather-bound book he called <em>The Utopian Chronicle</em>
+                with maps, travel accounts and theories. Then, three years ago, he left without the book.
+                He never came back.
+            </p>
+            <p class="intro-text intro-gap">
+                Now you hold his unfinished chronicle. You add your own words to the last page:
+            </p>
+            <p class="intro-quote">"I'm coming to find you. To finish what you started. To bring you home."</p>
+        </div>
+
+        <!-- Map layers (stacked, each reveals when area is discovered) -->
         <div class="map-layers">
             <img src="images/mapImages/enchantedForest.png" class="map-layer" id="map-enchantedForest" alt="">
-            <img src="images/mapImages/mountainRange.png" class="map-layer" id="map-mountainRange" alt="">
-            <img src="images/mapImages/nephelia.png" class="map-layer" id="map-nephelia" alt="">
-            <img src="images/mapImages/desertOfTruth.png" class="map-layer" id="map-desertOfTruth" alt="">
+            <img src="images/mapImages/mountainRange.png"   class="map-layer" id="map-mountainRange"   alt="">
+            <img src="images/mapImages/nephelia.png"         class="map-layer" id="map-nephelia"         alt="">
+            <img src="images/mapImages/desertOfTruth.png"   class="map-layer" id="map-desertOfTruth"   alt="">
             <img src="images/mapImages/underwaterRealm.png" class="map-layer" id="map-underwaterRealm" alt="">
-            <img src="images/mapImages/islandOfBliss.png" class="map-layer" id="map-islandOfBliss" alt="">
+            <img src="images/mapImages/islandOfBliss.png"   class="map-layer" id="map-islandOfBliss"   alt="">
+        </div>
+
+        <!-- Marker overlay - same bounds as map-layers but above the mask -->
+        <div class="map-overlay">
+            <svg class="player-trail" id="player-trail" xmlns="http://www.w3.org/2000/svg">
+                <path id="trail-path" d=""/>
+            </svg>
+            <img src="icons/locationOnMapIcon.png" class="player-marker" id="player-marker" alt="Your location">
         </div>
 
         <!-- Left Page Content -->
@@ -101,6 +142,14 @@
 
         <!-- Right Page Content -->
         <div class="page-content page-right-content">
+
+            <!-- Current Quest -->
+            <div class="quest-tracker">
+                <h2>Current Quest</h2>
+                <div class="quest-bar">
+                    <span class="quest-text" id="quest-text">Find the trapped spirit and free it</span>
+                </div>
+            </div>
 
             <!-- Inventory -->
             <div class="inventory">
@@ -225,6 +274,7 @@
     <!-- Command Input -->
     <div class="command-wrapper">
         <input type="text" id="command-input" placeholder="Enter your command here">
+        <button class="start-game-btn" id="start-game-btn">Begin the Journey</button>
     </div>
 </div>
 

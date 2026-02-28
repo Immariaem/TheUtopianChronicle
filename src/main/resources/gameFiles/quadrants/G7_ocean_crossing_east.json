@@ -26,7 +26,22 @@
   },
   "visibleObjects": {
     "npcs": [],
-    "items": [],
+    "items": [
+      {
+        "itemId": "surface_kelp",
+        "itemName": "Sea Kelp",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You chew on a strand of sea kelp. Salty and tough, but it takes the edge off the hunger."
+      },
+      {
+        "itemId": "surface_fresh_water",
+        "itemName": "Fresh Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink from a freshwater stream trickling into the sea where the currents surface. Clear and cold."
+      }
+    ],
     "interactables": [
       {
         "id": "current_pattern",
@@ -38,7 +53,7 @@
     ]
   },
   "requiredFlags": [
-    "coral_cipher_complete"
+    "guardian_trial_complete"
   ],
   "unlockFlags": []
 }

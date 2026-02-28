@@ -8,5 +8,4 @@ class ProjectCodeApplication
 
 fun main(args: Array<String>) {
     runApplication<ProjectCodeApplication>(*args)
-    val loader = QuadrantLoader()
 }

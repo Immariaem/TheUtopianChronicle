@@ -2,9 +2,9 @@
   "quadrantId": "E2",
   "name": "Desert Oasis",
   "description": {
-    "initial": "An oasis rises from the desert like a miracle. Palm trees provide shade over a clear pool of water, and the air here is blessedly cool. Sitting by a small fire is an old man with knowing eyes, the Hermit. He watches you approach without surprise, as if he's been expecting you. When you tell him about your father, his expression becomes unreadable. 'Did he die?' he asks quietly. 'I'm sorry. He sat by this fire, right where you sit now.'",
+    "initial": "An oasis, shade and water where there should be neither. Palm trees ring a clear pool and the air is cooler here. By a small fire, an old man watches you approach without surprise.",
     "return": "The oasis. The Hermit tends his fire, at peace with his chosen solitude.",
-    "atmospheric": "Water trickles from a spring, creating the most beautiful sound in the desert. The shade feels like salvation."
+    "atmospheric": "Water trickles from a spring, creating the most beautiful sound in the desert. The shade feels like a relief."
   },
   "connections": {
     "north": {
@@ -30,7 +30,7 @@
       {
         "npcId": "hermit",
         "npcName": "Hermit",
-        "dialogue": "\"You look very familiar... But if I am being honest I did already expect you. Your father had the same look you do now. Desperate and certain at the same \n  time. He sat at this fire for two nights before moving on. He left his compass\n   behind by accident, or perhaps on purpose, I was never sure. Take it. Head \n  south from here to the Star Observation Point. On a clear night the three \n  constellations align and point the way to the hidden cove where his boat still\n   waits. I know because I made this same journey once. I stopped here. Some \n  days I wonder if I was a coward. Most days I think I was wise.\"",
+        "dialogue": "\"You look very familiar... But if I am being honest I did already expect you. Your father had the same look you do now. Desperate and certain at the same time. He sat at this fire for two nights before moving on. He left his compass behind by accident, or perhaps on purpose, I was never sure. Take it. Head south from here to the Star Observation Point. On a clear night the three groups of stars line up and point the way to the hidden cove where his boat still waits. I know because I made this same journey once. I stopped here. Some days I wonder if I was a coward. Most days I think I was wise.\"",
         "dialogueConditions": [
           {
             "flag": "found_star_point",
@@ -43,7 +43,7 @@
     "items": [
       {
         "itemId": "fathers_compass",
-        "itemName": "Fathers Compass",
+        "itemName": "Compass",
         "isCollectable": true,
         "itemType": "tool",
         "itemMessage": "You hold the compass up. The needle spins, then points steadily toward the Island of Bliss."

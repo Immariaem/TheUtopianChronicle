@@ -39,7 +39,7 @@
       {
         "id": "giant_oyster",
         "name": "Giant Oyster",
-        "examineText": "An oyster large enough to climb inside. Its shell is encrusted with smaller shells and barnacles, a miniature ecosystem unto itself.",
+        "examineText": "An oyster large enough to climb inside. Its shell is covered with smaller shells and barnacles, a small world of its own.",
         "canInteract": true,
         "interactionText": "You peer inside the giant oyster. At its heart rests a pearl the size of your fist, gleaming with inner light. Beautiful, but you leave it undisturbed."
       }

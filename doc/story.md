@@ -1,6 +1,7 @@
 # Story & Design Dokument: "The Utopian Chronicle"
 
-## Die Geschichte
+<details>
+<summary><strong>Die Geschichte</strong></summary>
 
 Dein Vater war Schriftsteller und Entdecker, besessen von einer Legende: der "Island of Bliss", einer Utopie südlich jenseits des Ozeans, wo kein Leid existiert und jeder Tag vollkommen ist. Jahrelang erforschte er dieses Paradies und füllte ein in Leder gebundenes Buch, das er *"The Utopian Chronicle"* nannte, mit Karten, Reiseberichten und Theorien darüber, wie man es erreichen könnte.
 
@@ -20,7 +21,9 @@ Am Strand haltet ihr *"The Utopian Chronicle"* über das Wasser: seine Handschri
 
 *"Wir brauchen keine Karte zum Paradies mehr,"* sagt er. *"Weil wir nicht dorthin gehen. Wir gehen nach Hause."*
 
----
+</details>
+
+✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦
 
 ## Warum diese Geschichte
 
@@ -30,13 +33,17 @@ Die persönliche Geschichte eines Kindes, das einen vermissten Elternteil sucht,
 
 Die Geschichte erlaubt, das Utopie-Thema ehrlich statt glorifizierend zu behandeln, und weil der emotionale Kern dem philosophischen Gehalt echtes Gewicht verleiht.
 
----
+✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦
 
 ## Zielgruppe
 
-TBD
+"The Utopian Chronicle" richtet sich an alle, die gerne lesen und Wert auf eine bedeutungsvolle Geschichte legen. Das Spiel spricht besonders Fans von storybasierten Spielen an, die Charakterentwicklung, emotionale Tiefe und thematischen Gehalt über Actionmechaniken stellen.
 
----
+Text-Adventure-Enthusiasten werden sich sofort zuhause fühlen, da das Genre auf Vorstellungskraft und Sprache setzt statt auf Grafik. Wer das Genre noch nicht kennt, aber offen ist, etwas Neues auszuprobieren, wird schnell in die intuitive Befehlseingabe hineinfinden. Ein grundlegendes technisches Verständnis, nämlich zu wissen, wie man einen Browser öffnet und Text eingibt, ist alles, was es braucht. Theoretisch ist das Spiel für buchstäblich jeden zugänglich.
+
+Kurzum: Wer gerne liest, Geschichten liebt und neugierig ist, findet hier ein Spiel, das für sie oder ihn gemacht wurde.
+
+✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦ ✧ ⚘ ✦
 
 ## Was es interessant macht
 

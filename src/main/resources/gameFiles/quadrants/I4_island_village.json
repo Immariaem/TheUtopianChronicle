@@ -2,14 +2,15 @@
   "quadrantId": "I4",
   "name": "Island Village",
   "description": {
-    "initial": "You find a beautiful village at the island's heart. White cottages with flowering gardens, a central fountain, and people, the Smiling Ones. They welcome you with identical peaceful expressions: 'Welcome! Stay forever! Everything is perfect here. Always perfect.' But their eyes are empty. Their smiles never waver. They repeat the same phrases endlessly. This isn't paradise. This is a prison disguised as heaven.",
+    "initial": "White cottages, flowering gardens, a central fountain. People move through the village with calm, identical smiles. They notice you and turn, one after another, their expressions not changing. 'Welcome,' one says. 'Stay forever.' Their eyes are peaceful. Completely peaceful. The smiles never reach them.",
     "return": "The island village. The Smiling Ones continue their eternal, empty contentment.",
     "atmospheric": "The sun never moves. The breeze never changes. The smiles never fade. Nothing ever changes."
   },
   "connections": {
     "north": {
       "quadrantId": "H4",
-      "blocked": false
+      "blocked": true,
+      "blockedMessage": "The village is landlocked. There is no way north from here."
     },
     "south": {
       "quadrantId": "J4",
@@ -58,14 +59,14 @@
     "interactables": [
       {
         "id": "village_fountain",
-        "name": "Perfect Fountain",
+        "name": "Fountain",
         "examineText": "A fountain of clear water that never splashes, never makes a sound. The water rises and falls in perfect, silent arcs. It's beautiful and deeply wrong.",
         "canInteract": true,
         "interactionText": "You touch the water. It's neither warm nor cold. It has no temperature at all. Like everything here, it simply is, without life, without change."
       },
       {
         "id": "frozen_flowers",
-        "name": "Eternal Flowers",
+        "name": "Flowers",
         "examineText": "The flowers are in perfect bloom, but they have no scent. When you touch them, they feel real, but they don't move. They're frozen in eternal beauty.",
         "canInteract": false,
         "interactionText": null

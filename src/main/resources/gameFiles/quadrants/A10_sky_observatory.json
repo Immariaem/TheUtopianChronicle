@@ -2,7 +2,7 @@
   "quadrantId": "A10",
   "name": "Sky Observatory",
   "description": {
-    "initial": "At the northeastern edge of Nephelia stands the Sky Observatory, a tall tower with a domed roof made of crystal-clear glass. This is where the city's astronomers and scholars study the heavens, tracking the movements of stars and planets. The tower is currently closed to visitors, but from here you have an unobstructed view eastward. You can see the ocean stretching to the horizon, a vast expanse of blue that seems to go on forever. Somewhere out there, beneath those waves, lies the Underwater Realm you've heard about. The view is breathtaking but also slightly dizzying, you're so high up that clouds drift below you.",
+    "initial": "A crystal-domed tower marks Nephelia's eastern edge. The door is closed to visitors, but from the platform outside the view is unobstructed: ocean stretching to the horizon in every direction. Clouds drift past below you. Somewhere beneath those waves is somewhere you haven't been yet.",
     "return": "The Sky Observatory at Nephelia's eastern edge. The ocean stretches endlessly to the east.",
     "atmospheric": "The wind is stronger here at the edge of the city. It whistles past the observatory's tower with a low, mournful sound."
   },

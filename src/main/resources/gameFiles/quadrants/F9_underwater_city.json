@@ -2,7 +2,7 @@
   "quadrantId": "F9",
   "name": "Underwater City",
   "description": {
-    "initial": "You've discovered the heart of the Underwater Realm, a magnificent city built from living coral and shaped pearl. Merfolk swim through streets of iridescent shells, going about their daily lives. Bioluminescent creatures provide lighting, and the architecture seems to have grown rather than been built. This is a civilization that has thrived beneath the waves for millennia.",
+    "initial": "A city built from living coral and shaped pearl, its spires reaching upward through the water. Merfolk move through shimmering shell-paved streets. Glowing creatures hover like living lanterns. The architecture looks grown rather than built - and perhaps it was.",
     "return": "The Underwater City. Merfolk life continues in its ancient rhythms.",
     "atmospheric": "The city hums with activity and life. Music drifts through the water, haunting and beautiful."
   },

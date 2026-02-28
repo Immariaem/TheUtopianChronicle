@@ -27,7 +27,15 @@
   },
   "visibleObjects": {
     "npcs": [],
-    "items": [],
+    "items": [
+      {
+        "itemId": "slope_stream_water",
+        "itemName": "Stream Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You kneel beside a thin stream running down the rock face and drink. The water is cold and sharp, straight from the mountain."
+      }
+    ],
     "interactables": [
       {
         "id": "mountain_goats",

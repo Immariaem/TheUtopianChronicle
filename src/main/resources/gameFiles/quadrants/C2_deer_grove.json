@@ -33,7 +33,7 @@
         "dialogueConditions": [
           {
             "flag": "spirit_rescued",
-            "text": "\"You have done well, young one. The spirit is free, and the forest sings again. To follow your fathers path, you must journey east to the Crystal Caves beneath the mountains. May your Journey be ever so successful!\""
+            "text": "\"You have done well, young one. The spirit is free, and the forest sings again. To follow your father's path, you must journey east to the Crystal Caves beneath the mountains. May your Journey be ever so successful!\""
           }
         ],
         "isActive": true
@@ -45,7 +45,7 @@
         "itemName": "Stream Water",
         "isCollectable": true,
         "itemType": "consumable",
-        "itemMessage": "You drink the cool, refreshing water from the crystal spring."
+        "itemMessage": "You cup your hands and drink from the stream. The water is cool and refreshing."
       }
     ],
     "interactables": [

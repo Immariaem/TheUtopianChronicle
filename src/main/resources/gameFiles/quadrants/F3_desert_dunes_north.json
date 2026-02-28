@@ -46,7 +46,7 @@
       {
         "id": "desert_plant",
         "name": "Desert Sage",
-        "examineText": "A tough, grey-green plant that has somehow found enough water to survive. Its leaves are thick and waxy, hoarding every drop of moisture.",
+        "examineText": "A tough, grey-green plant that has somehow found enough water to survive. Its leaves are thick and smooth, keeping every drop of moisture.",
         "canInteract": false,
         "interactionText": null
       }

@@ -2,7 +2,7 @@
   "quadrantId": "E5",
   "name": "Red Chamber",
   "description": {
-    "initial": "You enter a chamber ablaze with red crystals, their fiery glow making you feel as if you've stepped into the heart of a volcano. Despite the color, the temperature remains cool. Like the Blue Chamber, this room holds a pedestal with a color-coded tablet, the second piece of the Coral Cipher puzzle.",
+    "initial": "You enter a chamber filled with red crystals, their fiery glow making you feel as if you've stepped into the heart of a volcano. Despite the color, the temperature remains cool. Like the Blue Chamber, this room holds a pedestal with a color-coded tablet, the second of three.",
     "return": "The Red Chamber. The crimson crystals pulse with their warm light.",
     "atmospheric": "The red light creates dancing shadows on the walls, giving the chamber an almost living quality."
   },
@@ -29,11 +29,18 @@
     "npcs": [],
     "items": [
       {
+        "itemId": "crimson_pool_water",
+        "itemName": "Mineral Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink the mineral water. It is cold and refreshing, tinted faintly red but perfectly safe."
+      },
+      {
         "itemId": "red_crystal_key",
         "itemName": "Red Crystal Key",
         "isCollectable": true,
         "itemType": "quest",
-        "itemMessage": "You pick up the blinding red crystal key."
+        "itemMessage": "You pick up the brightly glowing red crystal key."
       }
     ],
     "interactables": [
@@ -46,7 +53,7 @@
       },
       {
         "id": "ruby_formation",
-        "name": "Ruby Crystal Cluster",
+        "name": "Crystal Cluster",
         "examineText": "Deep red crystals cluster together like frozen flames. Their internal glow seems to flicker, creating an illusion of actual fire.",
         "canInteract": false,
         "interactionText": null

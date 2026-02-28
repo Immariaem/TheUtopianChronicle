@@ -3,7 +3,7 @@
   "name": "Secluded Beach",
   "description": {
     "initial": "You've found the secluded beach, separated from the rest of the island by rocks and palms. And there, sitting with his back to you, staring at the ocean, is an old man. The only person on this island whose face shows emotion, whose eyes are aware. Something about him is striking, familiar.",
-    "return": "The secluded beach, seperated from the rest of the island",
+    "return": "The secluded beach, separated from the rest of the island",
     "atmospheric": "The waves flow smoothly onto the sand. You feel the warmth of the sun on your skin."
   },
   "connections": {
@@ -29,7 +29,7 @@
       {
         "npcId": "father",
         "npcName": "Old Man",
-        "dialogue": "\"Three years. I kept thinking someone would come. I kept hoping you wouldn't.\" He finally turns to face you. There's no joy in his eyes, only exhaustion. \"You've seen the village. The Smiling Ones. That's what this island does, it wears you down until you stop missing anything.\"He is quiet for a moment. \"There is one place they never go. West, through the lab of mirrors. I found it in my first year. I tried to walk it alone three times. I couldn't.\" He looks at you. \"The mirrors show you things about yourself. Things that are hard to face. But I think that's the way out. I don't think the island can hold two people who go through it together.\"",
+        "dialogue": "\"Three years. I kept thinking someone would come. I kept hoping you wouldn't.\" He finally turns to face you. There's no joy in his eyes, only exhaustion. \"You've seen the village. The Smiling Ones. That's what this island does, it slowly breaks you until you stop missing anything.\"He is quiet for a moment. \"There is one place they never go. West, through the lab of mirrors. I found it in my first year. I tried to walk it alone three times. I couldn't.\" He looks at you. \"The mirrors show you things about yourself. Things that are hard to face. But I think that's the way out. I don't think the island can hold two people who go through it together.\"",
         "isActive": true,
         "dialogueConditions": [
           {
@@ -39,7 +39,15 @@
         ]
       }
     ],
-    "items": [],
+    "items": [
+      {
+        "itemId": "beach_coconut_water",
+        "itemName": "Coconut",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "A coconut fallen from a nearby palm. You crack it open. Cool milk inside."
+      }
+    ],
     "interactables": [
       {
         "id": "fathers_spot",

@@ -8,12 +8,12 @@ class MovementHandler(state: GameState,
     fun move(direction: String): String {
 
         // check survival before moving
-        if (state.hydration <= 0) {
-            return respawn("You died of dehydration! You have respawned at your last checkpoint.")
-        }
-
         if (state.saturation <= 0) {
             return respawn("You died of starvation! You have respawned at your last checkpoint.")
+        }
+
+        if (state.hydration <= 0) {
+            return respawn("You died of dehydration! You have respawned at your last checkpoint.")
         }
 
         // labyrinth movement gate
@@ -28,6 +28,11 @@ class MovementHandler(state: GameState,
         // labyrinth exit lock
         if (state.currentQuadrant.quadrantId == "J4" && direction == "west" && "mirror_labyrinth_complete" !in state.gameFlags) {
             return "The western wall is solid mirrors. There is no way through. Not yet."
+        }
+
+        // surface lock: must dive at E8 before moving anywhere
+        if (state.currentQuadrant.quadrantId == "E8" && "entered_underwater" !in state.gameFlags) {
+            return "You are floating on the surface of the open ocean. Water stretches in every direction with nothing but sky above. The only way forward is down. Type 'dive' to descend into the underwater realm."
         }
 
         // resolve direction to connection
@@ -91,24 +96,58 @@ class MovementHandler(state: GameState,
         return message
     }
 
+    // flags earned within each checkpoint section / all removed on death in that section
+    private val sectionFlags = mapOf(
+        "B2" to setOf(
+            "spirit_rescued"
+        ),
+        "C4" to setOf(
+            "viewed_blue_tablet", "viewed_red_tablet", "viewed_green_tablet",
+            "crystal_keys_complete"
+        ),
+        "A7" to setOf(
+            "cargo_delivered"
+        ),
+        "F5" to setOf(
+            "reached_desert", "found_star_point",
+            "met_hermit", "received_compass",
+            "star_navigation_complete"
+        ),
+        "E8" to setOf(
+            "entered_underwater",
+            "dropped_coral_relic", "dropped_pearl_relic", "dropped_stone_relic", "relics_offered",
+            "guardian_trial_complete"
+        ),
+        "I4" to setOf(
+            "met_smiling_ones", "mirror_labyrinth_complete"
+        )
+    )
+
     // restores items to their source quadrants and sends player to last checkpoint
     private fun respawn(cause: String): String {
-        state.playerInventory.forEach { item ->
-            val sourceId = state.itemSources[item]
+        // restore all taken items (inventory, placed keys, consumed) back to their source quadrants
+        state.itemSources.forEach { (item, sourceId) ->
             val sourceQuadrant = world.quadrants.find { it.quadrantId == sourceId }
-            sourceQuadrant?.visibleObjects?.items?.add(item)
+            if (sourceQuadrant != null && item !in sourceQuadrant.visibleObjects.items) {
+                sourceQuadrant.visibleObjects.items.add(item)
+            }
         }
-        state.playerInventory.clear()
-
-        state.placedKeys.forEach { key ->
-            val sourceId = state.itemSources[key]
-            val sourceQuadrant = world.quadrants.find { it.quadrantId == sourceId }
-            sourceQuadrant?.visibleObjects?.items?.add(key)
-        }
-        state.placedKeys.clear()
         state.itemSources.clear()
+        state.playerInventory.clear()
+        state.placedKeys.clear()
 
-        val checkpoint = world.quadrants.first { it.quadrantId == state.checkpointQuadrantId }
+        // reset puzzle state variables
+        state.labyrinthActive = false
+        state.labyrinthQuestion = 0
+        state.labyrinthAwaitingMove = false
+        state.currentGuardianQuestion = 0
+        state.guardianAnswersCorrect = true
+
+        // reset all flags earned in the current section so the player must replay it
+        sectionFlags[state.checkpointQuadrantId]?.forEach { state.gameFlags.remove(it) }
+
+        val checkpoint = world.quadrants.firstOrNull { it.quadrantId == state.checkpointQuadrantId }
+            ?: world.quadrants.first { it.quadrantId == "B2" }
         state.currentQuadrant = checkpoint
         state.hydration = 20
         state.saturation = 20

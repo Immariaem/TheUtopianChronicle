@@ -13,9 +13,24 @@ class DialogueHandler(state: GameState, world: World) : BaseHandler(state, world
 
         if (npc.npcId == "pearl_guardian" && "relics_offered" in state.gameFlags &&
             "guardian_trial_complete" !in state.gameFlags) {
-            state.currentGuardianQuestion = 0
-            state.guardianAnswersCorrect = true
-            return "\"The relics are accepted. Now I will ask you three questions.\"\n\n\"Many have come seeking this island. What drives you to follow in their footsteps?\"\n\nA) I am following someone who came this way. I need to know what happened to them.\n\nB) I seek a perfect life, free from the pain of the world above.\n\nC) I will succeed where others have failed. That is reason enough."
+            if (state.currentGuardianQuestion == 0) {
+                state.guardianAnswersCorrect = true
+                return "\"The relics are accepted. Now I will ask you three questions.\"\n\n\"Many have come seeking this island. What drives you to follow in their footsteps?\"\n\nA) I am following someone who came this way. I need to know what happened to them.\n\nB) I seek a perfect life, free from the pain of the world above.\n\nC) I will succeed where others have failed. That is reason enough."
+            }
+            return when (state.currentGuardianQuestion) {
+                1 -> "\"Some call the island a utopia. What do you believe a world without suffering would cost?\"\n\nA) Nothing. Peace is not something that must be paid for.\n\nB) Everything that makes life worth living.\n\nC) Only the freedom of those too weak to endure it."
+                2 -> "\"If you reached the island and found nothing you hoped for, what would you do?\"\n\nA) I would stay. Any destination is better than the journey.\n\nB) I would leave and carry the truth back with me.\n\nC) I would make it into what I needed it to be."
+                else -> "\"Answer truthfully, seeker.\""
+            }
+        }
+
+        // cargo delivery: talking to Zara with cargo in inventory delivers it
+        if (npc.npcId == "captain_zara" && "cargo_delivered" !in state.gameFlags) {
+            val cargo = state.playerInventory.find { it.itemId == "zaras_cargo" }
+            if (cargo != null) {
+                state.playerInventory.remove(cargo)
+                state.gameFlags.add("cargo_delivered")
+            }
         }
 
         val conditionalDialogue = npc.dialogueConditions.firstOrNull { it.flag in state.gameFlags }

@@ -2,7 +2,7 @@
   "quadrantId": "H4",
   "name": "Ocean Crossing",
   "description": {
-    "initial": "You've reached the final stretch of the ocean crossing. The water here glows with an unusual light, as if the sun itself is shining from beneath the waves. And there, on the horizon, you see it: a golden shimmer that can only be the Island of Bliss. Your father saw this same sight three years ago. The journey's end is in sight.",
+    "initial": "The water here glows from below, as if lit by a second sun. And there on the horizon - a golden shimmer, barely distinguishable from sky. Three years ago, someone else stood on this same crossing, looking at the same light.",
     "return": "The final ocean crossing. The Island of Bliss shimmers on the horizon.",
     "atmospheric": "Your heart races. After everything, you've finally found it. The legendary island awaits."
   },

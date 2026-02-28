@@ -2,9 +2,9 @@
   "quadrantId": "C5",
   "name": "Main Chamber",
   "description": {
-    "initial": "You emerge into a vast underground chamber that takes your breath away. Massive crystals of every color imaginable grow from the floor, walls, and ceiling, some as tall as trees. The light they emit is soft but bright enough to see clearly, and their combined hum creates a symphony that seems to resonate in your very bones. At the center of the chamber, a young woman tends to the crystals with careful, loving attention. This must be Kira.",
+    "initial": "A vast underground chamber opens before you. Crystals grow from every surface - floor, walls, ceiling - some as tall as trees, each glowing a different color. Their combined hum fills the chamber like music. At the center, a young woman moves carefully between them, tending each one.",
     "return": "The Main Chamber of the Crystal Caves. Kira continues her eternal work among the singing crystals.",
-    "atmospheric": "The crystal song fills every space, a harmony that speaks of ages past and ages yet to come."
+    "atmospheric": "The crystal song fills every space, a sound that seems to reach from the distant past into the future."
   },
   "connections": {
     "north": {
@@ -68,11 +68,11 @@
         "name": "Cathedral Crystal",
         "examineText": "The largest crystal in the chamber rises nearly to the ceiling. Its deep purple color contains swirls of silver that seem to move like clouds. Kira calls it the Cathedral Crystal, the heart of the caves.",
         "canInteract": true,
-        "interactionText": "You place your hand on the Cathedral Crystal. Its song intensifies, and for a moment, you hear what might be words in the harmony, ancient and incomprehensible but somehow comforting."
+        "interactionText": "You place your hand on the Cathedral Crystal. Its song intensifies, and for a moment, you hear what might be words in the harmony, ancient and impossible to understand but somehow comforting."
       },
       {
         "id": "kiras_workspace",
-        "name": "Crystal Tending Station",
+        "name": "Workstation",
         "examineText": "Kira's workspace holds tools for caring for the crystals: soft cloths, bottles of mineral solutions, small chisels for careful trimming. Everything is organized with obvious care.",
         "canInteract": false,
         "interactionText": null

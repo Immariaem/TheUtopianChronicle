@@ -2,7 +2,7 @@
   "quadrantId": "A1",
   "name": "Western Lands North Border",
   "description": {
-    "initial": "You've reached the northernmost edge of the western lands. Rolling hills stretch endlessly to the west, covered in wild grasses that sway in the wind. This is as far north and west as your journey needs to take you. Your path lies to the east, toward the Enchanted Forest and beyond.",
+    "initial": "The northernmost edge of the western lands. Rolling hills fade into grey emptiness to the west, swept by a constant wind. The Enchanted Forest is visible in the distance to the east.",
     "return": "The northern border of the western lands. Wild, untamed country stretches westward beyond the horizon.",
     "atmospheric": "The wind carries the scent of distant rain. This feels like the edge of the known world."
   },

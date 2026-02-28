@@ -2,7 +2,7 @@
   "quadrantId": "F5",
   "name": "Desert Dunes East",
   "description": {
-    "initial": "The eastern dunes mark the boundary between the desert and the coast. You can smell salt on the wind now, and the sand becomes darker, mixed with soil. Nerina's currents carried you here from the Underwater Realm, depositing you on the beach that leads into this desert. The path back to the sea lies to the east.",
+    "initial": "The eastern dunes mark the boundary between the desert and the coast. You can smell salt on the wind now, and the sand becomes darker, mixed with soil. Nerina's currents carried you here from the Underwater Realm, depositing you on the beach that leads into this desert. The path back to the sea lies to the east. The desert stretches west, vast and trackless. Without a compass or someone who knows its paths, the dunes all look the same.",
     "return": "The eastern dunes. The transition between desert and coast continues.",
     "atmospheric": "Salt and sand mingle in the air. Two worlds meet here."
   },
@@ -27,7 +27,15 @@
   },
   "visibleObjects": {
     "npcs": [],
-    "items": [],
+    "items": [
+      {
+        "itemId": "beach_cactus_fruit",
+        "itemName": "Cactus Fruit",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You bite into the cactus fruit. Juicy and sweet, it relieves both your hunger and thirst at the same time."
+      }
+    ],
     "interactables": [
       {
         "id": "beach_transition",

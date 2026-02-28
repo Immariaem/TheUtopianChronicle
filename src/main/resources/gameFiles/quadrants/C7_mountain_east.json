@@ -24,7 +24,8 @@
     },
     "west": {
       "quadrantId": "C6",
-      "blocked": false
+      "blocked": true,
+      "blockedMessage": "The mountain face here is sheer. There is no path back through the rock."
     }
   },
   "visibleObjects": {

@@ -2,7 +2,7 @@
   "quadrantId": "A8",
   "name": "Sky Market",
   "description": {
-    "initial": "The Sky Market is a riot of color, sound, and smell. Vendors have set up stalls selling everything imaginable. Exotic fruits from distant lands, bolts of shimmering silk that seem to change color as you look at them, intricate mechanical devices that whir and click, and stranger things still. A merchant sells bottled clouds ('Genuine storm clouds! Perfect for dramatic entrances!'). Another offers 'sky fish', fish that somehow swim through the air itself. The babble of haggling voices mingles with the cries of vendors advertising their wares. Awnings in every color flutter in the breeze, and the smell of street food, grilled meat, fresh bread, exotic spices, makes your mouth water.",
+    "initial": "Colorful canopies line the market, and every kind of thing imaginable is sold beneath them. One merchant sells bottled storm clouds; another offers sky fish that somehow swim through open air. Voices bargaining over prices layer over each other. The smell of grilled meat and fresh bread reaches you before the stalls do.",
     "return": "The bustling Sky Market. Vendors call out their wares and customers weave between the colorful stalls.",
     "atmospheric": "Someone is playing a stringed instrument somewhere, its melody weaving through the market's chaos. The music is beautiful and slightly melancholy."
   },
@@ -72,22 +72,22 @@
     "interactables": [
       {
         "id": "silk_stall",
-        "name": "Silk Merchant's Stall",
-        "examineText": "Bolts of the most beautiful fabric you've ever seen. The silk seems to shimmer with inner light, shifting through colors like oil on water. A sign reads: 'Cloud Silk, Woven from morning mist by the master weavers of the Eastern Peaks.'",
+        "name": "Silk Stall",
+        "examineText": "Rolls of the most beautiful fabric you've ever seen. The silk seems to shimmer with inner light, shifting through colors like oil on water. A sign reads: 'Cloud Silk, Woven from morning mist by the master weavers of the Eastern Peaks.'",
         "canInteract": true,
-        "interactionText": "The merchant smiles at your interest. 'Beautiful, isn't it? Light as air, strong as steel, and it never wrinkles. A bargain at only fifty gold crowns per bolt!'"
+        "interactionText": "The merchant smiles at your interest. 'Beautiful, isn't it? Light as air, strong as steel, and it never wrinkles. A bargain at only fifty gold crowns per roll!''"
       },
       {
         "id": "cloud_bottles",
         "name": "Bottled Clouds",
         "examineText": "Actual clouds trapped in glass bottles. Some are white and fluffy, others dark and stormy, one even has tiny lightning bolts crackling inside. The merchant catches you looking and winks.",
         "canInteract": true,
-        "interactionText": "'Ah, you have a good eye! That storm cloud is a rare piece. Captured from the Great Tempest of last summer. Makes quite the impression at parties when you uncork it!'"
+        "interactionText": "'Ah, you have a good eye! That storm cloud is a rare piece. Captured from the Great Tempest of last summer. Really impresses people at parties when you open it!'"
       },
       {
         "id": "food_stall",
         "name": "Street Food Vendor",
-        "examineText": "A small stall selling grilled skewers of meat and vegetables, fresh flatbread, and what appears to be fried pastries dusted with sugar. The smell is intoxicating.",
+        "examineText": "A small stall selling grilled skewers of meat and vegetables, fresh flatbread, and what appears to be fried pastries dusted with sugar. The smell is wonderful.",
         "canInteract": false,
         "interactionText": null
       }

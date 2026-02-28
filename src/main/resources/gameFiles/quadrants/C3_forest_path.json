@@ -48,7 +48,7 @@
         "name": "Fallen Log",
         "examineText": "A large fallen log provides a natural resting spot. Its surface is worn smooth by countless travelers who have sat here before you.",
         "canInteract": true,
-        "interactionText": "You sit on the log and rest for a moment, reviewing your father's book. His notes about this forest are detailed but clinical. Your own observations feel more alive, more present."
+        "interactionText": "You sit on the log and rest for a moment, reviewing your father's book. His notes about this forest are detailed but cold and distant. Your own observations feel more alive, more present."
       }
     ]
   },

@@ -4,7 +4,7 @@
   "description": {
     "initial": "You've found the main airship hangar of Nephelia, a vast covered structure where vessels are repaired and maintained. Partially-assembled airships hang from scaffolding, and workers move about with tools and materials. The smell of varnish, canvas, and engine oil fills the air. A foreman oversees the work, occasionally shouting instructions to the crews above.",
     "return": "The airship hangar. The work of building and maintaining Nephelia's fleet continues without pause.",
-    "atmospheric": "The clang of hammers on metal and the whoosh of bellows create an industrial symphony."
+    "atmospheric": "The clang of hammers on metal and the whoosh of air pumps create an busy mix of sounds."
   },
   "connections": {
     "north": {
@@ -45,7 +45,7 @@
     "interactables": [
       {
         "id": "unfinished_ship",
-        "name": "Ship Under Construction",
+        "name": "Unfinished Ship",
         "examineText": "A sleek new airship is taking shape on the scaffolding. Its hull is complete, but the balloon is still being sewn together by skilled craftsmen.",
         "canInteract": false,
         "interactionText": null

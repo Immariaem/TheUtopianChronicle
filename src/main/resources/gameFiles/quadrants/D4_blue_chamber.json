@@ -2,7 +2,7 @@
   "quadrantId": "D4",
   "name": "Blue Chamber",
   "description": {
-    "initial": "You enter a chamber dominated by crystals of deep, sapphire blue. They grow in clusters from every surface, their color so intense it seems to tint the very air. At the center of the chamber stands a pedestal holding a color-coded tablet, one of the three Kira mentioned. This is part of the Coral Cipher puzzle. The tablet displays a sequence of five colors, glowing softly.",
+    "initial": "You enter a chamber dominated by crystals of deep, sapphire blue. They grow in clusters from every surface, their color so intense it seems to fill the very air with color. At the center of the chamber stands a pedestal holding a color-coded tablet, one of the three Kira mentioned. The tablet displays a sequence of five colors, glowing softly. Study the pattern carefully.",
     "return": "The Blue Chamber. The sapphire crystals pulse with their eternal rhythm.",
     "atmospheric": "The blue light creates an underwater feeling, as if you've descended into the depths of an ocean made of stone."
   },
@@ -28,6 +28,13 @@
     "npcs": [],
     "items": [
       {
+        "itemId": "blue_pool_water",
+        "itemName": "Cave Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink the cave water. It is ice cold and faintly blue, with a slight mineral tingle."
+      },
+      {
         "itemId": "blue_crystal_key",
         "itemName": "Blue Crystal Key",
         "isCollectable": true,
@@ -45,7 +52,7 @@
       },
       {
         "id": "sapphire_formation",
-        "name": "Sapphire Crystal Cluster",
+        "name": "Crystal Cluster",
         "examineText": "A magnificent cluster of sapphire-blue crystals, some as long as your arm. They emit a low hum that harmonizes with the other crystals in the caves.",
         "canInteract": false,
         "interactionText": null

@@ -2,7 +2,7 @@
   "quadrantId": "E6",
   "name": "Green Chamber",
   "description": {
-    "initial": "The Green Chamber surrounds you with crystals of every shade of green, from pale mint to deep emerald. The effect is like standing in an underwater forest, peaceful and serene. The third and final tablet waits on its pedestal, the last piece of the Coral Cipher.",
+    "initial": "The Green Chamber surrounds you with crystals of every shade of green, from pale mint to deep emerald. The effect is like standing in an underwater forest, peaceful and calm. The third and final tablet waits on its pedestal.",
     "return": "The Green Chamber. The emerald crystals create their eternal forest of stone.",
     "atmospheric": "The green light is soothing, creating a sense of growth and life even in this underground space."
   },
@@ -29,24 +29,31 @@
     "npcs": [],
     "items": [
       {
+        "itemId": "emerald_spring_water",
+        "itemName": "Spring Water",
+        "isCollectable": true,
+        "itemType": "consumable",
+        "itemMessage": "You drink the spring water. It is cool and has a faint, sweet taste."
+      },
+      {
         "itemId": "green_crystal_key",
         "itemName": "Green Crystal Key",
         "isCollectable": true,
         "itemType": "quest",
-        "itemMessage": "You pick up the venomously glowing green crystal key."
+        "itemMessage": "You pick up the brightly glowing green crystal key."
       }
     ],
     "interactables": [
       {
         "id": "green_tablet",
         "name": "Color Tablet",
-        "examineText": "The final tablet displays: Green, Yellow, Yellow, Red, Green. This is the last sequence you need for the Coral Cipher.",
+        "examineText": "The final tablet displays: Green, Yellow, Yellow, Red, Green. This is the last sequence you need.",
         "canInteract": true,
         "interactionText": "You commit the final sequence to memory: Green, Yellow, Yellow, Red, Green. The tablet acknowledges you. Now you have all three patterns."
       },
       {
         "id": "emerald_formation",
-        "name": "Emerald Crystal Cluster",
+        "name": "Crystal Cluster",
         "examineText": "Emerald crystals grow in spiraling patterns that seem almost organic, like frozen plants reaching toward an invisible sun.",
         "canInteract": false,
         "interactionText": null

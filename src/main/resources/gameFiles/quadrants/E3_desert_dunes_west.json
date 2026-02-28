@@ -2,7 +2,7 @@
   "quadrantId": "E3",
   "name": "Desert Dunes West",
   "description": {
-    "initial": "You traverse a sea of golden dunes, each one seemingly identical to the last. Navigation here is treacherous without landmarks, the desert could swallow you whole if you lost your way. The sun beats down mercilessly, and you understand why the Hermit spoke of waiting for nightfall to travel.",
+    "initial": "You cross a sea of golden dunes, each one seemingly identical to the last. Navigation here is treacherous without landmarks, the desert could swallow you whole if you lost your way. The sun beats down without mercy, and you understand why the Hermit spoke of waiting for nightfall to travel.",
     "return": "The western dunes. The desert remains as beautiful and deadly as ever.",
     "atmospheric": "Sand shifts beneath your feet with each step. The horizon wavers in the heat."
   },
