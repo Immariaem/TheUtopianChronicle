@@ -144,7 +144,16 @@ class MovementHandler(state: GameState,
         state.guardianAnswersCorrect = true
 
         // reset all flags earned in the current section so the player must replay it
-        sectionFlags[state.checkpointQuadrantId]?.forEach { state.gameFlags.remove(it) }
+        val clearedFlags = sectionFlags[state.checkpointQuadrantId] ?: emptySet()
+        clearedFlags.forEach { state.gameFlags.remove(it) }
+
+        // un-visit any quadrant whose unlockFlags overlap with the cleared flags
+        // so they can re-trigger on the next visit (e.g. met_hermit from E2, star_navigation_complete from G4)
+        world.quadrants.forEach { q ->
+            if (q.unlockFlags.any { it in clearedFlags }) {
+                state.visitedQuadrants.remove(q.quadrantId)
+            }
+        }
 
         val checkpoint = world.quadrants.firstOrNull { it.quadrantId == state.checkpointQuadrantId }
             ?: world.quadrants.first { it.quadrantId == "B2" }

@@ -12,9 +12,8 @@
       "blocked": false
     },
     "south": {
-      "quadrantId": "J2",
-      "blocked": false,
-      "blockedMessage": null
+      "blocked": true,
+      "blockedMessage": "The beach ends at the water's edge. The ocean stretches south with no land in sight."
     },
     "east": {
       "quadrantId": "J4",

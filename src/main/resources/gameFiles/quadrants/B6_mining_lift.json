@@ -40,7 +40,7 @@
       {
         "id": "carved_instructions",
         "name": "Instructions",
-        "examineText": "Instructions carved into the stone beside the lift: 'Pull lever once to ascend. Pull twice to descend. The journey takes several minutes. Enjoy the view.'",
+        "examineText": "Instructions carved into the stone beside the lift: 'You must ascend north to continue your Journey. Enjoy the view.'",
         "canInteract": false,
         "interactionText": null
       }

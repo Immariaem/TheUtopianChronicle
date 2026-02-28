@@ -18,7 +18,8 @@
     },
     "east": {
       "quadrantId": "E4",
-      "blocked": false
+      "blocked": true,
+      "blockedMessage": "A sheer rock face rises where the dunes meet the mountain. There is no way through."
     },
     "west": {
       "quadrantId": "E2",
