@@ -273,7 +273,7 @@ function updateUI(data) {
 function appendResponse(data) {
     scrollContainer.classList.remove('game-over');
 
-    // handle quit - stop music, keep current background; intro will show on next page reload
+    // handle quit / stop music, keep current background / intro will show on next page reload
     if (data.description === 'QUIT') {
         outputDiv.innerHTML = `
             <p class="location-title">${data.quadrant}</p>
@@ -540,7 +540,7 @@ function drawTrail() {
     const px = trailPoints.map(p => ({ x: p.x / 100 * w, y: p.y / 100 * h }));
 
     // Smooth path: move to first point, then quadratic bezier curves
-    // through midpoints so corners are rounded instead of sharp 90°
+    // through midpoints so corners are rounded
     let d = `M ${px[0].x} ${px[0].y}`;
     for (let i = 1; i < px.length - 1; i++) {
         const midX = (px[i].x + px[i + 1].x) / 2;
@@ -558,7 +558,7 @@ function resetTrail() {
     if (path) path.setAttribute('d', '');
 }
 
-// Update map layers based on discovered areas - only show the latest unlocked image
+// Update map layers based on discovered areas / only show the latest unlocked image
 function updateMap(areas) {
     const areaIds = ['enchantedForest', 'mountainRange', 'nephelia', 'underwaterRealm', 'desertOfTruth', 'islandOfBliss'];
     let latestArea = null;
